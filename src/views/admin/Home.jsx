@@ -14,11 +14,6 @@ const Home = () => {
   return (
     <div className="pl-72">
       <div className="home-bar">
-        <Link className="home-link" to="/">
-          <button onClick={()=>{setToken(undefined); navigate("/"); }} 
-          className="link pointer" style={{border:'none'}}> Log out</button>
-         
-        </Link>
         <Link className="home-link" to="/admin">
            <pre> MyServiceNSW Account   </pre>
         </Link>
@@ -41,12 +36,15 @@ const Home = () => {
             Issue Licence
           </Link>
         </div>
-        
+        <Link className="home-link" to="/">
+          <button onClick={()=>{setToken(undefined); navigate("/"); }} 
+          className="link pointer" style={{border:'none'}}> Log out</button>
+        </Link>
       </div>
       
       
-      <p className="mt-3 mr-7" >Welcome, {jwt(token).firstname}</p>
-      <h3>You are logged in as an administrator</h3>
+      <h2 className="mt-10 mr-7" >Welcome, <span className="italic font-mono">{jwt(token).firstname}</span></h2>
+      <h3 className="ml-7 font-semibold text-2xl">You are logged in as an {jwt(token).roles}</h3>
       
       
       <Outlet />

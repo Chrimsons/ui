@@ -15,7 +15,7 @@ const Home = () => {
   return (
     <div className="pl-72">
       <div className="home-bar">
-        <Link className="home-link" to="/">
+        <Link className="home-link" to="/customer">
           MyServiceNSW Account
         </Link>
       </div>

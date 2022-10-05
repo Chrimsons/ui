@@ -219,13 +219,13 @@ a:link {
 }
 
 a:visited {
-  color: rgb(182, 52, 19);
+  color: rgb(194, 152, 224);
   background-color: transparent;
   text-decoration: none;
 }
 
 a:hover {
-  color: red;
+  color: rgb(199, 195, 195);
   background-color: transparent;
   text-decoration: underline;
 }
