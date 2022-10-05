@@ -5,12 +5,9 @@ import { useContext } from "react";
 import { jwt } from "../../identity";
 import { TokenContext } from "../../App";
 
-
-
 const Home = () => {
   const navigate = useNavigate();
-  const [token,setToken] = useContext(TokenContext)
-  
+  const [token, setToken] = useContext(TokenContext);
 
   return (
     <div className="pl-72">
@@ -37,22 +34,40 @@ const Home = () => {
             Display license
           </Link>
         </div>
-        
-        
       </div>
-      <div >
-                <p className="mt-3 mr-7" >Welcome {jwt(token).firstname}</p>
-                <br/><br/><br/>
-                <a href="https://www.nsw.gov.au/driving-boating-and-transport/driver-and-rider-licences/proof-of-identity/proving-your-identity" target="blank">Click here</a> to find more information about identification requirements
-                <br/><br/><br/><br/><br/><br/><br/><br/><br/>
-                <button onClick={()=>{setToken(undefined); navigate("/"); }} className="link pointer" style={{border:'none'}}>Log out</button>
-            </div>
-      
-      
-      
-      
+      <div>
+        <p className="mt-3 mr-7">Welcome {jwt(token).firstname}</p>
+        <br />
+        <br />
+        <br />
+        <a
+          href="https://www.nsw.gov.au/driving-boating-and-transport/driver-and-rider-licences/proof-of-identity/proving-your-identity"
+          target="blank"
+        >
+          Click here
+        </a>{" "}
+        to find more information about identification requirements
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <button
+          onClick={() => {
+            setToken(undefined);
+            navigate("/");
+          }}
+          className="link pointer"
+          style={{ border: "none" }}
+        >
+          Log out
+        </button>
+      </div>
 
-      
       <Outlet />
     </div>
   );

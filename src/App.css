@@ -76,10 +76,13 @@ h2 {
   @apply w-6/12 border-gray-600 border-[1px] pt-2 pb-20  mt-20
 }
 .home-bar {
-  @apply w-screen float-right py-3 pr-96 bg-slate-800 text-white text-base font-semibold;
+  @apply w-screen float-right py-3 pr-96 bg-slate-800;
 }
 .home-link {
-  @apply float-right  bg-slate-800 text-white text-base font-semibold;
+  @apply float-right bg-slate-800 text-white text-base font-semibold;
+}
+.admin-link {
+  @apply float-right font-bold text-white;
 }
 .userinfo-btn-red {
   @apply bg-red-600 rounded text-white text-lg px-16 py-2;
@@ -212,17 +215,18 @@ button{
   text-decoration: none;
   display: inline-block;
 }
+
 a:link {
   color: green;
   background-color: transparent;
   text-decoration: none;
 }
 
-a:visited {
+/* a:visited {
   color: rgb(194, 152, 224);
   background-color: transparent;
   text-decoration: none;
-}
+} */
 
 a:hover {
   color: rgb(199, 195, 195);
