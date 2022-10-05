@@ -20,7 +20,6 @@ export default function Register() {
   const navigate = useNavigate();
 
   function submit() {
-    debugger;
     registerAsync(
       firstname,
       lastname,
