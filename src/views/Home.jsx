@@ -5,7 +5,7 @@ import { TokenContext } from "../App";
 import { isInRole } from "../identity";
 import ProfilePicture from "./img/snswhomepage.JPG";
 
-const Main = () => {
+const Home = () => {
   const [token, setToken] = useContext(TokenContext);
   const navigate = useNavigate();
 
