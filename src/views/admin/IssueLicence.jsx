@@ -93,7 +93,7 @@ const IssueLicence = ()=>{
 
     return (
         <div>
-            <h1>Issue Licence</h1>
+            <h1 className="issue-licence-h1">Issue Licence</h1>
             {customerSearchJSX()}    
             {issueLicenceJSX()}     
         </div>
