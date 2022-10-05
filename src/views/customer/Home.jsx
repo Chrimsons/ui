@@ -42,7 +42,9 @@ const Home = () => {
       </div>
       <div >
                 <p className="mt-3 mr-7" >Welcome {jwt(token).firstname}</p>
-                <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                <br/><br/><br/>
+                <a href="https://www.nsw.gov.au/driving-boating-and-transport/driver-and-rider-licences/proof-of-identity/proving-your-identity" target="blank">Click here</a> to find more information about identification requirements
+                <br/><br/><br/><br/><br/><br/><br/><br/><br/>
                 <button onClick={()=>{setToken(undefined); navigate("/"); }} className="link pointer" style={{border:'none'}}>Log out</button>
             </div>
       
