@@ -1,38 +1,111 @@
-.App {
-  text-align: center;
+.home-login {
+  @apply bg-slate-900 float-right;
+}
+.h1-account {
+  @apply text-4xl;
+}
+.issue-licence-h1 {
+  @apply text-center mt-2 ml-7 text-4xl;
+}
+.form {
+  @apply w-5/12 m-auto border-gray-600 border-[1px] pt-2 pb-20  mt-20;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.form input {
+  @apply w-11/12 mt-2 ml-7 py-[11px] border-gray-600 rounded border-[2px]
+  focus:outline-none focus:border-[2px] focus:border-blue-600  
+  hover:bg-slate-200 font-semibold pl-3 inline-block;
+}
+.form label {
+  @apply font-semibold py-2 ml-10;
+}
+.form select {
+  @apply w-11/12 mt-2 ml-7 py-[11px] border-gray-600 rounded border-[2px]
+  focus:outline-none focus:border-[2px] focus:border-blue-600 
+  hover:bg-slate-200 disabled:cursor-not-allowed font-semibold hover:cursor-pointer;
+}
+.form-link {
+  @apply underline text-blue-600 visited:text-purple-400 visited:inline-block hover:text-blue-700 mt-10 pb-40;
+}
+h2 {
+  @apply text-3xl font-semibold font-sans mb-10;
+}
+.btn {
+  @apply rounded w-1/2 py-2 text-white font-semibold;
+}
+.form-btn-red {
+  @apply btn bg-red-700 hover:bg-red-500;
+}
+.form-btn-blue {
+  @apply btn bg-blue-700 hover:bg-blue-500 mb-5;
+}
+.form-btn-blue-search {
+  @apply btn bg-blue-700 hover:bg-blue-500 m-7;
+}
+.hours-btn {
+  @apply rounded  py-2 text-white font-semibold;
+}
+.hours-btn-red {
+  @apply hours-btn bg-red-700 hover:bg-red-500 w-[200px];
+}
+.hours-btn-blue {
+  @apply hours-btn bg-blue-700 hover:bg-blue-500 mb-10 w-1/2;
+}
+.hours-btn-yellow {
+  @apply hours-btn bg-yellow-500 hover:bg-yellow-400 mb-10 w-1/2;
+}
+.form-btn-yellow {
+  @apply rounded py-2 text-white font-semibold bg-yellow-500 hover:bg-yellow-400 mb-10 w-full;
+}
+.form-loghours {
+  @apply form;
+}
+.form-loghours input {
+  @apply text-center;
+}
+.home-bar {
+  @apply w-screen float-right py-3 pr-96 bg-slate-800 text-white text-base font-semibold;
+}
+.home-link {
+  @apply float-right  bg-slate-800 text-white text-base font-semibold;
+}
+.userinfo-btn-red {
+  @apply bg-red-600 rounded text-white text-lg px-16 py-2;
+}
+.userinfo-btn-blue {
+  @apply hover:bg-gray-100 rounded shadow text-white text-lg px-16 py-2 px-8 border border-blue-900 text-blue-900 bg-white font-semibold;
+}
+.user-h {
+  @apply text-4xl font-bold font-sans mt-16;
+}
+.table-h {
+  @apply text-4xl font-bold font-sans mt-2;
+}
+.user-p {
+  @apply text-xl font-semibold mb-7;
+}
+.h-lnk {
+  @apply inline-block p-4 font-semibold rounded-t-lg border-b-2 border-blue-800 active:border-[3px] dark:text-black dark:border-blue-800;
+}
+.ticket-table thead tr {
+  @apply bg-blue-500 text-white;
+}
+.ticket-table th {
+  @apply px-3 py-2 font-semibold;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.ticket-table tbody tr {
+  @apply bg-blue-100 text-center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.ticket-table tbody tr:nth-child(even) {
+  @apply bg-blue-200;
 }
 
-.App-link {
-  color: #61dafb;
+.ticket-table tbody tr:hover {
+  @apply bg-blue-300;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.ticket-table tbody td {
+  @apply px-3 py-1;
 }
