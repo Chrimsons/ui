@@ -130,13 +130,13 @@ const Services = () => {
             class="rounded-full px-10 py-3 text-center"
             onClick={() => navigate(`/customer/licence/${l._id}/logbook`)}
           >
-            Display Log or enter new log
+            Display hours
           </button>
           <button
             class="rounded-full px-10 py-3 text-center"
             onClick={() => navigate(`/customer/licence/${l._id}/logform`)}
           >
-            Display Log or enter new log
+            Log new hours
           </button>
           
         </div>
