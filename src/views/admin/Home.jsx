@@ -19,7 +19,7 @@ const Home = () => {
       >
         <div className="login-input">
           <img
-            onClick={() => navigate("/")}
+            onClick={() => navigate("/admin")}
             className="w-left cursor-pointer object-contain w-[200px] "
             src={ProfilePicture}
           />
