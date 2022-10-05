@@ -21,7 +21,7 @@ const UserInfo = () => {
         }
         return (
             <div className="user-info menu">
-                <p style={{margin:'0px 15px'}}>Logged in as {jwt(token).email}</p>
+                <p style={{margin:'0px 15px'}}>Logged in as {jwt(token).firstname}</p>
                 <button onClick={()=>{setToken(undefined); navigate("/login"); }} className="link pointer" style={{border:'none'}}>Log out</button>
             </div>
         );

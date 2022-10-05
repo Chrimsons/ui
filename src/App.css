@@ -85,7 +85,7 @@ h2 {
   @apply text-xl font-semibold mb-7;
 }
 .h-lnk {
-  @apply inline-block p-4 font-semibold rounded-t-lg border-b-2 border-blue-800 active:border-[3px] dark:text-black dark:border-blue-800;
+  @apply inline-block p-4 font-semibold rounded-t-lg border-b-2 hover:bg-blue-100 border-blue-800 active:border-[3px] dark:text-black dark:border-blue-800;
 }
 .ticket-table thead tr {
   @apply bg-blue-500 text-white;
@@ -108,4 +108,71 @@ h2 {
 
 .ticket-table tbody td {
   @apply px-3 py-1;
+}
+
+label{
+  min-width: 125px;
+  display: inline-block;
+  text-align: right;
+  margin: 5px 5px;
+  font-weight: bold;
+}
+
+input{
+  border-radius: 2.5px;
+  padding: 5px;
+  border-color: rgba(255, 0, 0,0.5);
+  border-width: 0.5px;
+}
+
+button{
+  background-color: red;
+  color: white;
+  border-width: 0px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.form-container{
+  display: inline-block;
+  margin: auto;
+}
+.tile{
+  border:1px solid #000;
+  padding:10px;
+  margin-bottom: 10px;
+  background-color: red;
+  color: white;
+}
+ .pointer{
+  cursor: pointer;
+ }
+
+ .user-info{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+ }
+
+ .user-info > p {
+  color: rgb(0, 110, 255);
+  font-weight: bolder;
+ }
+
+ .link {
+    background-color: red;
+    color:#fff;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+ }
+
+.alt-link {
+  background-color: #fff;
+  color:red;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
 }
