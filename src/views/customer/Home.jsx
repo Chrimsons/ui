@@ -1,12 +1,15 @@
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import ProfilePicture from "../../img/snswhomepage.JPG";
 import UserInfo from "../UserInfo";
-import { useEffect,useState } from "react";
+import { useEffect,useState,useContext } from "react";
 import { fetchLicencesAsync } from "../../web-services";
+import { jwt } from "../../identity";
+import { TokenContext } from "../../App";
 
 const Home = () => {
   const navigate = useNavigate();
   const [licences,setLicences] = useState([])
+  const [token,setToken] = useContext(TokenContext)
 
 
   useEffect(()=>{
@@ -38,9 +41,15 @@ const Home = () => {
             My Log Entries
           </Link>
         </div>
+        
+        
       </div>
+      
+      
+      
+      
 
-      <UserInfo />
+      
       <Outlet />
     </div>
   );

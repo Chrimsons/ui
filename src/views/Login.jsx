@@ -31,7 +31,7 @@ export default function Login() {
 
   return (
     <div className="">
-      <div class="form m-auto">
+      <div className="form m-auto">
         <h2 className="h2">Sign In</h2>
         <div>
           <label>Email: </label>

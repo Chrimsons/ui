@@ -24,11 +24,8 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/customer" element={<Customer.Home />}>
-              <Route path="services" element={<Customer.Services />} />
-              <Route
-                path="licence/:licenceId/logbook"
-                element={<Customer.LogBook />}
-              />
+              <Route path="customer/services" element={<Customer.Services />} />
+              <Route path="licence/:licenceId/logbook" element={<Customer.LogBook />}/>
             </Route>
             <Route path="admin" element={<Admin.Home />}>
               <Route path="licence/issue" element={<Admin.IssueLicence />} />
@@ -37,6 +34,7 @@ function App() {
                 element={<Admin.Licence />}
               />
             </Route>
+            
           
         </Routes>
       </BrowserRouter>
