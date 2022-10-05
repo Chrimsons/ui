@@ -96,7 +96,7 @@ export function issueLicenceAsync(userId) {
   };
   return fetch(`${server}/admin/licences`, config).then((r) => r.json());
 }
-export function issuePLicenceAsync(userId) {
+export function issuePLicenceAsync(_id) {
   let config = {
     method: "PUT",
     headers: {
@@ -105,7 +105,7 @@ export function issuePLicenceAsync(userId) {
         .getItem("token")
         .replaceAll('"', "")}`,
     },
-    body: JSON.stringify({ userId }),
+    body: JSON.stringify({ _id }),
   };
   return fetch(`${server}/admin/licences/p`, config).then((r) => r.json());
 }

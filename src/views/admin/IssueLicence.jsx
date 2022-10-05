@@ -64,9 +64,8 @@ const IssueLicence = () => {
 const provisional = () =>{
   if(hours=="Yes" && driving=="Yes") {
   setP(true)
-  issuePLicenceAsync(customer._id)
-  .then((j) => navigate(`/admin/customer/${customer._id}/licence`))
-  .catch((e) => alert("error issuing licence"));
+  issuePLicenceAsync(licence._id)
+  
   //navigate(`/admin/customer/prov`)
   
   }
