@@ -3,7 +3,7 @@ import { Outlet, Link, useNavigate } from "react-router-dom";
 import UserInfo from "./UserInfo";
 import { TokenContext } from "../App";
 import { isInRole } from "../identity";
-import ProfilePicture from "./img/snswhomepage.JPG";
+import ProfilePicture from "../img/snswhomepage.JPG";
 
 const Main = () => {
   const [token, setToken] = useContext(TokenContext);
