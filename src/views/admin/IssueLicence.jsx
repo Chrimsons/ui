@@ -68,10 +68,9 @@ const IssueLicence = () => {
   const provisional = () => {
     if (hours == "Yes" && driving == "Yes") {
       setP(true);
-      //issuePLicenceAsync(customer._id)
-      //.then((j) =>
-      navigate(`/admin/customer/prov`);
-      //)
+      issuePLicenceAsync(licence._id);
+
+      //navigate(`/admin/customer/prov`)
     } else {
       alert("DT/HPT/Hours is pending !!!");
     }
@@ -86,7 +85,9 @@ const IssueLicence = () => {
           </div>
           {!licence && (
             <div>
-              <p className="text-xl  mb-5 mt-7 ">Please only proceed if the customer has passed the DKT </p>
+              <p className="text-xl  mb-5 mt-7 ">
+                Please only proceed if the customer has passed the DKT{" "}
+              </p>
               <div className="border-[2px] w-fit pr-20 mt-10 ml-16">
                 <label>DKT:</label>
                 <select value={dkt} onChange={(e) => setDkt(e.target.value)}>
@@ -98,8 +99,18 @@ const IssueLicence = () => {
                 </select>
               </div>
               <br />
-              <button class="rounded-full bg-red-700 hover:bg-red-500 mt-10 px-10 py-3 text-2xl font-semibold text-center ml-24" onClick={submitLicence}>Issue</button>
-              <button class="rounded-full hover:bg-blue-500 mt-10 px-10 py-3 text-2xl font-semibold text-center ml-4" onClick={() => setCustomer(null)}>Cancel</button>
+              <button
+                class="rounded-full bg-red-700 hover:bg-red-500 mt-10 px-10 py-3 text-2xl font-semibold text-center ml-24"
+                onClick={submitLicence}
+              >
+                Issue
+              </button>
+              <button
+                class="rounded-full hover:bg-blue-500 mt-10 px-10 py-3 text-2xl font-semibold text-center ml-4"
+                onClick={() => setCustomer(null)}
+              >
+                Cancel
+              </button>
             </div>
           )}
           {p && (
@@ -110,38 +121,42 @@ const IssueLicence = () => {
 
           {licence && (
             <div>
-              <p>This customer has a Learner's Licence:</p>
-              <p>Licence: {licence._id}</p>
-              <p>Issued: {new Date(licence.issued).toDateString()}</p>
-              <div>
-                <label>Total hours complete?:</label>
-                <select
-                  value={hours}
-                  onChange={(e) => setHours(e.target.value)}
-                >
-                  <option disabled={true} value="">
-                    -- Please Select
-                  </option>
-                  <option value="Yes">Yes</option>
+              {!p && (
+                <div>
+                  <p>This customer has a Learner's Licence:</p>
+                  <p>Licence: {licence._id}</p>
+                  <p>Issued: {new Date(licence.issued).toDateString()}</p>
+                  <div>
+                    <label>Total hours complete?:</label>
+                    <select
+                      value={hours}
+                      onChange={(e) => setHours(e.target.value)}
+                    >
+                      <option disabled={true} value="">
+                        -- Please Select
+                      </option>
+                      <option value="Yes">Yes</option>
 
-                  <option value="No">No</option>
-                </select>
-              </div>
-              <div>
-                <label>Driving Test:</label>
-                <select
-                  value={driving}
-                  onChange={(e) => setDriving(e.target.value)}
-                >
-                  <option disabled={true} value="">
-                    -- Please Select
-                  </option>
-                  <option value="Yes">Pass</option>
-                  <option value="No">Fail</option>
-                </select>
-              </div>
-              <button onClick={provisional}>Issue Provisional</button>
-              <button onClick={() => setCustomer(null)}>Cancel</button>
+                      <option value="No">No</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label>Driving Test:</label>
+                    <select
+                      value={driving}
+                      onChange={(e) => setDriving(e.target.value)}
+                    >
+                      <option disabled={true} value="">
+                        -- Please Select
+                      </option>
+                      <option value="Yes">Pass</option>
+                      <option value="No">Fail</option>
+                    </select>
+                  </div>
+                  <button onClick={provisional}>Issue Provisional</button>
+                  <button onClick={() => setCustomer(null)}>Cancel</button>
+                </div>
+              )}
             </div>
           )}
         </div>
