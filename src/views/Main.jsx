@@ -90,41 +90,7 @@ const Main = () => {
         )}
         <UserInfo />
       </div>
-      <h2 className="user-h">MyServiceNSW Driver License</h2>
-          <br />
-          <div>
-            <p className="user-p">Welcome to Service NSW Driver License page</p>
-            <p className="user-p">
-              Please{" "}
-              <Link className="form-link" to="/login">
-                sign in
-              </Link>{" "}
-              or
-              <Link className="form-link" to="/register">
-                {" "}
-                register{" "}
-              </Link>
-              to access content.
-            </p>
-          </div>
-          <br />
-          <div>
-            <button
-              className="userinfo-btn-red"
-              onClick={() => navigate("/login")}
-            >
-              Log in
-            </button>{" "}
-            <span className="px-0.5" />
-            <button
-              className="userinfo-btn-blue"
-              onClick={() => navigate("/register")}
-            >
-              Create Account
-            </button>
-          </div>
       
-
       <Outlet />
     </div>
   );
