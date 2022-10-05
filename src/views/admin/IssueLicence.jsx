@@ -120,12 +120,12 @@ const IssueLicence = () => {
           )}
 
           {licence && (
-            <div>
+            <div >
               {!p && (
-                <div>
-                  <p>This customer has a Learner's Licence:</p>
-                  <p>Licence: {licence._id}</p>
-                  <p>Issued: {new Date(licence.issued).toDateString()}</p>
+                <div >
+                  <p className="text-xl  mb-5 mt-7 ">This customer has a Learner's Licence:</p>
+                  <p className="  mb-5 mt-7 ">Licence: {licence._id}</p>
+                  <p className="font-semibold  mb-5 mt-7 ">Issued: {new Date(licence.issued).toDateString()}</p>
                   <div>
                     <label>Total hours complete?:</label>
                     <select
