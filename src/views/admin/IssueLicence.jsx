@@ -31,9 +31,10 @@ const IssueLicence = () => {
       return (
         <>
           <div>
-            <form className="form pl-5 mx-64">
-              <h2 className="">Customer Search</h2>
+            <form className="form pl-5 mx-72">
+              <h2 className="">Issue Licence</h2>
               <div style={{ marginBottom: 15 }}>
+                <label htmlFor="searchUsername">Customer Search:</label>
                 <input
                   placeholder="Please enter an Email"
                   required={true}
@@ -97,7 +98,7 @@ const IssueLicence = () => {
 
   return (
     <div>
-      <h1 className="issue-licence-h1">Issue Licence</h1>
+      <br />
       {customerSearchJSX()}
       {issueLicenceJSX()}
     </div>

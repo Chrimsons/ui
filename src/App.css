@@ -5,7 +5,7 @@
   @apply text-4xl;
 }
 .issue-licence-h1 {
-  @apply text-center mt-2 ml-7 text-4xl;
+  @apply mx-[445px] mt-2 text-4xl font-extrabold;
 }
 .form-signin{
   @apply m-auto
@@ -15,7 +15,7 @@
 }
 
 .form input {
-  @apply w-11/12 mt-2 ml-7 py-[11px] border-gray-600 rounded border-[2px]
+  @apply w-11/12 mt-2 mb-2 ml-7 py-[11px] border-gray-600 rounded border-[2px]
   focus:outline-none focus:border-[2px] focus:border-blue-600  
   hover:bg-slate-200 font-semibold pl-3 inline-block
 }
@@ -29,6 +29,9 @@
 }
 .form-link {
   @apply underline text-blue-600 visited:text-purple-400 visited:inline-block hover:text-blue-700 ml-10 pb-40;
+}
+.page-link {
+  @apply underline text-blue-600 visited:text-purple-400 visited:inline-block hover:text-blue-700 ;
 }
 h2 {
   @apply text-4xl font-sans mb-10 mt-5 ml-7 font-bold;
@@ -129,7 +132,7 @@ input{
 }
 
 button{
-  background-color: red;
+  background-color: rgb(255, 0, 0);
   color: white;
   border-width: 0px;
   padding: 5px;
@@ -158,17 +161,19 @@ button{
  }
  .login-input{
   display: flex;
+  text-align: center;
   flex-direction: row;
   justify-content: flex-start;
+  align-self: auto;
  }
 
  .user-info > p {
-  color: rgb(0, 110, 255);
+  color: rgb(10, 10, 10);
   font-weight: bolder;
  }
 
  .link {
-    background-color: red;
+    background-color: rgba(255, 0, 0, 0.87);
     color:#fff;
     padding: 14px 25px;
     text-align: center;
