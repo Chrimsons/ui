@@ -20,10 +20,10 @@ function App() {
     <TokenContext.Provider value={[token, setToken]}>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Main />}>
-            <Route path="login" element={<Login />} />
-            <Route path="register" element={<Register />} />
-            <Route path="customer" element={<Customer.Home />}>
+          <Route path="/" element={<Main />}/>
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/customer" element={<Customer.Home />}>
               <Route path="services" element={<Customer.Services />} />
               <Route
                 path="licence/:licenceId/logbook"
@@ -37,7 +37,7 @@ function App() {
                 element={<Admin.Licence />}
               />
             </Route>
-          </Route>
+          
         </Routes>
       </BrowserRouter>
     </TokenContext.Provider>
