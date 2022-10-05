@@ -64,10 +64,11 @@ const IssueLicence = () => {
 const provisional = () =>{
   if(hours=="Yes" && driving=="Yes") {
   setP(true)
-  //issuePLicenceAsync(customer._id)
-  //.then((j) => 
-  navigate(`/admin/customer/prov`)
-  //)
+  issuePLicenceAsync(customer._id)
+  .then((j) => navigate(`/admin/customer/${customer._id}/licence`))
+  .catch((e) => alert("error issuing licence"));
+  //navigate(`/admin/customer/prov`)
+  
   }
   else{
   alert("DT/HPT/Hours is pending !!!")
@@ -109,14 +110,13 @@ const provisional = () =>{
           )}
           
 {
-
-
           licence && (
             
             <div>
-              
-              
-              <p>This customer has a Learner's Licence:</p>
+              {
+                !p &&(
+                  <div>
+                    <p>This customer has a Learner's Licence:</p>
               <p>Licence: {licence._id}</p>
               <p>Issued: {new Date(licence.issued).toDateString()}</p>
               <div>
@@ -145,7 +145,13 @@ const provisional = () =>{
               <button onClick={provisional}>Issue Provisional</button>
               <button onClick={() => setCustomer(null)}>Cancel</button>
             </div>
-          ) }
+          )}
+                    </div>
+                )
+              }
+              
+              
+               
     
     
          
