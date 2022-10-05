@@ -16,7 +16,7 @@ const Home = () => {
         <div>
           <img
             onClick={() => navigate("/")}
-            className="w-left cursor-pointer object-contain w-[200px]"
+            className="w-left cursor-pointer object-contain w-[200px] "
             src={ProfilePicture}
           />
           <UserInfo />

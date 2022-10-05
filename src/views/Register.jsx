@@ -10,7 +10,7 @@ export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [dob, setDob] = useState("");
-  const [mobile, setMobile] = useState("");
+  const [mobile, setMobile] = useState("04");
   const [firstname, setFirstName] = useState("");
   const [lastname, setLastName] = useState("");
   const [gender, setGender] = useState("");
@@ -43,13 +43,13 @@ export default function Register() {
       e.preventDefault();
       submit();
     }}
-    className="form"
+    className="form m-auto"
   >
     <Header />
     <h2>Sign up</h2>
     
       <div>
-        <label>E-mail </label>
+        <label>Email: </label>
         <br />
         <input
           placeholder="Please enter an E-mail"
@@ -61,7 +61,7 @@ export default function Register() {
       </div>
       <br />
           <div>
-            <label>Password </label>
+            <label>Password: </label>
             <br />
             <input
               placeholder="Please enter a password"
@@ -75,7 +75,7 @@ export default function Register() {
           </div>
           <br />
           <div>
-          <label>First Name </label>
+          <label>First Name: </label>
           <br />
           <input
               placeholder="Please enter your first name"
@@ -86,7 +86,7 @@ export default function Register() {
            </div>
            <br />
           <div>
-          <label>Last Name </label>
+          <label>Last Name: </label>
           <br />
           <input
               placeholder="Please enter your last name"
@@ -97,10 +97,10 @@ export default function Register() {
           </div>
           <br />
           <div>
-          <label>Mobile Number </label>
+          <label>Mobile No:</label>
           <br />
           <input
-              required={true}
+            required={true}
             type="tel"
             value={mobile}
             onChange={(e) => setMobile(e.target.value)}
@@ -108,7 +108,7 @@ export default function Register() {
           </div>
           <br />
           <div>
-          <label>Date of Birth </label>
+          <label>Date of Birth: </label>
           <br />
           <input
             className="cursor-text"
@@ -120,7 +120,7 @@ export default function Register() {
           </div>{" "}
           <br />
           <div>
-          <label>Gender</label>
+          <label>Gender:</label>
           <select value={gender} onChange={(e) => setGender(e.target.value)}>
             <option disabled={true} value="">
               -- Please Select Gender

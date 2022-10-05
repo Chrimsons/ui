@@ -88,14 +88,24 @@ const Main = () => {
         className=""
       >
         {token && isInRole(token, "customer") && (
-          <Link to={"/customer"} className="h-lnk">
-            Home
-          </Link>
+          <div>
+            <Link to={"/customer"} className="h-lnk">
+              Home
+            </Link>
+            <Link to={"/customer/services"} className="alt-link">
+              Services
+            </Link>
+          </div>
         )}
         {token && isInRole(token, "admin") && (
-          <Link to={"/admin"} className="h-lnk">
-            Home
-          </Link>
+          <div>
+            <Link to={"/admin"} className="h-lnk">
+              Home
+            </Link>
+            <Link to={"/admin/licence/issue"} className="h-lnk">
+              Issue Licence
+            </Link>
+          </div>
         )}
       </div>
 
