@@ -28,20 +28,35 @@ const IssueLicence = ()=>{
     }
 
     const customerSearchJSX = () => {
-        if(!customer){
-            return (
-                <div>
-                    <div>Customer Search</div>
-                    <div style={{marginBottom:15}}>
-                        <input value={email} onChange={e=>setEmail(e.target.value)} />
-                        <button onClick={fetchCustomers}>Search Customers</button>
-                    </div>
-                    {customers.length == 0 && 'Showing 0 Customers'}  
-                    {customers.length > 0 && customers.map(c=><div className="tile pointer" key={c._id} onClick={()=>setCustomer(c)}>{c.email}</div>)}          
+        if (!customer) {
+          return (
+            <>
+              <div>
+                <form className="form">
+                <h2>Customer Search</h2>
+                <div style={{ marginBottom: 15 }}>
+                  <input value={email} onChange={(e) => setEmail(e.target.value)} />
+                  <button className="form-btn-blue-search" onClick={fetchCustomers}>
+                    Search Customers
+                  </button>
                 </div>
-            ); 
+                {customers.length == 0 && "Showing 0 Customers"}
+                {customers.length > 0 &&
+                  customers.map((c) => (
+                    <div
+                      className="tile pointer"
+                      key={c._id}
+                      onClick={() => setCustomer(c)}
+                    >
+                      {c.email}
+                    </div>
+                  ))}
+                </form>
+              </div>
+            </>
+          );
         }
-    }
+      };
 
     const submitLicence = () => {
         issueLicenceAsync(customer._id)
