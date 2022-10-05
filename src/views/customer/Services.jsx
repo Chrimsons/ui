@@ -132,6 +132,12 @@ const Services = () => {
           >
             Display Log or enter new log
           </button>
+          <button
+            class="rounded-full px-10 py-3 text-center"
+            onClick={() => navigate(`/customer/licence/${l._id}/logform`)}
+          >
+            Display Log or enter new log
+          </button>
           
         </div>
       ))}

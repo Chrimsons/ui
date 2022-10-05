@@ -27,7 +27,7 @@ function App() {
             <Route path="/customer" element={<Customer.Home />}/>
               
               <Route path="/customer/licence/:licenceId/logbook" element={<Customer.LogBook />}/>
-                <Route path="/customer/licence/:licenceId/logbook/logform" element = {<Customer.LogForm/>}/>
+                <Route path="/customer/licence/:licenceId/logform" element = {<Customer.LogForm/>}/>
                 
                 <Route path="/admin/customer/prov" element={<Admin.Provisional/>}/>
             <Route path="/admin" element={<Admin.Home />}>

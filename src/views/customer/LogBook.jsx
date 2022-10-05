@@ -84,51 +84,7 @@ const LogBook = () => {
             
           )}
         </div>
-        <form className="form-loghours mx-64">
-          <h2 className="">New Log Entry:</h2>
-          <div className="text-2xl ml-20 mb-10 font-semibold">
-            Licence No: {licence._id}
-          </div>
-          <div>
-            <span>
-              <label> Start: </label>
-              <input
-                type="datetime-local"
-                value={start}
-                required={true}
-                onChange={(e) => setStart(e.target.value)}
-              />
-            </span>
-            <span>
-              <label> End: </label>
-              <input
-                type="datetime-local"
-                value={end}
-                required={true}
-                min={start}
-                onChange={(e) => setEnd(e.target.value)}
-              />
-            </span>
-            <span>
-              <label className="ml-52">
-                <input
-                  type="checkbox"
-                  checked={instructor}
-                  onChange={() => setInstructor(!instructor)}
-                />{" "}
-                Instructor
-              </label>
-              <p className="mt-5 ml-52 font-semibold text-lg">{`Hours: ${licence.total.hours} | Minutes: ${licence.total.minutes}`}</p>
-            </span>
-            <br />
-            <button
-              className="log-btn-red mt-5 ml-48"
-              onClick={addLogBookEntry}
-            >
-              Add
-            </button>
-          </div>
-        </form>
+        
         <br />
        
       </div>

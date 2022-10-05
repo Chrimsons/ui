@@ -17,11 +17,16 @@ const LogForm = () => {
   const [instructor, setInstructor] = useState(false);
   const navigate = useNavigate();
   const [token,setToken] = useContext(TokenContext)
-  
+  useEffect(() => {
+    fetchLicenceByIdAsync(licenceId)
+      .then((j) => setLicence(j))
+      .catch((e) => {});
+  }, [licenceId]);
 
   
 
   const addLogBookEntry2 = () => {
+    
     let entry = {
       start: Date.getLongFromDateTimeInput(start),
       end: Date.getLongFromDateTimeInput(end),
@@ -29,6 +34,8 @@ const LogForm = () => {
     };
     addLogbookEntryAsync(licenceId, entry)
     .then((j) => setLicence(j));
+    alert("Hours updated")
+    navigate(`/customer/services`)
   };
 
   const licenceJSX = () => {
