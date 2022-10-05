@@ -6,6 +6,8 @@ import { jwt } from "../../identity";
 import { TokenContext } from "../../App";
 import { useContext } from "react";
 import Locations from "../../img/Location.png"
+import { CircularProgressbar } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 
 const Services = () => {
   const [licences, setLicences] = useState([]);
@@ -117,6 +119,12 @@ const Services = () => {
           <p class="my-10">
             
             Total: {`Hours: ${l.total.hours} Minutes: ${l.total.minutes}`}
+            {
+              
+<div className="bar">
+              <CircularProgressbar value={l.total.hours} maxValue={120} text={`${l.total.hours} hours`} />
+              </div>
+            }
           </p>
           <button
             class="rounded-full px-10 py-3 text-center"

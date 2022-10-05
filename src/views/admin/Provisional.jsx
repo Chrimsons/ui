@@ -7,8 +7,7 @@ export default function Provisional(){
             <Home />
             <div className="pl-72">
       
-            <br/>
-            <br/>
+            
             {
                 alert("Provisional license has been issued")
             }
@@ -16,6 +15,8 @@ export default function Provisional(){
 
             Please inform the customer the license will be sent by post within 10 business days
             </label><br/>
+
+           
 
 
         
