@@ -72,6 +72,9 @@ h2 {
 .form-loghours input {
   @apply text-center;
 }
+.form-logbook{
+  @apply w-6/12 border-gray-600 border-[1px] pt-2 pb-20  mt-20
+}
 .home-bar {
   @apply w-screen float-right py-3 pr-96 bg-slate-800 text-white text-base font-semibold;
 }

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import { useParams,Link,useNavigate } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { fetchLicenceByIdAsync } from "../../web-services";
 import { addLogbookEntryAsync } from "../../web-services";
 import LogEntry from "./LogEntry";
@@ -16,14 +16,12 @@ const LogBook = () => {
   const [end, setEnd] = useState(new Date().addHours(1).toDatetimeLocal());
   const [instructor, setInstructor] = useState(false);
   const navigate = useNavigate();
-  const [token,setToken] = useContext(TokenContext)
+  const [token, setToken] = useContext(TokenContext);
   useEffect(() => {
     fetchLicenceByIdAsync(licenceId)
       .then((j) => setLicence(j))
       .catch((e) => {});
   }, [licenceId]);
-
-  
 
   const addLogBookEntry = () => {
     let entry = {
@@ -31,8 +29,7 @@ const LogBook = () => {
       end: Date.getLongFromDateTimeInput(end),
       instructor: instructor,
     };
-    addLogbookEntryAsync(licenceId, entry)
-    .then((j) => setLicence(j));
+    addLogbookEntryAsync(licenceId, entry).then((j) => setLicence(j));
   };
 
   const licenceJSX = () => {
@@ -41,64 +38,61 @@ const LogBook = () => {
     return (
       <div>
         <div className="pl-72">
-      <div className="home-bar">
-        <Link className="home-link" to="/">
-          MyServiceNSW Account
-        </Link>
-      </div>
-      <br />
-      <div
-        style={{ display: "flex", justifyContent: "space-between" }}
-        className="mt-10"
-      >
-        <div className="login-input">
-          <img
-            onClick={() => navigate("/")}
-            className="w-left cursor-pointer object-contain w-[200px] "
-            src={ProfilePicture}
-          />
-          <Link to={"/customer"} className="h-lnk">
-            Home
-          </Link>
-          <Link to={"/customer/services"} className="h-lnk">
-            Display license
-          </Link>
-        </div>
-        
-        
-      </div>
-      <div >
-                <p className="mt-3 mr-7" >Welcome {jwt(token).firstname}</p>
-                <br/>
-                
-            </div>
-            <div className="form-loghours mx-64">
-          {licence.logEntries.map((e) => <div>
-          <LogEntry  key={e.start}  entry={e} 
-          />
-          <br/>
+          <div className="home-bar">
+            <Link className="home-link" to="/">
+              MyServiceNSW Account
+            </Link>
           </div>
-            
-            
-            
-            
-          )}
+          <br />
+          <div
+            style={{ display: "flex", justifyContent: "space-between" }}
+            className="mt-10"
+          >
+            <div className="login-input">
+              <img
+                onClick={() => navigate("/")}
+                className="w-left cursor-pointer object-contain w-[200px] "
+                src={ProfilePicture}
+              />
+              <Link to={"/customer"} className="h-lnk">
+                Home
+              </Link>
+              <Link to={"/customer/services"} className="h-lnk">
+                Display license
+              </Link>
+            </div>
+          </div>
+          <div>
+            <p className="mt-3 mr-7">Welcome {jwt(token).firstname}</p>
+            <br />
+          </div>
+          <div className="form-logbook mx-64 pl-16">
+            <h2 class="ml-52">Total Hours</h2>
+            {licence.logEntries.map((e) => (
+              <div class="mt-7">
+                <LogEntry key={e.start} entry={e} />
+              </div>
+            ))}
+            <br />
+            <button class="rounded-full mt-10 px-10 py-3 text-2xl font-semibold text-center ml-60" onClick={() => navigate(-1)}>Back</button>
+          </div>
+
+          <br />
         </div>
-        
-        <br />
-       
-      </div>
-      <button onClick={()=>{setToken(undefined); navigate("/"); }} 
-                className="link pointer" style={{border:'none'}}>Log out</button>
+        <button
+          onClick={() => {
+            setToken(undefined);
+            navigate("/");
+          }}
+          className="link pointer"
+          style={{ border: "none" }}
+        >
+          Log out
+        </button>
       </div>
     );
-          
   };
 
-  return (
-  <div>
-    {licenceJSX()}
-    </div>
-  )
+  return <div>{licenceJSX()}</div>;
 };
 export default LogBook;
