@@ -3,13 +3,13 @@ import { useState } from "react";
 import { useParams,Link,useNavigate } from "react-router-dom";
 import { fetchLicenceByIdAsync } from "../../web-services";
 import { addLogbookEntryAsync } from "../../web-services";
-import LogEntry from "./LogEntry";
+
 import { jwt } from "../../identity";
 import { TokenContext } from "../../App";
 import ProfilePicture from "../../img/snswhomepage.JPG";
 import { useContext } from "react";
 
-const LogBook = () => {
+const logForm = () => {
   const { licenceId } = useParams();
   const [licence, setLicence] = useState();
   const [start, setStart] = useState(new Date().toDatetimeLocal());
@@ -25,7 +25,7 @@ const LogBook = () => {
 
   
 
-  const addLogBookEntry = () => {
+  const addLogBookEntry2 = () => {
     let entry = {
       start: Date.getLongFromDateTimeInput(start),
       end: Date.getLongFromDateTimeInput(end),
@@ -72,17 +72,8 @@ const LogBook = () => {
                 <br/>
                 
             </div>
-            <div className="form-loghours mx-64">
-          {licence.logEntries.map((e) => <div>
-          <LogEntry  key={e.start}  entry={e} 
-          />
-          <br/>
-          </div>
-            
-            
-            
-            
-          )}
+            <div className="ml-72 text-center">
+         
         </div>
         <form className="form-loghours mx-64">
           <h2 className="">New Log Entry:</h2>
@@ -123,7 +114,7 @@ const LogBook = () => {
             <br />
             <button
               className="log-btn-red mt-5 ml-48"
-              onClick={addLogBookEntry}
+              onClick={addLogBookEntry2}
             >
               Add
             </button>
@@ -145,4 +136,4 @@ const LogBook = () => {
     </div>
   )
 };
-export default LogBook;
+export default logForm;

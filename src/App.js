@@ -23,11 +23,14 @@ function App() {
           <Route path="/" element={<Main />}/>
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/customer" element={<Customer.Home />}>
-              <Route path="customer/services" element={<Customer.Services />} />
-              <Route path="licence/:licenceId/logbook" element={<Customer.LogBook />}/>
-            </Route>
-            <Route path="admin" element={<Admin.Home />}>
+            <Route path="/customer/services" element={<Customer.Services />} />
+            <Route path="/customer" element={<Customer.Home />}/>
+              
+              <Route path="/customer/licence/:licenceId/logbook" element={<Customer.LogBook />}/>
+                <Route path="/customer/licence/:licenceId/logbook/logform" element = {<Customer.logForm/>}/>
+                
+            
+            <Route path="/admin" element={<Admin.Home />}>
               <Route path="licence/issue" element={<Admin.IssueLicence />} />
               <Route
                 path="customer/:customerId/licence"

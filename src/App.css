@@ -150,10 +150,21 @@ button{
 .tile{
   border:1px solid #000;
   text-align: center;
-  width:500px;
+  width:550px;
   padding:10px;
-  background-color: rgb(243, 237, 237);
-  color: rgb(11, 11, 11);
+  background-color: rgb(245, 241, 241);
+  color: rgb(75, 7, 7);
+}
+.tile2{
+  border:1px solid #000;
+  text-align: center;
+  width:598px;
+  font-size: large;
+  font-style: italic;
+ 
+  
+  background-color: rgb(245, 241, 241);
+  color: rgb(7, 2, 2);
 }
  .pointer{
   cursor: pointer;

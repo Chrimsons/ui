@@ -1,20 +1,16 @@
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import ProfilePicture from "../../img/snswhomepage.JPG";
-import UserInfo from "../UserInfo";
-import { useEffect,useState,useContext } from "react";
-import { fetchLicencesAsync } from "../../web-services";
+import { useContext } from "react";
+
 import { jwt } from "../../identity";
 import { TokenContext } from "../../App";
 
+
+
 const Home = () => {
   const navigate = useNavigate();
-  const [licences,setLicences] = useState([])
   const [token,setToken] = useContext(TokenContext)
-
-
-  useEffect(()=>{
-      fetchLicencesAsync().then(j=>setLicences(j))
-  },[])
+  
 
   return (
     <div className="pl-72">
@@ -38,12 +34,17 @@ const Home = () => {
             Home
           </Link>
           <Link to={"/customer/services"} className="h-lnk">
-            My Log Entries
+            Display license
           </Link>
         </div>
         
         
       </div>
+      <div >
+                <p className="mt-3 mr-7" >Welcome {jwt(token).firstname}</p>
+                <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                <button onClick={()=>{setToken(undefined); navigate("/"); }} className="link pointer" style={{border:'none'}}>Log out</button>
+            </div>
       
       
       

@@ -9,7 +9,8 @@ export function loginAsync(email, password) {
     body: JSON.stringify({ email, password }),
   };
 
-  return fetch(`${server}/account/login`, config).then((r) => {
+  return fetch(`${server}/account/login`, config)
+  .then((r) => {
     if (r.status != 200) {
       throw Error("Invalid Login");
     }
@@ -100,12 +101,22 @@ export function fetchLicencesAsync() {
   let config = {
     method: "GET",
     headers: {
-      Authorization: `Bearer ${localStorage
+      'Authorization': `Bearer ${localStorage
         .getItem("token")
-        .replaceAll('"', "")}`,
+        .replaceAll('"','')}`
     },
   };
-  return fetch(`${server}/customer/licences`, config).then((r) => r.json());
+  return fetch(`${server}/customer/licences`, config)
+  
+  .then(r => {    
+    
+    if(r.status != 200){
+        throw Error("No license")
+    }
+    return r.json()
+});
+
+
 }
 
 export function fetchLicenceByIdAsync(id) {

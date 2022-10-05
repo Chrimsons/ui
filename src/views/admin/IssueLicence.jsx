@@ -36,7 +36,8 @@ const IssueLicence = () => {
                         <button onClick={fetchCustomers}>Search Customers</button>
                     </div>
                     {customers.length == 0 && 'Showing 0 Customers'}  
-                    {customers.length > 0 && customers.map(c=><div className="tile pointer" key={c._id} onClick={()=>setCustomer(c)}>{c.email}</div>)}          
+                    {customers.length > 0 && customers.map(c=><div className="tile pointer" key={c._id} 
+                    onClick={()=>setCustomer(c)}>{c.email}</div>)}          
                 </div>
       );
     }
@@ -55,12 +56,14 @@ const IssueLicence = () => {
           <div class="text-lg font-semibold mb-3">Customer: {customer.email}</div>
           {!licence && (
             <div>
+              <p>Please only proceed if the customer has passed the DKT . </p>
               <button onClick={submitLicence}>Issue</button>
               <button onClick={() => setCustomer(null)}>Cancel</button>
             </div>
           )}
           {licence && (
             <div>
+              
               <p>This customer already has a Learner's Licence:</p>
               <p>Licence: {licence._id}</p>
               <p>Issued: {new Date(licence.issued).toDateString()}</p>
