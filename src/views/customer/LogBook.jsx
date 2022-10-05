@@ -16,6 +16,12 @@ const LogBook = () => {
     fetchLicenceByIdAsync(licenceId)
       .then((j) => setLicence(j))
       .catch((e) => {});
+  }, [licence]);
+
+  useEffect(() => {
+    fetchLicenceByIdAsync(licenceId)
+      .then((j) => setLicence(j))
+      .catch((e) => {});
   }, [licenceId]);
 
   const addLogBookEntry = () => {
@@ -32,19 +38,18 @@ const LogBook = () => {
 
     return (
       <div>
-        <h2>
-          Log Book - Total:{" "}
-          {`Hours: ${licence.total.hours} Minutes: ${licence.total.minutes}`}
-        </h2>
-        <div>Licence: {licence._id}</div>
-
-        <form className="form-loghours">
-          <div >
+        <form className="form-loghours mx-64">
+          <h2 className="">New Log Entry:</h2>
+          <div className="text-2xl ml-20 mb-10 font-semibold">
+            Licence No: {licence._id}
+          </div>
+          <div>
             <span>
               <label> Start: </label>
               <input
                 type="datetime-local"
                 value={start}
+                required={true}
                 onChange={(e) => setStart(e.target.value)}
               />
             </span>
@@ -53,26 +58,38 @@ const LogBook = () => {
               <input
                 type="datetime-local"
                 value={end}
+                required={true}
+                min={start}
                 onChange={(e) => setEnd(e.target.value)}
               />
             </span>
-            <label style={{ marginLeft: 25 }}>
-              <input
-                type="checkbox"
-                checked={instructor}
-                onChange={() => setInstructor(!instructor)}
-              />{" "}
-              Instructor
-            </label>
-            <button style={{ marginLeft: 25 }} onClick={addLogBookEntry}>
+            <span>
+              <label className="ml-52">
+                <input
+                  type="checkbox"
+                  checked={instructor}
+                  onChange={() => setInstructor(!instructor)}
+                />{" "}
+                Instructor
+              </label>
+              <p className="mt-5 ml-52 font-semibold text-lg">{`Hours: ${licence.total.hours} | Minutes: ${licence.total.minutes}`}</p>
+            </span>
+            <br />
+            <button
+              className="log-btn-red mt-5 ml-48"
+              onClick={addLogBookEntry}
+            >
               Add
             </button>
           </div>
         </form>
-
-        <div>
+        <br />
+        <div className="ml-72 text-center">
           {licence.logEntries.map((e) => (
-            <LogEntry key={e.start} entry={e} />
+            <span key={e.start}>
+            <LogEntry  entry={e} />
+            <br />
+            </span>
           ))}
         </div>
       </div>

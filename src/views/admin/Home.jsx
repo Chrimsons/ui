@@ -13,8 +13,10 @@ const Home = () => {
         </Link>
       </div>
       <br />
-      <div style={{ display: "flex", justifyContent: "space-between" }}
-        className="mt-10">
+      <div
+        style={{ display: "flex", justifyContent: "space-between" }}
+        className="mt-10"
+      >
         <div className="login-input">
           <img
             onClick={() => navigate("/")}
@@ -32,6 +34,10 @@ const Home = () => {
 
       <UserInfo />
       <Outlet />
+      {/* <h2 className="mt-24">Welcome to the Admin page</h2>
+      <p className="text-3xl ml-7">
+      Click <Link className="page-link" to="/admin/licence/issue">Here</Link> 
+      to search and issue a new License</p> */}
     </div>
   );
 };

@@ -39,64 +39,65 @@ export default function Register() {
 
   return (
     <>
-    <form onSubmit={(e) => {
-      e.preventDefault();
-      submit();
-    }}
-    className="form m-auto"
-  >
-    <Header />
-    <h2>Sign up</h2>
-    
-      <div>
-        <label>Email: </label>
-        <br />
-        <input
-          placeholder="Please enter an E-mail"
-          type="email"
-          value={email}
-          required={true}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-      </div>
-      <br />
-          <div>
-            <label>Password: </label>
-            <br />
-            <input
-              placeholder="Please enter a password"
-              required title="6 characters minimum"
-              pattern=".{6,}"
-              minLength="6"
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          submit();
+        }}
+        className="form m-auto"
+      >
+        <Header />
+        <h2>Sign up</h2>
+        <div>
+          <label>Email: </label>
           <br />
-          <div>
+          <input
+            placeholder="Please enter an E-mail"
+            type="email"
+            value={email}
+            required={true}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
+        <br />
+        <div>
+          <label>Password: </label>
+          <br />
+          <input
+            placeholder="Please enter a password"
+            required
+            title="6 characters minimum"
+            pattern=".{6,}"
+            minLength="6"
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+        <br />
+        <div>
           <label>First Name: </label>
           <br />
           <input
-              placeholder="Please enter your first name"
+            placeholder="Please enter your first name"
             required={true}
             value={firstname}
             onChange={(e) => setFirstName(e.target.value)}
           />
-           </div>
-           <br />
-          <div>
+        </div>
+        <br />
+        <div>
           <label>Last Name: </label>
           <br />
           <input
-              placeholder="Please enter your last name"
-              required={true}
+            placeholder="Please enter your last name"
+            required={true}
             value={lastname}
             onChange={(e) => setLastName(e.target.value)}
           />
-          </div>
-          <br />
-          <div>
+        </div>
+        <br />
+        <div>
           <label>Mobile No:</label>
           <br />
           <input
@@ -105,9 +106,9 @@ export default function Register() {
             value={mobile}
             onChange={(e) => setMobile(e.target.value)}
           />
-          </div>
-          <br />
-          <div>
+        </div>
+        <br />
+        <div>
           <label>Date of Birth: </label>
           <br />
           <input
@@ -117,9 +118,9 @@ export default function Register() {
             value={dob}
             onChange={(e) => setDob(e.target.value)}
           />
-          </div>{" "}
-          <br />
-          <div>
+        </div>{" "}
+        <br />
+        <div>
           <label>Gender:</label>
           <select value={gender} onChange={(e) => setGender(e.target.value)}>
             <option disabled={true} value="">
@@ -129,17 +130,16 @@ export default function Register() {
             <option value="Female">Female</option>
             <option value="Other">Other</option>
           </select>
-          </div>
-         <br />
-
-         <button className="form-btn-red mt-5">Create Account</button>
-            <button
-              className="form-btn-blue"
-              onClick={(e) => {
-                e.preventDefault();
-                navigate(-1);
-              }}
-            >
+        </div>
+        <br />
+        <button className="form-btn-red mt-5">Create Account</button>
+        <button
+          className="form-btn-blue"
+          onClick={(e) => {
+            e.preventDefault();
+            navigate(-1);
+          }}
+        >
           Back
         </button>
         <br />
@@ -147,6 +147,6 @@ export default function Register() {
           Already have an account?{" "}
         </Link>
       </form>
-      </>
+    </>
   );
 }

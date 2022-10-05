@@ -11,7 +11,7 @@ const Main = () => {
 
   if (!token) {
     return (
-      <div style={{ margin: "auto" }} className="pl-72">
+      <div className="pl-72">
         <div className="home-bar">
           <Link className="home-link" to="/">
             MyServiceNSW Account
@@ -31,23 +31,21 @@ const Main = () => {
         </div>
         <h2 className="user-h">MyServiceNSW Driver License</h2>
         <br />
-        <div>
+        <div className="ml-7">
           <p className="user-p">Welcome to Service NSW Driver License page</p>
           <p className="user-p">
             Please{" "}
-            <Link className="form-link" to="/login">
+            <Link className="page-link ml-1 mr-1" to="/login">
               sign in
             </Link>{" "}
             or
-            <Link className="form-link" to="/register">
+            <Link className="page-link ml-1 mr-1" to="/register">
               {" "}
               register{" "}
             </Link>
             to access content.
           </p>
-        </div>
-        <br />
-        <div>
+          <br />
           <button
             className="userinfo-btn-red"
             onClick={() => navigate("/login")}
@@ -62,6 +60,7 @@ const Main = () => {
             Create Account
           </button>
         </div>
+
       </div>
     );
   }
@@ -83,22 +82,25 @@ const Main = () => {
         {token && isInRole(token, "customer") && (
           <div className="login-input">
             <img
-              onClick={() => navigate("/")}
+              onClick={() => navigate("/customer")}
               className="w-left cursor-pointer object-contain w-[200px]"
               src={ProfilePicture}
             />
             <Link to={"/customer"} className="h-lnk">
               Home
             </Link>
-            <Link to={"/customer/services"} className="alt-link">
+            <Link to={"/customer/services"} className="h-lnk">
               Services
+            </Link>
+            <Link to={"/customer/services"} className="h-lnk">
+              New Log
             </Link>
           </div>
         )}
         {token && isInRole(token, "admin") && (
           <div className="login-input">
             <img
-              onClick={() => navigate("/")}
+              onClick={() => navigate("/admin")}
               className="w-left cursor-pointer object-contain w-[200px]"
               src={ProfilePicture}
             />

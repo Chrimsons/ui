@@ -29,39 +29,15 @@ const IssueLicence = () => {
   const customerSearchJSX = () => {
     if (!customer) {
       return (
-        <>
-          <div>
-            <form className="form pl-5 mx-72">
-              <h2 className="">Issue Licence</h2>
-              <div style={{ marginBottom: 15 }}>
-                <label htmlFor="searchUsername">Customer Search:</label>
-                <input
-                  placeholder="Please enter an Email"
-                  required={true}
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-                <button
-                  className="form-btn-blue-search"
-                  onClick={fetchCustomers}
-                >
-                  Search Customers
-                </button>
-              </div>
-              {customers.length == 0 && "Showing 0 Customers"}
-              {customers.length > 0 &&
-                customers.map((c) => (
-                  <div
-                    className="tile pointer"
-                    key={c._id}
-                    onClick={() => setCustomer(c)}
-                  >
-                    {c.email}
-                  </div>
-                ))}
-            </form>
-          </div>
-        </>
+        <div>
+                    <div class="text-lg font-semibold mb-3">Customer Search</div>
+                    <div style={{marginBottom:15}}>
+                        <input value={email} onChange={e=>setEmail(e.target.value)} />
+                        <button onClick={fetchCustomers}>Search Customers</button>
+                    </div>
+                    {customers.length == 0 && 'Showing 0 Customers'}  
+                    {customers.length > 0 && customers.map(c=><div className="tile pointer" key={c._id} onClick={()=>setCustomer(c)}>{c.email}</div>)}          
+                </div>
       );
     }
   };
@@ -75,8 +51,8 @@ const IssueLicence = () => {
   const issueLicenceJSX = () => {
     if (customer) {
       return (
-        <div>
-          <div>Customer: {customer.email}</div>
+        <div >
+          <div class="text-lg font-semibold mb-3">Customer: {customer.email}</div>
           {!licence && (
             <div>
               <button onClick={submitLicence}>Issue</button>
