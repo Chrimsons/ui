@@ -131,12 +131,8 @@ export default function Register() {
           </select>
           </div>
          <br />
-          
-          
-      
-      
-      
-         <button className="form-btn-red">Create Account</button>
+
+         <button className="form-btn-red mt-5">Create Account</button>
             <button
               className="form-btn-blue"
               onClick={(e) => {
@@ -146,6 +142,7 @@ export default function Register() {
             >
           Back
         </button>
+        <br />
         <Link className="form-link" to="/login">
           Already have an account?{" "}
         </Link>
