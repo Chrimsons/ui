@@ -5,6 +5,7 @@ import ProfilePicture from "../../img/snswhomepage.JPG";
 import { jwt } from "../../identity";
 import { TokenContext } from "../../App";
 import { useContext } from "react";
+import Locations from "../../img/Location.png"
 
 const Services = () => {
   const [licences, setLicences] = useState([]);
@@ -53,9 +54,10 @@ const Services = () => {
                 <h1>No license has been issued</h1>
                 <br/>
                 <h1>
-                  Please <a href="https://www.service.nsw.gov.au/transaction/apply-learner-driver-licence">click here</a> to 
+                  Please <a href="https://www.service.nsw.gov.au/transaction/apply-learner-driver-licence" target="_blank">click here</a> to 
                   find more infofrmation on how to apply for a license
                 </h1>
+                <p><a href="https://www.service.nsw.gov.au/service-centre" target="_blank"> <img src={Locations}  width="400" height="600" /> </a> </p>
                 <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
                 <button onClick={()=>{setToken(undefined); navigate("/"); }} className="link pointer" style={{border:'none'}}>Log out</button>
             </div>

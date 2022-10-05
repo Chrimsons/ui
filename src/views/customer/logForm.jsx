@@ -9,7 +9,7 @@ import { TokenContext } from "../../App";
 import ProfilePicture from "../../img/snswhomepage.JPG";
 import { useContext } from "react";
 
-const logForm = () => {
+const LogForm = () => {
   const { licenceId } = useParams();
   const [licence, setLicence] = useState();
   const [start, setStart] = useState(new Date().toDatetimeLocal());
@@ -17,11 +17,7 @@ const logForm = () => {
   const [instructor, setInstructor] = useState(false);
   const navigate = useNavigate();
   const [token,setToken] = useContext(TokenContext)
-  useEffect(() => {
-    fetchLicenceByIdAsync(licenceId)
-      .then((j) => setLicence(j))
-      .catch((e) => {});
-  }, [licenceId]);
+  
 
   
 
@@ -136,4 +132,4 @@ const logForm = () => {
     </div>
   )
 };
-export default logForm;
+export default LogForm;

@@ -27,10 +27,11 @@ function App() {
             <Route path="/customer" element={<Customer.Home />}/>
               
               <Route path="/customer/licence/:licenceId/logbook" element={<Customer.LogBook />}/>
-                <Route path="/customer/licence/:licenceId/logbook/logform" element = {<Customer.logForm/>}/>
+                <Route path="/customer/licence/:licenceId/logbook/logform" element = {<Customer.LogForm/>}/>
                 
-            
+                <Route path="/admin/customer/prov" element={<Admin.Provisional/>}/>
             <Route path="/admin" element={<Admin.Home />}>
+            
               <Route path="licence/issue" element={<Admin.IssueLicence />} />
               <Route
                 path="customer/:customerId/licence"

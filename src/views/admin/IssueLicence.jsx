@@ -4,14 +4,19 @@ import {
   fetchCustomersAsync,
   fetchCustomerLicenceAsync,
   issueLicenceAsync,
+  issuePLicenceAsync
 } from "../../web-services";
+
 
 const IssueLicence = () => {
   const [customers, setCustomers] = useState([]);
   const [email, setEmail] = useState("");
   const [customer, setCustomer] = useState();
   const [licence, setLicence] = useState();
-  const[dkt,setDkt] = useState(false)
+  const[p,setP]= useState(false)
+  const[dkt,setDkt] = useState("")
+  const[hours,setHours] = useState("")
+  const[driving,setDriving] = useState("")
 
   let navigate = useNavigate();
 
@@ -45,7 +50,9 @@ const IssueLicence = () => {
   };
 
   const submitLicence = () => {
-    if(dkt==="yes"){
+   
+    if(dkt=="Yes"){
+      
     issueLicenceAsync(customer._id)
       .then((j) => navigate(`/admin/customer/${customer._id}/licence`))
       .catch((e) => alert("error issuing licence"));
@@ -53,6 +60,20 @@ const IssueLicence = () => {
   else{
     alert("DKT is pending !!!")
   }
+}
+const provisional = () =>{
+  if(hours=="Yes" && driving=="Yes") {
+  setP(true)
+  //issuePLicenceAsync(customer._id)
+  //.then((j) => 
+  navigate(`/admin/customer/prov`)
+  //)
+  }
+  else{
+  alert("DT/HPT/Hours is pending !!!")
+  }
+  
+    
 }
 
   const issueLicenceJSX = () => {
@@ -67,7 +88,7 @@ const IssueLicence = () => {
           <label>DKT:</label>
           <select value={dkt} onChange={(e) => setDkt(e.target.value)}>
             <option disabled={true} value="">
-              -- Please Select Gender
+              -- Please Select 
             </option>
             <option value="Yes">Yes</option>
             <option value="No">No</option>
@@ -80,15 +101,54 @@ const IssueLicence = () => {
               <button onClick={() => setCustomer(null)}>Cancel</button>
             </div>
           )}
-          {licence && (
+           {p && (
+            <div>
+              <p>This customer has been issued a provisional license</p>
+
+              </div>
+          )}
+          
+{
+
+
+          licence && (
+            
             <div>
               
-              <p>This customer already has a Learner's Licence:</p>
+              
+              <p>This customer has a Learner's Licence:</p>
               <p>Licence: {licence._id}</p>
               <p>Issued: {new Date(licence.issued).toDateString()}</p>
+              <div>
+          <label>Total hours complete?:</label>
+          <select value={hours} onChange={(e) => setHours(e.target.value)}>
+            <option disabled={true} value="">
+              -- Please Select 
+            </option>
+            <option value="Yes">Yes</option>
+            
+            <option value="No">No</option>
+            
+          </select>
+        </div>
+        <div>
+          <label>Driving Test:</label>
+          <select value={driving} onChange={(e) => setDriving(e.target.value)}>
+            <option disabled={true} value="">
+              -- Please Select 
+            </option>
+            <option value="Yes">Pass</option>
+            <option value="No">Fail</option>
+            
+          </select>
+        </div>
+              <button onClick={provisional}>Issue Provisional</button>
               <button onClick={() => setCustomer(null)}>Cancel</button>
             </div>
-          )}
+          ) }
+    
+    
+         
         </div>
       );
     }

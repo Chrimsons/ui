@@ -96,6 +96,19 @@ export function issueLicenceAsync(userId) {
   };
   return fetch(`${server}/admin/licences`, config).then((r) => r.json());
 }
+export function issuePLicenceAsync(userId) {
+  let config = {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${localStorage
+        .getItem("token")
+        .replaceAll('"', "")}`,
+    },
+    body: JSON.stringify({ userId }),
+  };
+  return fetch(`${server}/admin/licences/p`, config).then((r) => r.json());
+}
 
 export function fetchLicencesAsync() {
   let config = {
