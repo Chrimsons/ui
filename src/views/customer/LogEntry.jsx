@@ -8,7 +8,7 @@ const LogEntry = (props) => {
         <label>End : {new Date(e.end).toLocalString()}</label>
         <br />
         <label>
-           Hours : {(e.nightTime) ? e.nightDuration.hours : e.total.hours} Minutes : {(e.nightTime) ? e.nightDuration.hours : e.total.minutes}
+            {(e.nightTime) ? e.nightDuration.hours : e.total.hours} Hours   {(e.nightTime) ? e.nightDuration.hours : e.total.minutes} Minutes
         </label>
         <br />
         <label>Instructor : {e.instructor ? "Yes" : "No"}</label>
@@ -16,12 +16,12 @@ const LogEntry = (props) => {
         {e.instructor && (
           <div>
             <label>
-              Instructor Bonus: Hours: {e.bonus.hours} Minutes:{" "}
-              {e.bonus.minutes}
+              Instructor Bonus:  {e.bonus.hours} Hours {" "} 
+              {e.bonus.minutes} Minutes
             </label>
             <br />
             <label>
-              Total Hours: {e.total.hours} Minutes: {e.total.minutes}
+              Total : {e.total.hours} Hours {e.total.minutes} Minutes
             </label>
             <br />
           </div>
