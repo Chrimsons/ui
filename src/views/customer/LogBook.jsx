@@ -83,15 +83,15 @@ const LogBook = () => {
             <br />
           </div>
           <div className="form-logbook mx-64 pl-14">
-            <h2 class="ml-52">Total Hours</h2>
+            <h2 className="ml-52">Total Hours</h2>
             {licence.logEntries.map((e) => (
-              <div class="mt-7">
-                <LogEntry key={e.start} entry={e} />
+              <div className="mt-7" key={e.start}>
+                <LogEntry  entry={e} />
               </div>
             ))}
             <br />
             <button
-              class="rounded-full mt-10 px-10 py-3 text-2xl font-semibold text-center ml-56"
+              className="rounded-full mt-10 px-10 py-3 text-2xl font-semibold text-center ml-56"
               onClick={() => navigate(-1)}
             >
               Back

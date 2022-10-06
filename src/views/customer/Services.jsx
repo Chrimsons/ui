@@ -135,28 +135,28 @@ const Services = () => {
         <div className="mt-10 ml-72 text-2xl font-semibold">
           {licences.map((l) => (
             <div key={l._id} className="tile">
-              <p class="mt-10">Licence: {l._id}</p>
-              <p class="my-10">
+              <p className="mt-10">Licence: {l._id}</p>
+              <p className="my-10">
                 Total: {`Hours: ${l.total.hours} Minutes: ${l.total.minutes}`}
                 {
-                  <div className="bar">
+                  <span className="bar">
                     <br />
                     <CircularProgressbar
                       value={l.total.hours}
                       maxValue={120}
                       text={`${l.total.hours} hours`}
                     />
-                  </div>
+                  </span>
                 }
               </p>
               <button
-                class="rounded-full px-10 py-3 text-center"
+                className="rounded-full px-10 py-3 text-center"
                 onClick={() => navigate(`/customer/licence/${l._id}/logbook`)}
               >
                 Display hours
               </button>
               <button
-                class="rounded-full px-10 py-3 text-center "
+                className="rounded-full px-10 py-3 text-center "
                 onClick={() => navigate(`/customer/licence/${l._id}/logform`)}
               >
                 Log new hours
