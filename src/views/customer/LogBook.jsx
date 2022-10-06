@@ -41,7 +41,7 @@ const LogBook = () => {
       <div>
         <div className="pl-72">
           <div className="home-bar">
-            <Link className="home-link" to="/">
+            <Link className="home-link" to="/customer">
               MyServiceNSW Account
             </Link>
           </div>
@@ -52,7 +52,7 @@ const LogBook = () => {
           >
             <div className="login-input">
               <img
-                onClick={() => navigate("/")}
+                onClick={() => navigate("/customer")}
                 className="w-left cursor-pointer object-contain w-[200px] "
                 src={ProfilePicture}
               />
@@ -63,12 +63,26 @@ const LogBook = () => {
                 Display license
               </Link>
             </div>
+            <Link className="home-link mr-5" to="/">
+              <button
+                onClick={() => {
+                  setToken(undefined);
+                  navigate("/");
+                }}
+                className="link pointer"
+                style={{ border: "none" }}
+              >
+                {" "}
+                Log out
+              </button>
+            </Link>
           </div>
+
           <div>
             <p className="mt-3 mr-7">Welcome {jwt(token).firstname}</p>
             <br />
           </div>
-          <div className="form-logbook mx-64 pl-16">
+          <div className="form-logbook mx-64 pl-14">
             <h2 class="ml-52">Total Hours</h2>
             {licence.logEntries.map((e) => (
               <div class="mt-7">
@@ -76,21 +90,16 @@ const LogBook = () => {
               </div>
             ))}
             <br />
-            <button class="rounded-full mt-10 px-10 py-3 text-2xl font-semibold text-center ml-60" onClick={() => navigate(-1)}>Back</button>
+            <button
+              class="rounded-full mt-10 px-10 py-3 text-2xl font-semibold text-center ml-56"
+              onClick={() => navigate(-1)}
+            >
+              Back
+            </button>
           </div>
 
           <br />
         </div>
-        <button
-          onClick={() => {
-            setToken(undefined);
-            navigate("/");
-          }}
-          className="link pointer"
-          style={{ border: "none" }}
-        >
-          Log out
-        </button>
       </div>
     );
   };

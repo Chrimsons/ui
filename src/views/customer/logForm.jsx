@@ -43,7 +43,7 @@ const LogForm = () => {
       <div>
         <div className="pl-72">
           <div className="home-bar">
-            <Link className="home-link" to="/">
+            <Link className="home-link" to="/customer">
               MyServiceNSW Account
             </Link>
           </div>
@@ -54,7 +54,7 @@ const LogForm = () => {
           >
             <div className="login-input">
               <img
-                onClick={() => navigate("/")}
+                onClick={() => navigate("/customer")}
                 className="w-left cursor-pointer object-contain w-[200px] "
                 src={ProfilePicture}
               />
@@ -65,6 +65,19 @@ const LogForm = () => {
                 Display license
               </Link>
             </div>
+            <Link className="home-link mr-5" to="/">
+              <button
+                onClick={() => {
+                  setToken(undefined);
+                  navigate("/");
+                }}
+                className="link pointer"
+                style={{ border: "none" }}
+              >
+                {" "}
+                Log out
+              </button>
+            </Link>
           </div>
           <div>
             <p className="mt-3 mr-7">Welcome {jwt(token).firstname}</p>
@@ -129,16 +142,6 @@ const LogForm = () => {
           </form>
           <br />
         </div>
-        <button
-          onClick={() => {
-            setToken(undefined);
-            navigate("/");
-          }}
-          className="link pointer"
-          style={{ border: "none" }}
-        >
-          Log out
-        </button>
       </div>
     );
   };

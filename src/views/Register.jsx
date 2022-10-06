@@ -33,7 +33,11 @@ export default function Register() {
         setToken(t);
         navigate("/customer");
       })
-      .catch((e) => alert(e.message));
+      .catch((e) =>
+        alert(
+          "\nThe Email you selected is already in use. \n\nPlease use a different Email address or if you already have an account please login"
+        )
+      );
   }
 
   return (

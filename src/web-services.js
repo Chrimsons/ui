@@ -9,8 +9,7 @@ export function loginAsync(email, password) {
     body: JSON.stringify({ email, password }),
   };
 
-  return fetch(`${server}/account/login`, config)
-  .then((r) => {
+  return fetch(`${server}/account/login`, config).then((r) => {
     if (r.status != 200) {
       throw Error("Invalid Login");
     }
@@ -96,7 +95,7 @@ export function issueLicenceAsync(userId) {
   };
   return fetch(`${server}/admin/licences`, config).then((r) => r.json());
 }
-export function issuePLicenceAsync(userId) {
+export function issuePLicenceAsync(_id) {
   let config = {
     method: "PUT",
     headers: {
@@ -105,7 +104,7 @@ export function issuePLicenceAsync(userId) {
         .getItem("token")
         .replaceAll('"', "")}`,
     },
-    body: JSON.stringify({ userId }),
+    body: JSON.stringify({ _id }),
   };
   return fetch(`${server}/admin/licences/p`, config).then((r) => r.json());
 }
@@ -114,22 +113,17 @@ export function fetchLicencesAsync() {
   let config = {
     method: "GET",
     headers: {
-      'Authorization': `Bearer ${localStorage
+      Authorization: `Bearer ${localStorage
         .getItem("token")
-        .replaceAll('"','')}`
+        .replaceAll('"', "")}`,
     },
   };
-  return fetch(`${server}/customer/licences`, config)
-  
-  .then(r => {    
-    
-    if(r.status != 200){
-        throw Error("No license")
+  return fetch(`${server}/customer/licences`, config).then((r) => {
+    if (r.status != 200) {
+      throw Error("No license");
     }
-    return r.json()
-});
-
-
+    return r.json();
+  });
 }
 
 export function fetchLicenceByIdAsync(id) {
