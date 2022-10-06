@@ -18,6 +18,7 @@ const LogForm = () => {
   const [nightTime, setNightTime] = useState(false);
   const navigate = useNavigate();
   const [token, setToken] = useContext(TokenContext);
+  
   useEffect(() => {
     fetchLicenceByIdAsync(licenceId)
       .then((j) => setLicence(j))

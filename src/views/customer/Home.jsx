@@ -33,6 +33,12 @@ const Home = () => {
           <Link to={"/customer/services"} className="h-lnk">
             Display license
           </Link>
+          <a href="https://www.service.nsw.gov.au/transaction/apply-learner-driver-licence#eligibility" className="h-lnk" target="blank">
+            Check eligibility
+          </a>
+          <div className="h-lnk"
+             title="Mon-Fri 7am - 7pm"> Contact us @ 13 77 88</div>
+          
         </div>
         <Link className="home-link mr-5" to="/">
           <button
@@ -56,11 +62,12 @@ const Home = () => {
           <span className="italic font-extrabold">{jwt(token).firstname}</span>
         </h2>
 
-        <p className="ml-7 mt-52 font-semibold text-2xl">
+        <p className="ml-7 mt-32 font-semibold text-2xl">
           Click{" "}
           <a
             className="page-link mr-1"
-            href="https://www.nsw.gov.au/driving-boating-and-transport/driver-and-rider-licences/proof-of-identity/proving-your-identity"
+            href="https://www.nsw.gov.au/driving-boating-and-transport/driver-and-rider-licences
+            /proof-of-identity/proving-your-identity"
             target="blank"
           >
             here
@@ -70,6 +77,7 @@ const Home = () => {
       </div>
 
       <Outlet />
+      
     </div>
   );
 };

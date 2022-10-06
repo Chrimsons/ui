@@ -30,6 +30,7 @@ export default function Login() {
   }
 
   return (
+    <>
     <div className="">
       <div className="form m-auto">
         <h2 className="h2">Sign In</h2>
@@ -72,6 +73,9 @@ export default function Login() {
           Create an account instead
         </Link>
       </div>
+      
     </div>
+  
+    </>
   );
 }

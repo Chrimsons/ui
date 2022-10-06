@@ -125,7 +125,7 @@ h2 {
   @apply px-3 py-1;
 }
 .bar{
-  @apply w-6/12 ml-32
+  @apply w-60 ml-32
 
 }
 
@@ -217,7 +217,7 @@ button{
 }
 
 a:link {
-  color: green;
+  color: rgb(1, 1, 1);
   background-color: transparent;
   text-decoration: none;
 }
@@ -241,3 +241,4 @@ a:active {
   border-width: 0pc;
   
 }
+
