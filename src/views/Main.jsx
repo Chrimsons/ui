@@ -4,6 +4,7 @@ import UserInfo from "./UserInfo";
 import { TokenContext } from "../App";
 import { isInRole } from "../identity";
 import ProfilePicture from "../img/snswhomepage.JPG";
+import Learners from "../img/learnersOne.jpg"
 
 const Main = () => {
   const [token, setToken] = useContext(TokenContext);
@@ -31,6 +32,8 @@ const Main = () => {
         </div>
         <h2 className="user-h">MyServiceNSW Driver License</h2>
         <br />
+        <img src={Learners} className="object-contain w-7/12 mr-24 float-right" />
+        
         <div className="ml-7">
           <p className="user-p">Welcome to Service NSW Driver License page</p>
           <p className="user-p">
