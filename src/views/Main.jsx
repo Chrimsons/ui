@@ -95,7 +95,9 @@ const Main = () => {
             <Link to={"/customer/services"} className="h-lnk">
               New Log
             </Link>
+            
           </div>
+          
         )}
         {token && isInRole(token, "admin") && (
           <div className="login-input">
