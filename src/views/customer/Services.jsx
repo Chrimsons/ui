@@ -127,12 +127,12 @@ const Services = () => {
         </div>
         <div
           style={{ display: "flex", justifyContent: "space-between" }}
-          className="mt-10"
+          
         ></div>
 
-        <p className="mt-3 mr-7">Welcome {jwt(token).firstname}</p>
+        <p className="mt-3 ml-7 mr-7">Welcome {jwt(token).firstname}</p>
 
-        <div className="mt-10 ml-72 text-2xl font-semibold">
+        <div className="mt-20 ml-72 text-2xl font-semibold">
           {licences.map((l) => (
             <div key={l._id} className="tile">
               <p className="mt-10">Licence: {l._id}</p>
@@ -140,6 +140,7 @@ const Services = () => {
                 Total: {`Hours: ${l.total.hours} Minutes: ${l.total.minutes}`}
                 {
                   <span className="bar">
+                    <br />
                     <br />
                     <CircularProgressbar
                       value={l.total.hours}

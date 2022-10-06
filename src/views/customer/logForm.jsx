@@ -80,10 +80,10 @@ const LogForm = () => {
             </Link>
           </div>
           <div>
-            <p className="mt-3 mr-7">Welcome {jwt(token).firstname}</p>
+            <p className="mt-3 ml-7">Welcome {jwt(token).firstname}</p>
             <br />
           </div>
-          <div className="ml-72 text-center"></div>
+          <div className="ml-80"></div>
           <form className="form-loghours mx-64">
             <h2 className="">New Log Entry:</h2>
             <div className="text-2xl ml-20 mb-10 font-semibold">

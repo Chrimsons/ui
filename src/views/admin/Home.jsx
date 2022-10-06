@@ -1,6 +1,6 @@
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import ProfilePicture from "../../img/snswhomepage.JPG";
-import UserInfo from "../UserInfo";
+import Transition from "../../img/transition.jpg"
 import { useContext } from "react";
 
 import { jwt } from "../../identity";
@@ -50,15 +50,17 @@ const Home = () => {
           </button>
         </Link>
       </div>
+      <img src={Transition} className="object-contain mt-20 mr-40 w-7/12 float-right" />
 
       <h2 className="mt-20 text-4xl mr-7">
         Welcome,{" "}
         <span className="italic font-extrabold">{jwt(token).firstname}</span>
       </h2>
-      <h3 className="ml-7 font-semibold text-2xl">
+      
+      <h3 className="ml-7 mt-40 font-semibold text-2xl">
         You are logged in as an {jwt(token).roles}
       </h3>
-
+      <p className="ml-7 mt-10 text-xl font-semibold">click <Link className="page-link" to={"/admin/licence/issue"}>here</Link> to issue a new licence</p>
       <Outlet />
       {/* <h2 className="mt-24">Welcome to the Admin page</h2>
       <p className="text-3xl ml-7">

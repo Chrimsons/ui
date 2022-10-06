@@ -1,7 +1,7 @@
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import ProfilePicture from "../../img/snswhomepage.JPG";
 import { useContext } from "react";
-
+import LearnersTwo from "../../img/learnerstwo.jpg"
 import { jwt } from "../../identity";
 import { TokenContext } from "../../App";
 
@@ -49,11 +49,14 @@ const Home = () => {
         </Link>
       </div>
       <div>
+      <img src={LearnersTwo} className="object-contain mt-20 mr-40 w-7/12 float-right" />
+
         <h2 className="mt-20 text-4xl mr-7">
           Welcome{" "}
           <span className="italic font-extrabold">{jwt(token).firstname}</span>
         </h2>
-        <p className="ml-7 mt-20 font-semibold text-2xl">
+
+        <p className="ml-7 mt-52 font-semibold text-2xl">
           Click{" "}
           <a
             className="page-link mr-1"
@@ -64,7 +67,6 @@ const Home = () => {
           </a>
           to find more information about identification requirements.
         </p>
-        <div> </div>
       </div>
 
       <Outlet />

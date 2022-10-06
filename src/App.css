@@ -100,7 +100,7 @@ h2 {
   @apply text-xl font-semibold mb-7;
 }
 .h-lnk {
-  @apply inline-block p-4 font-semibold rounded-t-lg border-b-2 hover:bg-blue-100 border-blue-800 active:border-[3px] dark:text-black dark:border-blue-800;
+  @apply inline-block mt-6 mx-2 font-semibold hover:border-b-[5px] w-fit border-blue-800 active:border-[2px] active:border-collapse dark:text-black dark:border-blue-800;
 }
 .ticket-table thead tr {
   @apply bg-blue-500 text-white;
@@ -229,13 +229,15 @@ a:link {
 } */
 
 a:hover {
-  color: rgb(199, 195, 195);
+  color: rgb(10, 9, 9);
   background-color: transparent;
-  text-decoration: underline;
 }
 
 a:active {
-  color: yellow;
+  color: black;
   background-color: transparent;
-  text-decoration: underline;
+  border: 0.5px;
+  border-style: solid;
+  border-width: 0pc;
+  
 }

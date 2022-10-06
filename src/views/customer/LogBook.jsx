@@ -79,7 +79,7 @@ const LogBook = () => {
           </div>
 
           <div>
-            <p className="mt-3 mr-7">Welcome {jwt(token).firstname}</p>
+            <p className="mt-3 ml-7">Welcome {jwt(token).firstname}</p>
             <br />
           </div>
           <div className="form-logbook mx-64 pl-14">
