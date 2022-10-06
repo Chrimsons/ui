@@ -89,7 +89,7 @@ const Services = () => {
     <>
       <div className="pl-72">
         <div className="home-bar">
-          <Link className="home-link" to="/">
+          <Link className="home-link" to="/customer">
             MyServiceNSW Account
           </Link>
         </div>
@@ -100,7 +100,7 @@ const Services = () => {
         >
           <div className="login-input">
             <img
-              onClick={() => navigate("/")}
+              onClick={() => navigate("/customer")}
               className="w-left cursor-pointer object-contain w-[200px] "
               src={ProfilePicture}
             />
