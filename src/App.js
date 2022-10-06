@@ -30,14 +30,14 @@ function App() {
                 <Route path="/customer/licence/:licenceId/logform" element = {<Customer.LogForm/>}/>
                 
                 <Route path="/admin/customer/prov" element={<Admin.Provisional/>}/>
-            <Route path="/admin" element={<Admin.Home />}>
+            <Route path="/admin" element={<Admin.Home />}/>
             
-              <Route path="licence/issue" element={<Admin.IssueLicence />} />
+              <Route path="/admin/licence/issue" element={<Admin.IssueLicence />} />
               <Route
-                path="customer/:customerId/licence"
+                path="/admin/customer/:customerId/licence"
                 element={<Admin.Licence />}
               />
-            </Route>
+            
             
           
         </Routes>
