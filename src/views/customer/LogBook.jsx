@@ -15,6 +15,7 @@ const LogBook = () => {
   const [start, setStart] = useState(new Date().toDatetimeLocal());
   const [end, setEnd] = useState(new Date().addHours(1).toDatetimeLocal());
   const [instructor, setInstructor] = useState(false);
+  const [nightTime, setNightTime] = useState(false);
   const navigate = useNavigate();
   const [token, setToken] = useContext(TokenContext);
   useEffect(() => {
@@ -28,6 +29,7 @@ const LogBook = () => {
       start: Date.getLongFromDateTimeInput(start),
       end: Date.getLongFromDateTimeInput(end),
       instructor: instructor,
+      nightTime: nightTime
     };
     addLogbookEntryAsync(licenceId, entry).then((j) => setLicence(j));
   };

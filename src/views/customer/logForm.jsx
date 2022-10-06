@@ -15,6 +15,7 @@ const LogForm = () => {
   const [start, setStart] = useState(new Date().toDatetimeLocal());
   const [end, setEnd] = useState(new Date().addHours(1).toDatetimeLocal());
   const [instructor, setInstructor] = useState(false);
+  const [nightTime, setNightTime] = useState(false);
   const navigate = useNavigate();
   const [token, setToken] = useContext(TokenContext);
   useEffect(() => {
@@ -28,6 +29,7 @@ const LogForm = () => {
       start: Date.getLongFromDateTimeInput(start),
       end: Date.getLongFromDateTimeInput(end),
       instructor: instructor,
+      nightTime: nightTime,
     };
     addLogbookEntryAsync(licenceId, entry).then((j) => setLicence(j));
     alert("Hours updated");
@@ -104,6 +106,17 @@ const LogForm = () => {
                   Instructor
                 </label>
                 <p className="mt-5 ml-52 font-semibold text-lg">{`Hours: ${licence.total.hours} | Minutes: ${licence.total.minutes}`}</p>
+              </span>
+              <span>
+                <label className="ml-52">
+                  <input
+                    type="checkbox"
+                    checked={nightTime}
+                    onChange={() => setNightTime(!nightTime)}
+                  />{" "}
+                  Night Time
+                </label>
+                <p className="mt-5 ml-52 font-semibold text-lg">{`Hours: ${licence.totalNightHours.hours} | Minutes: ${licence.totalNightHours.minutes}`}</p>
               </span>
               <br />
               <button
