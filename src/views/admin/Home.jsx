@@ -53,7 +53,7 @@ const Home = () => {
 
       <h2 className="mt-20 text-4xl mr-7">
         Welcome,{" "}
-        <span className="italic font-mono">{jwt(token).firstname}</span>
+        <span className="italic font-extrabold">{jwt(token).firstname}</span>
       </h2>
       <h3 className="ml-7 font-semibold text-2xl">
         You are logged in as an {jwt(token).roles}

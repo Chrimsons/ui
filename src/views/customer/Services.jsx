@@ -69,18 +69,7 @@ const Services = () => {
               <img src={Locations} width="400" height="600" />{" "}
             </a>{" "}
           </p>
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
+
           <button
             onClick={() => {
               setToken(undefined);
@@ -122,6 +111,19 @@ const Services = () => {
               Display license
             </Link>
           </div>
+          <Link className="home-link mr-5" to="/">
+            <button
+              onClick={() => {
+                setToken(undefined);
+                navigate("/");
+              }}
+              className="link pointer"
+              style={{ border: "none" }}
+            >
+              {" "}
+              Log out
+            </button>
+          </Link>
         </div>
         <div
           style={{ display: "flex", justifyContent: "space-between" }}
@@ -154,30 +156,13 @@ const Services = () => {
                 Display hours
               </button>
               <button
-                class="rounded-full px-10 py-3 text-center"
+                class="rounded-full px-10 py-3 text-center "
                 onClick={() => navigate(`/customer/licence/${l._id}/logform`)}
               >
                 Log new hours
               </button>
             </div>
           ))}
-        </div>
-        <div>
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <button
-            onClick={() => {
-              setToken(undefined);
-              navigate("/");
-            }}
-            className="link pointer"
-            style={{ border: "none" }}
-          >
-            Log out
-          </button>
         </div>
       </div>
     </>

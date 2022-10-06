@@ -63,6 +63,19 @@ const LogForm = () => {
                 Display license
               </Link>
             </div>
+            <Link className="home-link mr-5" to="/">
+              <button
+                onClick={() => {
+                  setToken(undefined);
+                  navigate("/");
+                }}
+                className="link pointer"
+                style={{ border: "none" }}
+              >
+                {" "}
+                Log out
+              </button>
+            </Link>
           </div>
           <div>
             <p className="mt-3 mr-7">Welcome {jwt(token).firstname}</p>
@@ -116,16 +129,6 @@ const LogForm = () => {
           </form>
           <br />
         </div>
-        <button
-          onClick={() => {
-            setToken(undefined);
-            navigate("/");
-          }}
-          className="link pointer"
-          style={{ border: "none" }}
-        >
-          Log out
-        </button>
       </div>
     );
   };

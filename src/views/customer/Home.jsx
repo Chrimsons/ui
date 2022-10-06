@@ -34,38 +34,37 @@ const Home = () => {
             Display license
           </Link>
         </div>
+        <Link className="home-link mr-5" to="/">
+          <button
+            onClick={() => {
+              setToken(undefined);
+              navigate("/");
+            }}
+            className="link pointer"
+            style={{ border: "none" }}
+          >
+            {" "}
+            Log out
+          </button>
+        </Link>
       </div>
       <div>
-        <p className="mt-3 mr-7">Welcome {jwt(token).firstname}</p>
-        <br />
-        <br />
-        <br />
-        <a
-          href="https://www.nsw.gov.au/driving-boating-and-transport/driver-and-rider-licences/proof-of-identity/proving-your-identity"
-          target="blank"
-        >
-          Click here
-        </a>{" "}
-        to find more information about identification requirements
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <button
-          onClick={() => {
-            setToken(undefined);
-            navigate("/");
-          }}
-          className="link pointer"
-          style={{ border: "none" }}
-        >
-          Log out
-        </button>
+        <h2 className="mt-20 text-4xl mr-7">
+          Welcome{" "}
+          <span className="italic font-extrabold">{jwt(token).firstname}</span>
+        </h2>
+        <p className="ml-7 mt-20 font-semibold text-2xl">
+          Click{" "}
+          <a
+            className="page-link mr-1"
+            href="https://www.nsw.gov.au/driving-boating-and-transport/driver-and-rider-licences/proof-of-identity/proving-your-identity"
+            target="blank"
+          >
+            here
+          </a>
+          to find more information about identification requirements.
+        </p>
+        <div> </div>
       </div>
 
       <Outlet />

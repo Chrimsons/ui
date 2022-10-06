@@ -47,8 +47,12 @@ const Licence = () => {
         className="w-left cursor-pointer object-contain w-[500px] "
         src={CongratsPicture}
       />
-      <div className="text-4xl font-bold mt-10 mb-6 ml-32 ">{customerJSX()}</div>
-      <div className="text-xl font-semibold italic mb-3 ml-24 ">{licenceJSX()}</div>
+      <div className="text-4xl font-bold mt-10 mb-6 ml-32 ">
+        {customerJSX()}
+      </div>
+      <div className="text-xl font-semibold italic mb-3 ml-24 ">
+        {licenceJSX()}
+      </div>
       <button
         class="ml-44 bg-yellow-600 hover:bg-yellow-500 mt-10 px-10 py-3 text-2xl font-semibold text-center"
         onClick={() => navigate("/admin")}

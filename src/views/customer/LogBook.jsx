@@ -61,7 +61,21 @@ const LogBook = () => {
                 Display license
               </Link>
             </div>
+            <Link className="home-link mr-5" to="/">
+              <button
+                onClick={() => {
+                  setToken(undefined);
+                  navigate("/");
+                }}
+                className="link pointer"
+                style={{ border: "none" }}
+              >
+                {" "}
+                Log out
+              </button>
+            </Link>
           </div>
+
           <div>
             <p className="mt-3 mr-7">Welcome {jwt(token).firstname}</p>
             <br />
@@ -74,21 +88,16 @@ const LogBook = () => {
               </div>
             ))}
             <br />
-            <button class="rounded-full mt-10 px-10 py-3 text-2xl font-semibold text-center ml-60" onClick={() => navigate(-1)}>Back</button>
+            <button
+              class="rounded-full mt-10 px-10 py-3 text-2xl font-semibold text-center ml-60"
+              onClick={() => navigate(-1)}
+            >
+              Back
+            </button>
           </div>
 
           <br />
         </div>
-        <button
-          onClick={() => {
-            setToken(undefined);
-            navigate("/");
-          }}
-          className="link pointer"
-          style={{ border: "none" }}
-        >
-          Log out
-        </button>
       </div>
     );
   };
