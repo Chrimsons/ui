@@ -153,6 +153,21 @@ const Services = () => {
                     </div>
                   </span>
                 }
+                Total Night Hours: {` ${l.totalNightHours.hours} Hours ${l.totalNightHours.minutes} Minutes`}
+                {
+                  <span className="bar">
+                    <br />
+                    <br />
+                    <div className="bar">
+                    <CircularProgressbar
+                      value={l.totalNightHours.hours}
+                      maxValue={120}
+                      text={`${l.totalNightHours.hours} hours ${l.totalNightHours.minutes} Minutes`}
+                      
+                    />
+                    </div>
+                  </span>
+                }
               </p>
               <button
                 className="rounded-full px-10 py-3 text-center"
