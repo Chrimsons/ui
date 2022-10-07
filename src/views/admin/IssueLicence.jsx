@@ -18,15 +18,16 @@ import { TokenContext } from "../../App";
 const IssueLicence = () => {
   const [customers, setCustomers] = useState([]);
   const [email, setEmail] = useState("");
+  const [mobile, setMobile] = useState("");
   const [customer, setCustomer] = useState();
   const [licence, setLicence] = useState();
   const [p, setP] = useState(false);
   const [dkt, setDkt] = useState("");
   const [hours, setHours] = useState("");
   const [driving, setDriving] = useState("");
-
   let navigate = useNavigate();
   const [token, setToken] = useContext(TokenContext);
+
   function Display() {
     return (
       <div>
@@ -87,13 +88,15 @@ const IssueLicence = () => {
   useEffect(() => {
     if (customer) {
       fetchCustomerLicenceAsync(customer._id)
-        .then((j) => setLicence(j))
+        .then((j) => {
+          setLicence(j);
+        })
         .catch((e) => setLicence(undefined));
     }
   }, [customer]);
 
   const fetchCustomers = () => {
-    fetchCustomersAsync(`email=${email}`).then((j) => setCustomers(j));
+    return fetchCustomersAsync(`email=${email}`).then((j) => setCustomers(j));
   };
 
   const customerSearchJSX = () => {
@@ -114,7 +117,18 @@ const IssueLicence = () => {
                   key={c._id}
                   onClick={() => setCustomer(c)}
                 >
-                  {c.email}
+                  <div className="text-left flex justify-center">
+                    First Name: {c.firstname}
+                    <br />
+                    Last Name: {c.lastname}
+                    <br />
+                    Email: {c.email}
+                    <br />
+                    Mobile: {c.mobile}
+                    <br/>
+                    DOB: 
+                    {new Date((c.dob)).toDateString()}
+                  </div>
                 </div>
               ))}
           </div>
@@ -148,7 +162,7 @@ const IssueLicence = () => {
       return (
         <div className="ml-64 mt-10 border-[4px] border-collapse w-fit p-5 ">
           <div className="text-2xl font-semibold mb-3 text-center">
-            Customer: {customer.email}
+            Customer: {customer.firstname}
           </div>
           {!licence && (
             <div>
@@ -167,7 +181,7 @@ const IssueLicence = () => {
               </div>
               <br />
               <button
-                class="rounded-full bg-red-700 hover:bg-red-500 mt-10 px-10 py-3 text-2xl font-semibold text-center ml-24"
+                className="rounded-full bg-red-700 hover:bg-red-500 mt-10 px-10 py-3 text-2xl font-semibold text-center ml-24"
                 onClick={submitLicence}
               >
                 Issue
@@ -204,15 +218,33 @@ const IssueLicence = () => {
             <div>
               {!p && (
                 <div>
-                  <p className="text-xl  mb-5 mt-7 text-center">
-                    This customer has a Learner's Licence:
-                  </p>
-                  <p className="  mb-5 mt-7 text-center">
-                    Licence: {licence._id}
-                  </p>
-                  <p className="font-semibold  mb-5 mt-7 text-center">
-                    Issued: {new Date(licence.issued).toDateString()}
-                  </p>
+                  <div className="border-[3px] pb-4">
+                    <div>
+                      <p className="text-4xl  mb-5 mt-7 text-center font-bold">
+                        Learner's Driver Licence
+                      </p>
+                      <p className="mb-5 text-2xl font-semibold mt-7 text-center underline">
+                        Licence: {licence._id}
+                      </p>
+                      <div className="flex flex-row font-semibold pb-5 mt-7 text-center justify-evenly ">
+                        <p>Issued: {new Date(licence.issued).toDateString()}</p>
+                        <p>
+                          Expiry:{" "}
+                          {new Date(
+                            licence.issued + 157784630000
+                          ).toDateString()}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="font-semibold mb-5 mt-2 text-2xl text-center border-[3px]">
+                      <p className="mb-5">
+                        Total hours done: <br />
+                      </p>
+                      <p className="italic mb-5 border-dotted border-[3px] border-black mx-40">
+                        {licence.total.hours}
+                      </p>
+                    </div>
                   <div>
                     <label className="mb-5 mt-7 ml-24">
                       Total hours complete?:

@@ -149,6 +149,7 @@ const Services = () => {
                       maxValue={120}
                       text={`${l.total.hours} hours ${l.total.minutes} Minutes`}
                       
+                      
                     />
                     </div>
                   </span>
