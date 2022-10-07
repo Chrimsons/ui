@@ -3,11 +3,11 @@ import { useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { fetchLicenceByIdAsync } from "../../web-services";
 import { addLogbookEntryAsync } from "../../web-services";
-
 import { jwt } from "../../identity";
 import { TokenContext } from "../../App";
 import ProfilePicture from "../../img/snswhomepage.JPG";
 import { useContext } from "react";
+import Footer from "../../Footer";
 
 const LogForm = () => {
   const { licenceId } = useParams();
@@ -66,7 +66,7 @@ const LogForm = () => {
                 Display license
               </Link>
             </div>
-            <Link className="home-link mr-5" to="/">
+            <Link className=" mr-5" to="/">
               <button
                 onClick={() => {
                   setToken(undefined);

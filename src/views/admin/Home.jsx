@@ -5,6 +5,7 @@ import { useContext } from "react";
 
 import { jwt } from "../../identity";
 import { TokenContext } from "../../App";
+import Footer from "../../Footer";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -17,6 +18,7 @@ const Home = () => {
         <Link className="home-link" to="/admin">
           MyServiceNSW Account
         </Link>
+        <Footer/>
       </div>
       <br />
       <div
@@ -36,7 +38,7 @@ const Home = () => {
             Issue Licence
           </Link>
         </div>
-        <Link className="home-link mr-5" to="/">
+        <Link className=" mr-5" to="/admin">
           <button
             onClick={() => {
               setToken(undefined);
@@ -66,6 +68,7 @@ const Home = () => {
       <p className="text-3xl ml-7">
       Click <Link className="page-link" to="/admin/licence/issue">Here</Link> 
       to search and issue a new License</p> */}
+    
     </div>
   );
 };

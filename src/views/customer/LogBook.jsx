@@ -8,6 +8,7 @@ import { jwt } from "../../identity";
 import { TokenContext } from "../../App";
 import ProfilePicture from "../../img/snswhomepage.JPG";
 import { useContext } from "react";
+import Footer from "../../Footer";
 
 const LogBook = () => {
   const { licenceId } = useParams();
@@ -44,6 +45,7 @@ const LogBook = () => {
             <Link className="home-link" to="/customer">
               MyServiceNSW Account
             </Link>
+
           </div>
           <br />
           <div
@@ -63,7 +65,7 @@ const LogBook = () => {
                 Display license
               </Link>
             </div>
-            <Link className="home-link mr-5" to="/">
+            <Link className="mr-5" to="/">
               <button
                 onClick={() => {
                   setToken(undefined);

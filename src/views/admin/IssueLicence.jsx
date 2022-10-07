@@ -100,7 +100,6 @@ const IssueLicence = () => {
     if (!customer) {
       return (
         <>
-       
         <div className="ml-64 mt-10 border-[4px] border-collapse w-fit p-5 ">
           <div className="text-lg font-semibold mb-3 ">Customer Search</div>
           <div style={{ marginBottom: 15 }}>

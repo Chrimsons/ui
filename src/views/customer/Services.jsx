@@ -8,6 +8,7 @@ import { useContext } from "react";
 import Locations from "../../img/Location.png";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
+import Footer from "../../Footer";
 
 const Services = () => {
   const [licences, setLicences] = useState([]);
@@ -111,7 +112,7 @@ const Services = () => {
               Display license
             </Link>
           </div>
-          <Link className="home-link mr-5" to="/">
+          <Link className=" mr-5" to="/">
             <button
               onClick={() => {
                 setToken(undefined);

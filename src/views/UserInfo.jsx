@@ -66,29 +66,21 @@ const UserInfo = () => {
     }
     return (
       <div>
+                <Link className="home-link mr-5" to="/">
+          <button
+            onClick={() => {
+              setToken(undefined);
+              navigate("/");
+            }}
+            className="link pointer"
+            style={{ border: "none" }}
+          >
+            {" "}
+            Log out
+          </button>
+        </Link>
         <p className="mt-3 mr-7">Welcome {jwt(token).firstname}</p>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <button
-          onClick={() => {
-            setToken(undefined);
-            navigate("/");
-          }}
-          className="link pointer"
-          style={{ border: "none" }}
-        >
-          Log out
-        </button>
+        
       </div>
     );
   };

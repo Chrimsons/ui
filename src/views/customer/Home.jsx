@@ -4,6 +4,7 @@ import { useContext } from "react";
 import LearnersTwo from "../../img/learnerstwo.jpg"
 import { jwt } from "../../identity";
 import { TokenContext } from "../../App";
+import Footer from "../../Footer";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -15,7 +16,9 @@ const Home = () => {
         <Link className="home-link" to="/customer">
           MyServiceNSW Account
         </Link>
+        <Footer/>
       </div>
+
       <br />
       <div
         style={{ display: "flex", justifyContent: "space-between" }}

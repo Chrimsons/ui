@@ -5,6 +5,7 @@ import { TokenContext } from "../App";
 import { isInRole } from "../identity";
 import ProfilePicture from "../img/snswhomepage.JPG";
 import Learners from "../img/learnersOne.jpg"
+import Footer from "../Footer";
 
 const Main = () => {
   const [token, setToken] = useContext(TokenContext);
@@ -12,7 +13,7 @@ const Main = () => {
 
   if (!token) {
     return (
-      <div className="pl-72">
+      <div className="pl-64">
         <div className="home-bar">
           <Link className="home-link" to="/">
             MyServiceNSW Account
@@ -33,7 +34,6 @@ const Main = () => {
         <h2 className="user-h">MyServiceNSW Driver License</h2>
         <br />
         <img src={Learners} className="object-contain w-7/12 mr-24 float-right" />
-        
         <div className="ml-7">
           <p className="user-p">Welcome to Service NSW Driver License page</p>
           <p className="user-p">
@@ -69,11 +69,12 @@ const Main = () => {
   }
 
   return (
-    <div style={{ margin: "auto"}} className="pl-72">
+    <div style={{ margin: "auto"}} className="pl-64">
       <div className="home-bar">
         <Link className="home-link" to="/">
           MyServiceNSW Account
         </Link>
+        <Footer/>
       </div>
 
       <br />
@@ -120,6 +121,7 @@ const Main = () => {
       </div>
       <UserInfo />
       <Outlet />
+
     </div>
   );
 };
