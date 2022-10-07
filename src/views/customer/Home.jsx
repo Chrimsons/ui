@@ -96,7 +96,6 @@ const Home = () => {
       <div>
         <Footer />
       </div>
-
       <Outlet />
     </div>
   );
