@@ -98,7 +98,10 @@ const IssueLicence = () => {
 
   const fetchCustomers = () => {
 
-    return fetchCustomersAsync(`email=${email}`).then((j) => setCustomers(j))
+    return fetchCustomersAsync(`email=${email}`).then((j) => {
+      
+      setCustomers(j)
+    })
     
   };
 
@@ -131,6 +134,9 @@ const IssueLicence = () => {
                     Email: {c.email}
                     <br />
                     Mobile: {c.mobile}
+                    <br/>
+                    DOB: 
+                    {new Date((c.dob)).toDateString()}
                   </div>
                 </div>
               ))}
@@ -224,6 +230,7 @@ const IssueLicence = () => {
                   <p className="text-xl  mb-5 mt-7 text-center">
                     This customer has a Learner's Licence:
                   </p>
+                  
                   <p className="  mb-5 mt-7 text-center">
                     Licence: {licence._id}
                   </p>
