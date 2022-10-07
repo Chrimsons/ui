@@ -8,6 +8,7 @@ import { useContext } from "react";
 import Locations from "../../img/Location.png";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
+import BlankProfile from "../../img/blank.jpg"
 
 
 const Services = () => {
@@ -135,47 +136,65 @@ const Services = () => {
         <div className="mt-20 ml-72 text-2xl font-semibold">
           {licences.map((l) => (
             <div key={l._id} className="tile">
-              <p className="mt-10">Licence: {l._id}</p>
+              
               
               <p className="my-10">
+              <div className="border-[3px] mx-5">
+              <p className="text-4xl mt-7 ml-16 font-bold text-lime-600">
+                Learner's Driver Licence
+              </p>
+              <img className="ml-16 mt-10 mb-3 w-[200px] " src={BlankProfile} />
+              <p className="ml-16 text-xl font-semibold mb-3">
+                Name: {jwt(token).firstname} {jwt(token).lastname}
+              </p>
+              <div className="text-2xl text-center mb-10 font-semibold">
+                Licence No: {l._id}
+              </div>
+            </div>
                 <div className="flex flex-row justify-center">
                   <div>
-                    Total: <br />
-                    {` ${l.total.hours} Hours / ${l.total.minutes} Minutes`}
+                  Day hours: <br />
+                    {` ${(l.total.hours)-(l.totalNightHours.hours)} hours / ${(l.total.minutes)-(l.totalNightHours.minutes)} minutes`}<br/>
+                    
                     {
                       <span className="bar">
                         <br />
                         <br />
                         <div className="bar">
                           <CircularProgressbar
-                            value={l.total.hours}
-                            maxValue={120}
-                            text={`${l.total.hours} hours / ${l.total.minutes} Minutes`}
+                            value={(l.total.hours)-(l.totalNightHours.hours)}
+                            maxValue={100}
+                            text={`${(l.total.hours)-(l.totalNightHours.hours)} h/${(l.total.minutes)-(l.totalNightHours.minutes)} m`}
                           />
                         </div>
-                        <br />
+                        
                       </span>
                     }
                   </div>
                   <div className="ml-5">
                     Total Night Hours: <br />
-                    {` ${l.totalNightHours.hours} Hours / ${l.totalNightHours.minutes} Minutes`}
+                    {` ${l.totalNightHours.hours} hours / ${l.totalNightHours.minutes} minutes`}
                     {
                       <span className="bar">
                         <br />
                         <br />
+                        <br/>
                         <div className="bar">
                           <CircularProgressbar
                             value={l.totalNightHours.hours}
                             maxValue={20}
-                            text={`${l.totalNightHours.hours} hours / ${l.totalNightHours.minutes} Minutes`}
+                            text={`${l.totalNightHours.hours} h/${l.totalNightHours.minutes} m`}
                           />
                         </div>
                       </span>
                     }
+                    
                   </div>
+                  
                 </div>
               </p>
+              Total: <br />
+                    {` ${l.total.hours} hours / ${l.total.minutes} minutes`}<br/>
               <button
                 className="rounded-full px-10 py-3 text-center hover:bg-blue-500"
                 onClick={() => navigate(`/customer/licence/${l._id}/logbook`)}

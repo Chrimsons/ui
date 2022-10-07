@@ -91,18 +91,8 @@ const LogForm = () => {
           <div className="ml-80"></div>
           <form className="form-loghours mx-64">
             <h2 className="">New Log Entry:</h2>
-            <div className="border-[3px] mx-5">
-              <p className="text-4xl mt-7 ml-16 font-bold text-lime-600">
-                Learner's Driver Licence
-              </p>
-              <img className="ml-16 mt-10 mb-3 w-[400px] " src={BlankProfile} />
-              <p className="ml-16 text-xl font-semibold mb-3">
-                Name: {jwt(token).firstname} {jwt(token).lastname}
-              </p>
-              <div className="text-2xl text-center mb-10 font-semibold">
-                Licence No: {licence._id}
-              </div>
-            </div>
+
+            
 
             <div>
               <span>
