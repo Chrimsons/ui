@@ -223,6 +223,7 @@ const IssueLicence = () => {
                       <p className="text-4xl  mb-5 mt-7 text-center font-bold">
                         Learner's Driver Licence
                       </p>
+                      Name: {customer.firstname}{" "}{customer.lastname}
                       <p className="mb-5 text-2xl font-semibold mt-7 text-center underline">
                         Licence: {licence._id}
                       </p>
