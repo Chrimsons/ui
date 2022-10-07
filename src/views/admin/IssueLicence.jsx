@@ -87,7 +87,10 @@ const IssueLicence = () => {
   useEffect(() => {
     if (customer) {
       fetchCustomerLicenceAsync(customer._id)
-        .then((j) => setLicence(j))
+        .then((j) => {
+          
+          setLicence(j)
+        })
         .catch((e) => setLicence(undefined));
     }
   }, [customer]);
@@ -213,6 +216,10 @@ const IssueLicence = () => {
                   <p className="font-semibold  mb-5 mt-7 text-center">
                     Issued: {new Date(licence.issued).toDateString()}
                   </p>
+                  <p className="  mb-5 mt-7 text-center">
+                    Total hours done: {licence.total.hours} 
+                  </p>
+
                   <div>
                     <label className="mb-5 mt-7 ml-24">
                       Total hours complete?:
