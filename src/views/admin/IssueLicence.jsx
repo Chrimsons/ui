@@ -11,7 +11,7 @@ import { Link, Outlet, useNavigate } from "react-router-dom";
 import ProfilePicture from "../../img/snswhomepage.JPG";
 import Transition from "../../img/transition.jpg";
 import { useContext } from "react";
-
+import BlankProfile from "../../img/blank.jpg";
 import { jwt } from "../../identity";
 import { TokenContext } from "../../App";
 
@@ -125,9 +125,9 @@ const IssueLicence = () => {
                     Email: {c.email}
                     <br />
                     Mobile: {c.mobile}
-                    <br/>
-                    DOB: 
-                    {new Date((c.dob)).toDateString()}
+                    <br />
+                    DOB:
+                    {new Date(c.dob).toDateString()}
                   </div>
                 </div>
               ))}
@@ -223,8 +223,14 @@ const IssueLicence = () => {
                       <p className="text-4xl  mb-5 mt-7 text-center font-bold text-lime-600">
                         Learner's Driver Licence
                       </p>
-                      Name: {customer.firstname}{" "}{customer.lastname}
-                      <p className="mb-5 text-2xl font-semibold mt-7 text-center underline">
+                      <img
+                        className="ml-9 cursor-pointer object-contain w-[400px]"
+                        src={BlankProfile}
+                      />
+                      <p className="ml-9 text-xl font-semibold">
+                        Name: {customer.firstname} {customer.lastname}
+                      </p>
+                      <p className="mb-5 text-2xl font-semibold mt-3 text-center underline">
                         Licence: {licence._id}
                       </p>
                       <div className="flex flex-row font-semibold pb-5 mt-7 text-center justify-evenly ">
@@ -239,13 +245,13 @@ const IssueLicence = () => {
                     </div>
                   </div>
                   <div className="font-semibold mb-5 mt-2 text-2xl text-center border-[3px]">
-                      <p className="mb-5">
-                        Total hours done: <br />
-                      </p>
-                      <p className="italic mb-5 border-dotted border-[3px] border-black mx-40">
-                        {licence.total.hours}
-                      </p>
-                    </div>
+                    <p className="mb-5">
+                      Total hours done: <br />
+                    </p>
+                    <p className="italic mb-5 border-dotted border-[3px] border-black mx-40">
+                      {licence.total.hours}
+                    </p>
+                  </div>
                   <div>
                     <label className="mb-5 mt-7 ml-24">
                       Total hours complete?:
