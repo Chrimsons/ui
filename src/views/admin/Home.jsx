@@ -1,90 +1,50 @@
-import { Link, Outlet, useNavigate } from "react-router-dom";
-import ProfilePicture from "../../img/snswhomepage.JPG";
+import { Link, Outlet } from "react-router-dom";
 import Transition from "../../img/transition.jpg";
 import { useContext } from "react";
-
 import { jwt } from "../../identity";
 import { TokenContext } from "../../App";
 import Footer from "../../Footer";
+import AdminHeader from "./AdminHeader";
+import Welcome from "../../Welcome";
 
 const Home = () => {
-  const navigate = useNavigate();
-
   const [token, setToken] = useContext(TokenContext);
 
   return (
     <div className="pl-72">
       <div>
-        <header>
-          <div className="home-bar">
-            <Link className="home-link" to="/admin">
-              MyServiceNSW Account
-            </Link>
-          </div>
-          <br />
-          <div
-            style={{ display: "flex", justifyContent: "space-between" }}
-            className="mt-10"
-          >
-            <div className="login-input">
-              <img
-                onClick={() => navigate("/admin")}
-                className="w-left cursor-pointer object-contain w-[200px] "
-                src={ProfilePicture}
-              />
-              <Link to={"/admin"} className="h-lnk">
-                Home
-              </Link>
-              <Link to={"/admin/licence/issue"} className="h-lnk">
-                Issue Licence
-              </Link>
-            </div>
-            <Link className=" mr-5" to="/">
-              <button
-                onClick={() => {
-                  setToken(undefined);
-                  navigate("/");
-                }}
-                className="link pointer"
-                style={{ border: "none" }}
-              >
-                {" "}
-                Log out
-              </button>
-            </Link>
-          </div>
-        </header>
+        <AdminHeader />
       </div>
-      <div >
-        <body>
+      <div>
+        <div>
           <img
             src={Transition}
             className="object-contain mt-20 mr-40 w-7/12 float-right"
           />
-
-          <h2 className="mt-10 text-4xl mr-7">
-            Welcome,{" "}
-            <span className="italic font-extrabold">
-              {jwt(token).firstname}
-            </span>
-          </h2>
-
-          <h3 className="ml-7 mt-40 font-semibold text-2xl">
+        </div>
+        <div>
+          <Welcome />
+        </div>
+        <div>
+          <h3 className="ml-7 mt- font-semibold text-2xl">
             You are logged in as an {jwt(token).roles}
           </h3>
-          <p className="ml-7 mt-10 text-xl font-semibold">
-            click{" "}
-            <Link className="page-link" to={"/admin/licence/issue"}>
-              here
-            </Link>{" "}
-            to issue a new licence
-          </p>
-        </body>
+        </div>
+        <div className="ml-7 mt-52 text-xl font-semibold">
+          <Link
+            className="border-[2px] bg-yellow-400 hover:bg-yellow-300 p-5"
+            to={"/admin/licence/issue"}
+          >
+            Click here to issue a new licence
+          </Link>
+        </div>
+        <div>
+          <Footer />
+        </div>
+        <div>
+          <Outlet />
+        </div>
       </div>
-      <div>
-        <Footer />
-      </div>
-      <Outlet />
     </div>
   );
 };

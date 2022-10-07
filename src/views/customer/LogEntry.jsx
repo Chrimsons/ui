@@ -2,8 +2,8 @@ const LogEntry = (props) => {
   let e = props.entry;
   return (
     <>
-      <div className="tile2 bg-purple-300">
-        <div className="border-[3px] border-black mt-5 mx-9 my-3 pb-4 bg-purple-200">
+      <div className="tile2 bg-gray-300">
+        <div className="border-[3px] border-black mt-5 mx-9 my-3 pb-4 bg-gray-200">
           <div className="flex flex-column justify-center mt-5 mb-3">
             <div className="mr-4">
               <label>Start : {new Date(e.start).toLocalString()}</label>
@@ -14,8 +14,8 @@ const LogEntry = (props) => {
           </div>
           <div className="border-[3px] border-gray-600 border-dotted mx-28">
             <label>
-              {e.nightTime ? `${e.nightDuration.hours} night` : e.total.hours}{" "}
-              Hour/s : {e.nightTime ? e.nightDuration.hours : e.total.minutes}{" "}
+              {e.nightTime ? `${e.nightDuration.hours} night` : e.total.hours}
+              Hour/s : {e.nightTime ? e.nightDuration.hours : e.total.minutes}
               Minute/s
             </label>
           </div>
@@ -40,7 +40,7 @@ const LogEntry = (props) => {
                   </div>
                 </label>
               </div>
-              <div className="text-2xl border-[3px] border-gray-600 border-dotted mx-16 bg-purple-200 py- mt-2">
+              <div className="text-2xl border-[3px] border-gray-600 border-dotted mx-16 bg-gray-200 py- mt-2">
                 <label>
                   Total with Instructor Bonus:
                   <div className="text-center mt-2 ">

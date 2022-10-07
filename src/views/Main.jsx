@@ -4,8 +4,10 @@ import UserInfo from "./UserInfo";
 import { TokenContext } from "../App";
 import { isInRole } from "../identity";
 import ProfilePicture from "../img/snswhomepage.JPG";
-import Learners from "../img/learnersOne.jpg"
+import Learners from "../img/learnersOne.jpg";
 import Footer from "../Footer";
+import Header from "./customer/CustomerHeader";
+import Welcome from "../Welcome";
 
 const Main = () => {
   const [token, setToken] = useContext(TokenContext);
@@ -18,7 +20,7 @@ const Main = () => {
           <Link className="home-link" to="/">
             MyServiceNSW Account
           </Link>
-          <Footer/>
+          <Footer />
         </div>
         <br />
         <div
@@ -34,7 +36,10 @@ const Main = () => {
         </div>
         <h2 className="user-h">MyServiceNSW Driver License</h2>
         <br />
-        <img src={Learners} className="object-contain w-7/12 mr-24 float-right" />
+        <img
+          src={Learners}
+          className="object-contain w-7/12 mr-24 float-right"
+        />
         <div className="ml-7">
           <p className="user-p">Welcome to Service NSW Driver License page</p>
           <p className="user-p">
@@ -64,48 +69,21 @@ const Main = () => {
             Create Account
           </button>
         </div>
-
       </div>
     );
   }
 
   return (
-    <div style={{ margin: "auto"}} className="pl-64">
-      <div className="home-bar">
-        <Link className="home-link" to="/">
-          MyServiceNSW Account
-        </Link>
-        <Footer/>
-      </div>
-
-      <br />
-      <div
-        style={{ display: "flex", justifyContent: "space-between" }}
-        className="mt-10"
-      >
-        {" "}
+    <div className="pl-72">
+      <div>
         {token && isInRole(token, "customer") && (
-          <div className="login-input">
-            <img
-              onClick={() => navigate("/customer")}
-              className="w-left cursor-pointer object-contain w-[200px]"
-              src={ProfilePicture}
-            />
-            <Link to={"/customer"} className="h-lnk">
-              Home
-            </Link>
-            <Link to={"/customer/services"} className="h-lnk">
-              Services
-            </Link>
-            <Link to={"/customer/services"} className="h-lnk">
-              New Log
-            </Link>
-            
+          <div>
+            <Header />
+            <Welcome/>
           </div>
-          
         )}
         {token && isInRole(token, "admin") && (
-          <div className="login-input">
+          <div>
             <img
               onClick={() => navigate("/admin")}
               className="w-left cursor-pointer object-contain w-[200px]"
@@ -120,9 +98,8 @@ const Main = () => {
           </div>
         )}
       </div>
-      <UserInfo />
+      <Footer />
       <Outlet />
-
     </div>
   );
 };

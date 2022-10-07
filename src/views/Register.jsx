@@ -4,7 +4,7 @@ import { registerAsync, parseDate } from "../web-services";
 import { TokenContext } from "../App";
 import { Link } from "react-router-dom";
 
-import Header from "../Header";
+import Header from "./customer/CustomerHeader";
 
 export default function Register() {
   const [email, setEmail] = useState("");

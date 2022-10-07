@@ -1,13 +1,12 @@
-import { useEffect } from "react";
-import { useState } from "react";
-import { useParams, Link, useNavigate } from "react-router-dom";
-import { fetchLicenceByIdAsync } from "../../web-services";
-import { addLogbookEntryAsync } from "../../web-services";
+import { useEffect, useContext, useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import {
+  fetchLicenceByIdAsync,
+  addLogbookEntryAsync,
+} from "../../web-services";
 import { jwt } from "../../identity";
 import { TokenContext } from "../../App";
-import ProfilePicture from "../../img/snswhomepage.JPG";
-import { useContext } from "react";
-import BlankProfile from "../../img/blank.jpg";
+import Header from "./CustomerHeader";
 
 const LogForm = () => {
   const { licenceId } = useParams();
@@ -41,111 +40,110 @@ const LogForm = () => {
     if (!licence) return;
 
     return (
-      <div>
-        <div className="pl-72">
-          <div className="home-bar">
-            <Link className="home-link" to="/customer">
-              MyServiceNSW Account
-            </Link>
-          </div>
-          <br />
-          <div
-            style={{ display: "flex", justifyContent: "space-between" }}
-            className="mt-10"
-          >
-            <div className="login-input">
-              <img
-                onClick={() => navigate("/customer")}
-                className="w-left cursor-pointer object-contain w-[200px] "
-                src={ProfilePicture}
-              />
-              <Link to={"/customer"} className="h-lnk">
-                Home
-              </Link>
-              <Link to={"/customer/services"} className="h-lnk">
-                Display license
-              </Link>
-            </div>
-            <Link className=" mr-5" to="/">
-              <button
-                onClick={() => {
-                  setToken(undefined);
-                  navigate("/");
-                }}
-                className="link pointer"
-                style={{ border: "none" }}
-              >
-                {" "}
-                Log out
-              </button>
-            </Link>
-          </div>
+      <div className="ml-72">
+        <div>
+          <Header />
+        </div>
+        <div>
           <div>
             <h2 className="mt-10 text-4xl mr-7">
-              Welcome{" "}
+              Welcome
               <span className="italic font-extrabold">
                 {jwt(token).firstname}
               </span>
             </h2>
           </div>
-          <div className="ml-80"></div>
-          <form className="form-loghours mx-64">
-            <h2 className="">New Log Entry:</h2>
-
-            
-
-            <div>
-              <span>
-                <label> Start: </label>
-                <input
-                  type="datetime-local"
-                  value={start}
-                  required={true}
-                  onChange={(e) => setStart(e.target.value)}
-                />
-              </span>
-              <span>
-                <label> End: </label>
-                <input
-                  type="datetime-local"
-                  value={end}
-                  required={true}
-                  min={start}
-                  onChange={(e) => setEnd(e.target.value)}
-                />
-              </span>
-              <span>
-                <label className="ml-52">
+          <div className="form-loghours ml-72 bg-gray-100">
+            <form>
+              <div>
+                <h2 className="text-center border-[1px] mr-6 py-6 border-black bg-gray-200">
+                  New Log Entry
+                </h2>
+              </div>
+              <div>
+                <div>
+                  <label className="text-center">Start:</label>
+                </div>
+                <div>
                   <input
-                    type="checkbox"
-                    checked={instructor}
-                    onChange={() => setInstructor(!instructor)}
-                  />{" "}
-                  Instructor
-                </label>
-                <p className="mt-5 ml-52 font-semibold text-lg">{`Hours: ${licence.total.hours} | Minutes: ${licence.total.minutes}`}</p>
-              </span>
-              <span>
-                <label className="ml-52">
+                    type="datetime-local"
+                    value={start}
+                    required={true}
+                    onChange={(e) => setStart(e.target.value)}
+                  />
+                </div>
+              </div>
+              <div>
+                <div>
+                  <label className="text-center">End:</label>
+                </div>
+                <div>
                   <input
-                    type="checkbox"
-                    checked={nightTime}
-                    onChange={() => setNightTime(!nightTime)}
-                  />{" "}
-                  Night Time
-                </label>
-                <p className="mt-5 ml-52 font-semibold text-lg">{`Hours: ${licence.totalNightHours.hours} | Minutes: ${licence.totalNightHours.minutes}`}</p>
-              </span>
-              <br />
-              <button
-                className="log-btn-red mt-5 ml-48"
-                onClick={addLogBookEntry2}
-              >
-                Add
-              </button>
-            </div>
-          </form>
-          <br />
+                    type="datetime-local"
+                    value={end}
+                    required={true}
+                    min={start}
+                    onChange={(e) => setEnd(e.target.value)}
+                  />
+                </div>
+                <div className="flex flex-column justify-left mt-5 w-fit ml-[90px] mb-10">
+                  <div>
+                    <div>
+                      <label className="mr-20">
+                        <input
+                          type="checkbox"
+                          checked={instructor}
+                          onChange={() => setInstructor(!instructor)}
+                        />
+                        Instructor
+                      </label>
+                    </div>
+                    <div className="text-center mr-5">
+                      <p className="mt-5 font-semibold text-lg">
+                        Total Hours: <br />
+                        {`Hours: ${licence.total.hours} | Minutes: ${licence.total.minutes}`}
+                      </p>
+                    </div>
+                  </div>
+                  <div>
+                    <div>
+                      <label className="">
+                        <input
+                          type="checkbox"
+                          checked={nightTime}
+                          onChange={() => setNightTime(!nightTime)}
+                        />
+                        Night Time
+                      </label>
+                    </div>
+                    <div className="text-center ml-2">
+                      <p className="mt-5  font-semibold text-lg">
+                        Night Hours: <br />
+                        {`Hours: ${licence.totalNightHours.hours} | Minutes: ${licence.totalNightHours.minutes}`}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="mt-5 ml-24">
+                  <button
+                    className="rounded-full px-14 py-3 text-center hover:bg-red-500 bg-red-600"
+                    onClick={addLogBookEntry2}
+                  >
+                    Add Entry
+                  </button>
+                  <button
+                    className="rounded-full px-20 py-3 ml-6 text-center hover:bg-blue-500 bg-blue-600"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      navigate(-1);
+                    }}
+                  >
+                    Back
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     );
