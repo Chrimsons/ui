@@ -262,7 +262,7 @@ const IssueLicence = () => {
                     </select>
                   </div>
                   <div>
-                    <label className="mb-5 mt-7 ml-24">Driving Test:</label>
+                    <label className="mb-5 ml-24">Driving Test:</label>
                     <select
                       value={driving}
                       onChange={(e) => setDriving(e.target.value)}
