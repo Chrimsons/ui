@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <div className=" footer">
+    <div>
       <div>
         <footer style={{ position: "absolute", bottom: "0", width: "100%" }}>
           <div className="bg-slate-200 pl-64 py-5">

@@ -7,8 +7,8 @@
 .issue-licence-h1 {
   @apply mx-[445px] mt-2 text-4xl font-extrabold;
 }
-.form-signin{
-  @apply m-auto
+.form-signin {
+  @apply m-auto;
 }
 .form {
   @apply w-5/12 border-gray-600 border-[1px] pt-2 pb-20  mt-20;
@@ -17,10 +17,10 @@
 .form input {
   @apply w-11/12 mt-2 mb-2 ml-7 py-[11px] border-gray-600 rounded border-[2px]
   focus:outline-none focus:border-[2px] focus:border-blue-600  
-  hover:bg-slate-200 font-semibold pl-3 inline-block
+  hover:bg-slate-200 font-semibold pl-3 inline-block;
 }
 .form label {
-  @apply font-semibold py-2 ;
+  @apply font-semibold py-2;
 }
 .form select {
   @apply w-11/12 mt-2 ml-7 py-[11px] border-gray-600 rounded border-[2px]
@@ -31,7 +31,7 @@
   @apply underline text-blue-600 visited:text-purple-400 visited:inline-block hover:text-blue-700 ml-10 pb-40;
 }
 .page-link {
-  @apply underline text-blue-600 visited:text-purple-400 visited:inline-block hover:text-blue-700 ;
+  @apply underline text-blue-600 visited:text-purple-400 visited:inline-block hover:text-blue-700;
 }
 h2 {
   @apply text-4xl font-sans mb-10 mt-5 ml-7 font-bold;
@@ -72,8 +72,8 @@ h2 {
 .form-loghours input {
   @apply text-center;
 }
-.form-logbook{
-  @apply w-6/12 border-gray-600 border-[1px] pt-2 pb-20  mt-20
+.form-logbook {
+  @apply w-6/12 border-gray-600 border-[1px] pt-2 pb-20  mt-20;
 }
 .home-bar {
   @apply w-screen float-right py-3 pr-96 bg-slate-800;
@@ -124,18 +124,17 @@ h2 {
 .ticket-table tbody td {
   @apply px-3 py-1;
 }
-.bar{
-  @apply w-60 ml-32
+.bar {
+  @apply w-60 ml-32;
 }
-.footer a{
-  @apply hover:underline mb-2 active:border-[2px] active:border-white w-fit
+.footer a {
+  @apply hover:underline mb-2 active:border-[2px] active:border-white w-fit;
 }
 .footer-heading {
-  @apply pb-4 font-semibold
+  @apply pb-4 font-semibold;
 }
 
-
-label{
+label {
   min-width: 125px;
   display: inline-block;
   text-align: right;
@@ -143,14 +142,14 @@ label{
   font-weight: bold;
 }
 
-input{
+input {
   border-radius: 2.5px;
   padding: 5px;
-  border-color: rgba(255, 0, 0,0.5);
+  border-color: rgba(255, 0, 0, 0.5);
   border-width: 0.5px;
 }
 
-button{
+button {
   background-color: rgb(0, 98, 255);
   color: white;
   border-width: 1px;
@@ -159,63 +158,62 @@ button{
   text-align: center;
 }
 
-.form-container{
+.form-container {
   display: inline-block;
   margin: auto;
 }
-.tile{
-  border:1px solid #000;
+.tile {
+  border: 1px solid #000;
   text-align: center;
-  width:550px;
-  padding:10px;
+  width: 550px;
+  padding: 10px;
   background-color: rgb(245, 241, 241);
   color: rgb(75, 7, 7);
 }
-.tile2{
-  border:1px solid #000;
+.tile2 {
+  border: 1px solid #000;
   text-align: center;
-  width:598px;
+  width: 598px;
   font-size: large;
   font-style: italic;
- 
-  
+
   background-color: rgb(245, 241, 241);
   color: rgb(7, 2, 2);
 }
- .pointer{
+.pointer {
   cursor: pointer;
- }
+}
 
- .user-info{
+.user-info {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
- }
- .login-input{
+}
+.login-input {
   display: flex;
   text-align: center;
   flex-direction: row;
   justify-content: flex-start;
   align-self: auto;
- }
+}
 
- .user-info > p {
+.user-info > p {
   color: rgb(10, 10, 10);
   font-weight: bolder;
- }
+}
 
- .link {
-    background-color: rgba(255, 0, 0, 0.87);
-    color:#fff;
-    padding: 14px 25px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
- }
+.link {
+  background-color: rgba(255, 0, 0, 0.87);
+  color: #fff;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
 
 .alt-link {
   background-color: #fff;
-  color:red;
+  color: red;
   padding: 14px 25px;
   text-align: center;
   text-decoration: none;
@@ -226,7 +224,22 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
- }
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+html,
+body {
+ height: 100%;
+ position: relative;
+}
+.main-container {
+  min-height: 70vh; /* will cover the 100% of viewport */
+  overflow: hidden;
+  display: block;
+  position: relative;
+  padding-bottom: 100px; /* height of your footer */
+}
 
 /* a:link {
   color: rgb(1, 1, 1);
@@ -251,4 +264,3 @@ a:active {
   border-style: solid;
   border-width: 0pc;
 } */
-
