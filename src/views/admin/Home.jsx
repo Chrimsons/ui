@@ -56,13 +56,13 @@ const Home = () => {
         </header>
       </div>
       <div >
-        <body className="main-container">
+        <body>
           <img
             src={Transition}
             className="object-contain mt-20 mr-40 w-7/12 float-right"
           />
 
-          <h2 className="mt-20 text-4xl mr-7">
+          <h2 className="mt-10 text-4xl mr-7">
             Welcome,{" "}
             <span className="italic font-extrabold">
               {jwt(token).firstname}
