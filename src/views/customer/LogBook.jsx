@@ -30,7 +30,7 @@ const LogBook = () => {
       start: Date.getLongFromDateTimeInput(start),
       end: Date.getLongFromDateTimeInput(end),
       instructor: instructor,
-      nightTime: nightTime
+      nightTime: nightTime,
     };
     addLogbookEntryAsync(licenceId, entry).then((j) => setLicence(j));
   };
@@ -45,7 +45,6 @@ const LogBook = () => {
             <Link className="home-link" to="/customer">
               MyServiceNSW Account
             </Link>
-
           </div>
           <br />
           <div
@@ -81,14 +80,19 @@ const LogBook = () => {
           </div>
 
           <div>
-            <p className="mt-3 ml-7">Welcome {jwt(token).firstname}</p>
-            <br />
+            <h2 className="mt-10 text-4xl mr-7">
+              Welcome{" "}
+              <span className="italic font-extrabold">
+                {jwt(token).firstname}
+              </span>
+            </h2>
+
           </div>
           <div className="form-logbook mx-64 pl-14">
             <h2 className="ml-52">Total Hours</h2>
             {licence.logEntries.map((e) => (
               <div className="mt-7" key={e.start}>
-                <LogEntry  entry={e} />
+                <LogEntry entry={e} />
               </div>
             ))}
             <br />

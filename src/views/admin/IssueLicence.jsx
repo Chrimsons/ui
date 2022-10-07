@@ -224,7 +224,7 @@ const IssueLicence = () => {
                         Learner's Driver Licence
                       </p>
                       <img
-                        className="ml-9 cursor-pointer object-contain w-[400px]"
+                        className="ml-9 w-[400px]"
                         src={BlankProfile}
                       />
                       <p className="ml-9 text-xl font-semibold">

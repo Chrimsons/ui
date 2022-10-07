@@ -7,7 +7,7 @@ import { jwt } from "../../identity";
 import { TokenContext } from "../../App";
 import ProfilePicture from "../../img/snswhomepage.JPG";
 import { useContext } from "react";
-import Footer from "../../Footer";
+import BlankProfile from "../../img/blank.jpg";
 
 const LogForm = () => {
   const { licenceId } = useParams();
@@ -18,7 +18,7 @@ const LogForm = () => {
   const [nightTime, setNightTime] = useState(false);
   const navigate = useNavigate();
   const [token, setToken] = useContext(TokenContext);
-  
+
   useEffect(() => {
     fetchLicenceByIdAsync(licenceId)
       .then((j) => setLicence(j))
@@ -81,15 +81,29 @@ const LogForm = () => {
             </Link>
           </div>
           <div>
-            <p className="mt-3 ml-7">Welcome {jwt(token).firstname}</p>
-            <br />
+            <h2 className="mt-10 text-4xl mr-7">
+              Welcome{" "}
+              <span className="italic font-extrabold">
+                {jwt(token).firstname}
+              </span>
+            </h2>
           </div>
           <div className="ml-80"></div>
           <form className="form-loghours mx-64">
             <h2 className="">New Log Entry:</h2>
-            <div className="text-2xl ml-20 mb-10 font-semibold">
-              Licence No: {licence._id}
+            <div className="border-[3px] mx-5">
+              <p className="text-4xl mt-7 ml-16 font-bold text-lime-600">
+                Learner's Driver Licence
+              </p>
+              <img className="ml-16 mt-10 mb-3 w-[400px] " src={BlankProfile} />
+              <p className="ml-16 text-xl font-semibold mb-3">
+                Name: {jwt(token).firstname} {jwt(token).lastname}
+              </p>
+              <div className="text-2xl text-center mb-10 font-semibold">
+                Licence No: {licence._id}
+              </div>
             </div>
+
             <div>
               <span>
                 <label> Start: </label>

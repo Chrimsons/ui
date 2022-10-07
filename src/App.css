@@ -125,7 +125,7 @@ h2 {
   @apply px-3 py-1;
 }
 .bar {
-  @apply w-60 ml-32;
+  @apply w-60;
 }
 .footer a {
   @apply hover:underline mb-2 active:border-[2px] active:border-white w-fit;

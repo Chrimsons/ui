@@ -8,7 +8,7 @@ import { useContext } from "react";
 import Locations from "../../img/Location.png";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import Footer from "../../Footer";
+
 
 const Services = () => {
   const [licences, setLicences] = useState([]);
@@ -126,59 +126,64 @@ const Services = () => {
             </button>
           </Link>
         </div>
-        <div
-          style={{ display: "flex", justifyContent: "space-between" }}
-          
-        ></div>
+        <div style={{ display: "flex", justifyContent: "space-between" }}></div>
 
-        <p className="mt-3 ml-7 mr-7">Welcome {jwt(token).firstname}</p>
-
+        <h2 className="mt-10 text-4xl mr-7">
+          Welcome{" "}
+          <span className="italic font-extrabold">{jwt(token).firstname}</span>
+        </h2>
         <div className="mt-20 ml-72 text-2xl font-semibold">
           {licences.map((l) => (
             <div key={l._id} className="tile">
               <p className="mt-10">Licence: {l._id}</p>
+              
               <p className="my-10">
-                Total: {` ${l.total.hours} Hours / ${l.total.minutes} Minutes`}
-                {
-                  <span className="bar">
-                    <br />
-                    <br />
-                    <div className="bar">
-                    <CircularProgressbar
-                      value={l.total.hours}
-                      maxValue={120}
-                      text={`${l.total.hours} hours / ${l.total.minutes} Minutes`}
-                      
-                      
-                    />
-                    </div>
-                  </span>
-                }
-                Total Night Hours: {` ${l.totalNightHours.hours} Hours / ${l.totalNightHours.minutes} Minutes`}
-                {
-                  <span className="bar">
-                    <br />
-                    <br />
-                    <div className="bar">
-                    <CircularProgressbar
-                      
-                      value={l.totalNightHours.hours}
-                      maxValue={20}
-                      text={`${l.totalNightHours.hours} hours / ${l.totalNightHours.minutes} Minutes`}
-                      
-                    />
-                    </div>
-                  </span>
-                }
+                <div className="flex flex-row justify-center">
+                  <div>
+                    Total: <br />
+                    {` ${l.total.hours} Hours / ${l.total.minutes} Minutes`}
+                    {
+                      <span className="bar">
+                        <br />
+                        <br />
+                        <div className="bar">
+                          <CircularProgressbar
+                            value={l.total.hours}
+                            maxValue={120}
+                            text={`${l.total.hours} hours / ${l.total.minutes} Minutes`}
+                          />
+                        </div>
+                        <br />
+                      </span>
+                    }
+                  </div>
+                  <div className="ml-5">
+                    Total Night Hours: <br />
+                    {` ${l.totalNightHours.hours} Hours / ${l.totalNightHours.minutes} Minutes`}
+                    {
+                      <span className="bar">
+                        <br />
+                        <br />
+                        <div className="bar">
+                          <CircularProgressbar
+                            value={l.totalNightHours.hours}
+                            maxValue={20}
+                            text={`${l.totalNightHours.hours} hours / ${l.totalNightHours.minutes} Minutes`}
+                          />
+                        </div>
+                      </span>
+                    }
+                  </div>
+                </div>
               </p>
               <button
-                className="rounded-full px-10 py-3 text-center"
+                className="rounded-full px-10 py-3 text-center hover:bg-blue-500"
                 onClick={() => navigate(`/customer/licence/${l._id}/logbook`)}
               >
                 Display hours
               </button>
               <button
-                className="rounded-full px-10 py-3 text-center "
+                className="rounded-full px-10 py-3 text-center bg-yellow-600 hover:bg-yellow-400"
                 onClick={() => navigate(`/customer/licence/${l._id}/logform`)}
               >
                 Log new hours
