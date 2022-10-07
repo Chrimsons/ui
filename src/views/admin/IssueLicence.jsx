@@ -68,11 +68,11 @@ const IssueLicence = () => {
                 className="text-lg text-left font-semibold ml-7"
                 htmlFor="customerSearch"
               >
-                Customer Search:
+                Customer Search
               </label>
               <div className="float-right">
                 <input
-                  className="border-black active:border-blue-400 active:bg-blue-200"
+                  className="border-black active:border-blue-400 active:bg-blue-200 ml-3"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
@@ -100,8 +100,7 @@ const IssueLicence = () => {
                     <br />
                     Mobile: {c.mobile}
                     <br />
-                    DOB:
-                    {new Date(c.dob).toDateString()}
+                    DOB: {new Date(c.dob).toDateString()}
                   </div>
                 </div>
               ))}
