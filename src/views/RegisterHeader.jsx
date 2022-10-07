@@ -49,13 +49,12 @@ export default function RegisterHeader() {
           </Link>
           <button
             onClick={() => {
-              setToken(undefined);
               navigate("/");
             }}
-            className="link pointer mr-10 ml-5 rounded-lg"
+            className="register pointer bg-blue-500 mr-10 ml-5 rounded-lg"
             style={{ border: "none" }}
           >
-            Log out
+            Home
           </button>
         </div>
       </div>
