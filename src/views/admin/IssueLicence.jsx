@@ -216,6 +216,10 @@ const IssueLicence = () => {
                   <p className="font-semibold  mb-5 mt-7 text-center">
                     Issued: {new Date(licence.issued).toDateString()}
                   </p>
+                  <p className="font-semibold  mb-5 mt-7 text-center">
+                    Expiry: {new Date((licence.issued)+157784630000).toDateString()}
+                   
+                  </p>
                   <p className="  mb-5 mt-7 text-center">
                     Total hours done: {licence.total.hours} 
                   </p>
