@@ -4,6 +4,7 @@ import { loginAsync } from "../web-services";
 import { TokenContext } from "../App";
 import { isInRole } from "../identity";
 import { useEffect } from "react";
+import RegisterHeader from "./RegisterHeader";
 
 export default function Login() {
   const [token, setToken] = useContext(TokenContext);
@@ -30,10 +31,10 @@ export default function Login() {
   }
 
   return (
-    <>
-    <div className="">
-      <div className="form m-auto">
-        <h2 className="h2">Sign In</h2>
+    <div className="ml-72">
+      <RegisterHeader />
+      <div className="form ml-72 ">
+        <h2 className="text-center">Sign In</h2>
         <div>
           <label>Email: </label>
           <br />
@@ -73,9 +74,6 @@ export default function Login() {
           Create an account instead
         </Link>
       </div>
-      
     </div>
-  
-    </>
   );
 }
