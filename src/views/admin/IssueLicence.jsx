@@ -9,7 +9,7 @@ import {
 import CongratsPicture from "../../img/congratulations.jpg";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import ProfilePicture from "../../img/snswhomepage.JPG";
-import Transition from "../../img/transition.jpg"
+import Transition from "../../img/transition.jpg";
 import { useContext } from "react";
 
 import { jwt } from "../../identity";
@@ -27,61 +27,61 @@ const IssueLicence = () => {
 
   let navigate = useNavigate();
   const [token, setToken] = useContext(TokenContext);
-  function Display(){
-    return(
+  function Display() {
+    return (
       <div>
-   <div className="pl-72">
-        <div className="home-bar">
-          <Link className="home-link" to="/admin">
-            MyServiceNSW Account
-          </Link>
-        </div>
-        <br />
-        <div
-          style={{ display: "flex", justifyContent: "space-between" }}
-          className="mt-10"
-        >
-          <div className="login-input">
-            <img
-              onClick={() => navigate("/admin")}
-              className="w-left cursor-pointer object-contain w-[200px] "
-              src={ProfilePicture}
-            />
-            <Link to={"/admin"} className="h-lnk">
-              Home
-            </Link>
-            <Link to={"/admin/licence/issue"} className="h-lnk">
-              Issue Licence
+        <div className="pl-72">
+          <div className="home-bar">
+            <Link className="home-link" to="/admin">
+              MyServiceNSW Account
             </Link>
           </div>
-          <Link className="home-link mr-5" to="/">
-            <button
-              onClick={() => {
-                setToken(undefined);
-                navigate("/");
-              }}
-              className="link pointer"
-              style={{ border: "none" }}
-            >
-              {" "}
-              Log out
-            </button>
-          </Link>
+          <br />
+          <div
+            style={{ display: "flex", justifyContent: "space-between" }}
+            className="mt-10"
+          >
+            <div className="login-input">
+              <img
+                onClick={() => navigate("/admin")}
+                className="w-left cursor-pointer object-contain w-[200px] "
+                src={ProfilePicture}
+              />
+              <Link to={"/admin"} className="h-lnk">
+                Home
+              </Link>
+              <Link to={"/admin/licence/issue"} className="h-lnk">
+                Issue Licence
+              </Link>
+            </div>
+            <Link className=" mr-5" to="/">
+              <button
+                onClick={() => {
+                  setToken(undefined);
+                  navigate("/");
+                }}
+                className="link pointer"
+                style={{ border: "none" }}
+              >
+                {" "}
+                Log out
+              </button>
+            </Link>
+          </div>
+
+          <h2 className="mt-20 text-4xl mr-7">
+            Welcome,{" "}
+            <span className="italic font-extrabold">
+              {jwt(token).firstname}
+            </span>
+          </h2>
+
+          <h3 className="ml-7 mt-10 font-semibold text-2xl">
+            You are logged in as an {jwt(token).roles}
+          </h3>
         </div>
-        
-  
-        <h2 className="mt-20 text-4xl mr-7">
-          Welcome,{" "}
-          <span className="italic font-extrabold">{jwt(token).firstname}</span>
-        </h2>
-        
-        <h3 className="ml-7 mt-40 font-semibold text-2xl">
-          You are logged in as an {jwt(token).roles}
-        </h3>
-         
       </div>
-      </div>
-    )
+    );
   }
 
   useEffect(() => {
@@ -100,24 +100,24 @@ const IssueLicence = () => {
     if (!customer) {
       return (
         <>
-        <div className="ml-64 mt-10 border-[4px] border-collapse w-fit p-5 ">
-          <div className="text-lg font-semibold mb-3 ">Customer Search</div>
-          <div style={{ marginBottom: 15 }}>
-            <input value={email} onChange={(e) => setEmail(e.target.value)} />
-            <button onClick={fetchCustomers}>Search Customers</button>
+          <div className="ml-64 mt-10 border-[4px] border-collapse w-fit p-5 ">
+            <div className="text-lg font-semibold mb-3 ">Customer Search</div>
+            <div style={{ marginBottom: 15 }}>
+              <input value={email} onChange={(e) => setEmail(e.target.value)} />
+              <button onClick={fetchCustomers}>Search Customers</button>
+            </div>
+            {customers.length == 0 && "Showing 0 Customers"}
+            {customers.length > 0 &&
+              customers.map((c) => (
+                <div
+                  className="tile pointer"
+                  key={c._id}
+                  onClick={() => setCustomer(c)}
+                >
+                  {c.email}
+                </div>
+              ))}
           </div>
-          {customers.length == 0 && "Showing 0 Customers"}
-          {customers.length > 0 &&
-            customers.map((c) => (
-              <div
-                className="tile pointer"
-                key={c._id}
-                onClick={() => setCustomer(c)}
-              >
-                {c.email}
-              </div>
-            ))}
-        </div>
         </>
       );
     }
@@ -144,7 +144,6 @@ const IssueLicence = () => {
   };
 
   const issueLicenceJSX = () => {
-
     if (customer) {
       return (
         <div className="ml-64 mt-10 border-[4px] border-collapse w-fit p-5 ">
@@ -189,7 +188,8 @@ const IssueLicence = () => {
                 src={CongratsPicture}
               />
               <p className="font-semibold text-2xl mb-5 mt-7 text-center">
-                This customer has been issued a <span className="italic font-bold">provisional</span> license
+                This customer has been issued a{" "}
+                <span className="italic font-bold">provisional</span> license
               </p>
               <button
                 class="ml-52 bg-yellow-600 hover:bg-yellow-500 mt-10 px-10 py-3 text-2xl font-semibold text-center"
@@ -259,7 +259,6 @@ const IssueLicence = () => {
             </div>
           )}
         </div>
-        
       );
     }
   };
@@ -268,11 +267,11 @@ const IssueLicence = () => {
     <div>
       <br />
       <Display />
-      {customerSearchJSX()}
-      {issueLicenceJSX()}
+      <div className="ml-80 mt-24">
+        {customerSearchJSX()}
+        {issueLicenceJSX()}
+      </div>
     </div>
   );
 };
 export default IssueLicence;
-
-
