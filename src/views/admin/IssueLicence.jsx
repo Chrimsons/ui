@@ -89,17 +89,14 @@ const IssueLicence = () => {
     if (customer) {
       fetchCustomerLicenceAsync(customer._id)
         .then((j) => {
-          
-          setLicence(j)
+          setLicence(j);
         })
         .catch((e) => setLicence(undefined));
     }
   }, [customer]);
 
   const fetchCustomers = () => {
-
-    return fetchCustomersAsync(`email=${email}`).then((j) => setCustomers(j))
-    
+    return fetchCustomersAsync(`email=${email}`).then((j) => setCustomers(j));
   };
 
   const customerSearchJSX = () => {
@@ -109,10 +106,7 @@ const IssueLicence = () => {
           <div className="ml-64 mt-10 border-[4px] border-collapse w-fit p-5 ">
             <div className="text-lg font-semibold mb-3 ">Customer Search</div>
             <div style={{ marginBottom: 15 }}>
-              <input
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
+              <input value={email} onChange={(e) => setEmail(e.target.value)} />
               <button onClick={fetchCustomers}>Search Customers</button>
             </div>
             {customers.length == 0 && "Showing 0 Customers"}
@@ -221,23 +215,33 @@ const IssueLicence = () => {
             <div>
               {!p && (
                 <div>
-                  <p className="text-xl  mb-5 mt-7 text-center">
-                    This customer has a Learner's Licence:
-                  </p>
-                  <p className="  mb-5 mt-7 text-center">
-                    Licence: {licence._id}
-                  </p>
-                  <p className="font-semibold  mb-5 mt-7 text-center">
-                    Issued: {new Date(licence.issued).toDateString()}
-                  </p>
-                  <p className="font-semibold  mb-5 mt-7 text-center">
-                    Expiry: {new Date((licence.issued)+157784630000).toDateString()}
-                   
-                  </p>
-                  <p className="  mb-5 mt-7 text-center">
-                    Total hours done: {licence.total.hours} 
-                  </p>
-
+                  <div className="border-[3px] pb-4">
+                    <div>
+                      <p className="text-4xl  mb-5 mt-7 text-center font-bold">
+                        Learner's Driver Licence
+                      </p>
+                      <p className="mb-5 text-2xl font-semibold mt-7 text-center underline">
+                        Licence: {licence._id}
+                      </p>
+                      <div className="flex flex-row font-semibold pb-5 mt-7 text-center justify-evenly ">
+                        <p>Issued: {new Date(licence.issued).toDateString()}</p>
+                        <p>
+                          Expiry:{" "}
+                          {new Date(
+                            licence.issued + 157784630000
+                          ).toDateString()}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="font-semibold mb-5 mt-2 text-2xl text-center border-[3px]">
+                      <p className="mb-5">
+                        Total hours done: <br />
+                      </p>
+                      <p className="italic mb-5 border-dotted border-[3px] border-black mx-40">
+                        {licence.total.hours}
+                      </p>
+                    </div>
                   <div>
                     <label className="mb-5 mt-7 ml-24">
                       Total hours complete?:
