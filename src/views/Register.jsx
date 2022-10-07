@@ -1,10 +1,9 @@
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { registerAsync, parseDate } from "../web-services";
+import { registerAsync } from "../web-services";
 import { TokenContext } from "../App";
 import { Link } from "react-router-dom";
-
-import Header from "./customer/CustomerHeader";
+import RegisterHeader from "./RegisterHeader";
 
 export default function Register() {
   const [email, setEmail] = useState("");
@@ -41,16 +40,16 @@ export default function Register() {
   }
 
   return (
-    <>
+    <div className="ml-72">
+      <RegisterHeader />
       <form
         onSubmit={(e) => {
           e.preventDefault();
           submit();
         }}
-        className="form m-auto"
+        className="form ml-72"
       >
-        <Header />
-        <h2>Sign up</h2>
+        <h2 className="text-center">Sign up</h2>
         <div>
           <label>Email: </label>
           <br />
@@ -121,7 +120,7 @@ export default function Register() {
             value={dob}
             onChange={(e) => setDob(e.target.value)}
           />
-        </div>{" "}
+        </div>
         <br />
         <div>
           <label>Gender:</label>
@@ -147,9 +146,9 @@ export default function Register() {
         </button>
         <br />
         <Link className="form-link" to="/login">
-          Already have an account?{" "}
+          Already have an account?
         </Link>
       </form>
-    </>
+    </div>
   );
 }
