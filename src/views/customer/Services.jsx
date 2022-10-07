@@ -138,7 +138,7 @@ const Services = () => {
             <div key={l._id} className="tile">
               <p className="mt-10">Licence: {l._id}</p>
               <p className="my-10">
-                Total: {` ${l.total.hours} Hours ${l.total.minutes} Minutes`}
+                Total: {` ${l.total.hours} Hours / ${l.total.minutes} Minutes`}
                 {
                   <span className="bar">
                     <br />
@@ -147,23 +147,24 @@ const Services = () => {
                     <CircularProgressbar
                       value={l.total.hours}
                       maxValue={120}
-                      text={`${l.total.hours} hours ${l.total.minutes} Minutes`}
+                      text={`${l.total.hours} hours / ${l.total.minutes} Minutes`}
                       
                       
                     />
                     </div>
                   </span>
                 }
-                Total Night Hours: {` ${l.totalNightHours.hours} Hours ${l.totalNightHours.minutes} Minutes`}
+                Total Night Hours: {` ${l.totalNightHours.hours} Hours / ${l.totalNightHours.minutes} Minutes`}
                 {
                   <span className="bar">
                     <br />
                     <br />
                     <div className="bar">
                     <CircularProgressbar
+                      
                       value={l.totalNightHours.hours}
-                      maxValue={120}
-                      text={`${l.totalNightHours.hours} hours ${l.totalNightHours.minutes} Minutes`}
+                      maxValue={20}
+                      text={`${l.totalNightHours.hours} hours / ${l.totalNightHours.minutes} Minutes`}
                       
                     />
                     </div>
