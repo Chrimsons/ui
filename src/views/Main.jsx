@@ -18,6 +18,7 @@ const Main = () => {
           <Link className="home-link" to="/">
             MyServiceNSW Account
           </Link>
+          <Footer/>
         </div>
         <br />
         <div
