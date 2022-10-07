@@ -220,7 +220,7 @@ const IssueLicence = () => {
                 <div>
                   <div className="border-[3px] pb-4">
                     <div>
-                      <p className="text-4xl  mb-5 mt-7 text-center font-bold">
+                      <p className="text-4xl  mb-5 mt-7 text-center font-bold text-lime-600">
                         Learner's Driver Licence
                       </p>
                       Name: {customer.firstname}{" "}{customer.lastname}
