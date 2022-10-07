@@ -125,6 +125,9 @@ const IssueLicence = () => {
                     Email: {c.email}
                     <br />
                     Mobile: {c.mobile}
+                    <br/>
+                    DOB: 
+                    {new Date((c.dob)).toDateString()}
                   </div>
                 </div>
               ))}
@@ -159,7 +162,7 @@ const IssueLicence = () => {
       return (
         <div className="ml-64 mt-10 border-[4px] border-collapse w-fit p-5 ">
           <div className="text-2xl font-semibold mb-3 text-center">
-            Customer: {customer.email}
+            Customer: {customer.firstname}
           </div>
           {!licence && (
             <div>
