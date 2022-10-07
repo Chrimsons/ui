@@ -18,15 +18,16 @@ import { TokenContext } from "../../App";
 const IssueLicence = () => {
   const [customers, setCustomers] = useState([]);
   const [email, setEmail] = useState("");
+  const [mobile, setMobile] = useState("");
   const [customer, setCustomer] = useState();
   const [licence, setLicence] = useState();
   const [p, setP] = useState(false);
   const [dkt, setDkt] = useState("");
   const [hours, setHours] = useState("");
   const [driving, setDriving] = useState("");
-
   let navigate = useNavigate();
   const [token, setToken] = useContext(TokenContext);
+
   function Display() {
     return (
       <div>
@@ -93,7 +94,9 @@ const IssueLicence = () => {
   }, [customer]);
 
   const fetchCustomers = () => {
-    fetchCustomersAsync(`email=${email}`).then((j) => setCustomers(j));
+
+    return fetchCustomersAsync(`email=${email}`).then((j) => setCustomers(j))
+    
   };
 
   const customerSearchJSX = () => {
@@ -103,7 +106,10 @@ const IssueLicence = () => {
           <div className="ml-64 mt-10 border-[4px] border-collapse w-fit p-5 ">
             <div className="text-lg font-semibold mb-3 ">Customer Search</div>
             <div style={{ marginBottom: 15 }}>
-              <input value={email} onChange={(e) => setEmail(e.target.value)} />
+              <input
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
               <button onClick={fetchCustomers}>Search Customers</button>
             </div>
             {customers.length == 0 && "Showing 0 Customers"}
@@ -114,7 +120,15 @@ const IssueLicence = () => {
                   key={c._id}
                   onClick={() => setCustomer(c)}
                 >
-                  {c.email}
+                  <div className="text-left flex justify-center">
+                    First Name: {c.firstname}
+                    <br />
+                    Last Name: {c.lastname}
+                    <br />
+                    Email: {c.email}
+                    <br />
+                    Mobile: {c.mobile}
+                  </div>
                 </div>
               ))}
           </div>
@@ -167,7 +181,7 @@ const IssueLicence = () => {
               </div>
               <br />
               <button
-                class="rounded-full bg-red-700 hover:bg-red-500 mt-10 px-10 py-3 text-2xl font-semibold text-center ml-24"
+                className="rounded-full bg-red-700 hover:bg-red-500 mt-10 px-10 py-3 text-2xl font-semibold text-center ml-24"
                 onClick={submitLicence}
               >
                 Issue
