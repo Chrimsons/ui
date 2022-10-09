@@ -336,7 +336,7 @@ section {
 }
 
 /* Login */
-/* Buttons */
+
 .login {
   @apply w-5/12 border-gray-600 border-[1px] pt-5 pb-10 mt-20 ml-72
 }
@@ -351,11 +351,12 @@ section {
 .login label {
   @apply font-semibold py-2 text-left ml-10;
 }
-.login button{
-  @apply rounded-full w-5/12 py-3 text-center text-xl font-bold mt-10 mb-5
-}
 .login-link {
   @apply underline text-blue-600 visited:text-purple-400 visited:inline-block hover:text-blue-600 ml-10
+}
+/* Buttons */
+.login button{
+  @apply rounded-full w-5/12 py-3 text-center text-xl font-bold mt-10 mb-5
 }
 .login-buttons{
   @apply flex flex-row mx-5 justify-evenly
@@ -364,6 +365,43 @@ section {
   @apply hover:bg-red-500 bg-red-600
 }
 .login-buttons-blue {
+  @apply hover:bg-blue-500 bg-blue-600
+}
+
+/* Register */
+.register {
+  @apply w-5/12 border-gray-600 border-[1px] pt-5 pb-10  mt-20;
+}
+.register h2 {
+  @apply text-center
+}
+.register input {
+  @apply w-11/12 mt-2 mb-2 ml-7 py-[11px] border-gray-600 rounded border-[2px]
+  focus:outline-none focus:border-[2px] focus:border-blue-600  
+  hover:bg-slate-200 font-semibold pl-3 ;
+}
+.register label {
+  @apply font-semibold py-2 text-left ml-10;
+}
+.register select {
+  @apply w-11/12 mt-2 ml-7 py-[11px] border-gray-600 rounded border-[2px]
+  focus:outline-none focus:border-[2px] focus:border-blue-600 
+  hover:bg-slate-200 disabled:cursor-not-allowed font-semibold hover:cursor-pointer;
+}
+.register-link {
+  @apply underline text-blue-600 visited:text-purple-400 visited:inline-block hover:text-blue-600 ml-10
+}
+/* Buttons */
+.register button{
+  @apply rounded-full w-5/12 py-3 text-center text-xl font-bold mt-10 mb-10
+}
+.register-buttons{
+  @apply flex flex-row mx-5 justify-evenly
+}
+.register-buttons-red {
+  @apply hover:bg-red-500 bg-red-600
+}
+.register-buttons-blue {
   @apply hover:bg-blue-500 bg-blue-600
 }
 
@@ -432,14 +470,14 @@ button {
   display: inline-block;
 }
 
-.register {
+/* .register {
   background-color: rgba(0, 42, 255, 0.87);
   color: #fff;
   padding: 14px 25px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-}
+} */
 
 .alt-link {
   background-color: #fff;

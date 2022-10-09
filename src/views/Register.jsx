@@ -55,7 +55,7 @@ export default function Register() {
                 e.preventDefault();
                 submit();
               }}
-              className="form ml-72"
+              className=" register ml-72"
             >
               <h2 className="text-center">Sign up</h2>
               <div>
@@ -137,26 +137,27 @@ export default function Register() {
                   onChange={(e) => setGender(e.target.value)}
                 >
                   <option disabled={true} value="">
-                    -- Please Select Gender
+                    -- Please Select Gender --
                   </option>
                   <option value="Male">Male</option>
                   <option value="Female">Female</option>
                   <option value="Other">Other</option>
                 </select>
               </div>
-              <br />
-              <button className="form-btn-red mt-5">Create Account</button>
-              <button
-                className="form-btn-blue"
-                onClick={(e) => {
-                  e.preventDefault();
-                  navigate(-1);
-                }}
-              >
-                Back
-              </button>
-              <br />
-              <Link className="form-link" to="/login">
+
+              <div className="form-loghours-buttons">
+                <button className="register-buttons-red">Create Account</button>
+                <button
+                  className="register-buttons-blue"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    navigate(-1);
+                  }}
+                >
+                  Back
+                </button>
+              </div>
+              <Link className="register-link" to="/login">
                 Already have an account?
               </Link>
             </form>
