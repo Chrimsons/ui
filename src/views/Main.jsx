@@ -25,50 +25,55 @@ const Main = () => {
               </Link>
             </div>
             <br />
-            <div className="mt-10 flex justify-between">
-              <div className="login-input justify-start">
+              <div className=" main-none-link">
                 <img
                   onClick={() => navigate("/")}
-                  className="w-left cursor-pointer object-contain w-[200px] "
                   src={ProfilePicture}
                 />
-                <Link to={"/"} className="h-lnk">
+                <Link to={"/"} className="main-links">
                   Home
                 </Link>
                 <a
                   href="https://www.service.nsw.gov.au/transaction/apply-learner-driver-licence#eligibility"
-                  className="h-lnk"
+                  className="main-links"
                   target="blank"
                 >
                   Check eligibility
                 </a>
                 <a
                   href="https://www.service.nsw.gov.au/service-centre"
-                  className="h-lnk"
+                  className="main-links"
                 >
                   Find Location
                 </a>
-              </div>
-              <div>
                 <a
-                  href="tel:137788"
-                  className="h-lnk italic"
-                  title="Mon-Fri 7am - 7pm"
-                >
-                  Contact us @ 13 77 88
-                </a>
+                    href="tel:137788"
+                    className="main-links italic"
+                    title="Mon-Fri 7am - 7pm"
+                  >
+                    Contact us @ 13 77 88
+                  </a>
+                <div className="main-links-btn">
                 <button
-                  onClick={() => {
-                    navigate("/");
-                  }}
-                  className="register pointer bg-blue-500 mr-10 ml-5 rounded-lg"
-                  style={{ border: "none" }}
-                >
-                  Home
-                </button>
+                    onClick={() => {
+                      navigate("/login");
+                    }}
+                    className="bg-red-600 hover:bg-red-400"
+                  >
+                    Log in
+                  </button>
+                  <button
+                    onClick={() => {
+                      navigate("/register");
+                    }}
+                    className=" bg-blue-600 hover:bg-blue-400 ml-1"
+                  >
+                    Register
+                  </button>
+                </div>
               </div>
-            </div>
           </header>
+
           <section>
             <h2 className="user-h">MyServiceNSW Driver License</h2>
             <br />
