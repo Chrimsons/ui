@@ -1,10 +1,9 @@
-import { useEffect, useContext, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import {
   fetchLicenceByIdAsync,
   addLogbookEntryAsync,
 } from "../../web-services";
-import { TokenContext } from "../../App";
 import Header from "../Header";
 import Welcome from "../Welcome";
 import Footer from "../Footer";
@@ -46,13 +45,10 @@ const LogForm = () => {
 
         <section>
           <form className="form-loghours ml-72 bg-gray-100">
-            <h2 className="text-center border-[1px] mr-6 py-6 border-black bg-gray-200">
-              New Log Entry
-            </h2>
-
-            <div className="start-end">
+            <h2>New Log Entry</h2>
+            <div className="form-loghours-start-end">
               <div className="start">
-                <label className="text-center">Start:</label>
+                <label>Start:</label>
                 <input
                   type="datetime-local"
                   value={start}
@@ -62,7 +58,7 @@ const LogForm = () => {
               </div>
 
               <div className="end">
-                <label className="text-center">End:</label>
+                <label>End:</label>
                 <input
                   type="datetime-local"
                   value={end}
@@ -73,7 +69,7 @@ const LogForm = () => {
               </div>
             </div>
 
-            <div className="instAndNight flex flex-column justify-left mt-5 w-fit ml-[90px] mb-10">
+            <div className="form-loghours-day-night">
               <div className="instructor">
                 <label className="mr-20">
                   <input
@@ -83,7 +79,7 @@ const LogForm = () => {
                   />
                   Instructor
                 </label>
-                <p className="mt-5 font-semibold text-lg text-center mr-5">
+                <p>
                   Total Hours: <br />
                   {`Hours: ${licence.total.hours} | Minutes: ${licence.total.minutes}`}
                 </p>
@@ -98,23 +94,23 @@ const LogForm = () => {
                   />
                   Night Time
                 </label>
-                <p className="mt-5  font-semibold text-lg text-center ml-2">
+                <p>
                   Night Hours: <br />
                   {`Hours: ${licence.totalNightHours.hours} | Minutes: ${licence.totalNightHours.minutes}`}
                 </p>
               </div>
             </div>
 
-            <div className="buttons">
+            <div className="form-loghours-buttons">
               <button
-                className="rounded-full mt-5 ml-24 px-14 py-3 text-center hover:bg-red-500 bg-red-600"
+                className="form-loghours-red-btn"
                 onClick={addLogBookEntry2}
               >
                 Add Entry
               </button>
 
               <button
-                className="rounded-full px-20 py-3 ml-6 text-center hover:bg-blue-500 bg-blue-600"
+                className="form-loghours-yellow-btn"
                 onClick={(e) => {
                   e.preventDefault();
                   navigate(-1);

@@ -69,15 +69,7 @@ h2 {
 .form-btn-yellow {
   @apply rounded py-2 text-white font-semibold bg-yellow-500 hover:bg-yellow-400 mb-10 w-full;
 }
-.form-loghours {
-  @apply form;
-}
-.form-loghours input {
-  @apply text-center;
-}
-.form-logbook {
-  @apply w-6/12 border-gray-600 border-[1px] pt-2 pb-20  mt-20;
-}
+
 .home-bar {
   @apply w-screen float-right py-3 pr-96 bg-slate-800;
 }
@@ -310,6 +302,38 @@ section {
   @apply font-bold
 }
 
+/* Log Forms */
+.form-loghours {
+  @apply form;
+}
+.form-loghours h2{
+  @apply text-center border-[1px] mr-6 py-6 border-black bg-gray-200
+}
+.form-loghours input {
+  @apply text-center;
+}
+.form-loghours-day-night {
+  @apply flex justify-evenly mt-5 w-fit ml-[90px] mb-10
+}
+.form-loghours-day-night p{
+  @apply mt-5 font-semibold text-lg text-center
+}
+.form-logbook {
+  @apply w-6/12 border-gray-600 border-[1px] pt-2 pb-20  mt-20;
+}
+/* Buttons */
+.form-loghours button{
+  @apply rounded-full w-6/12 py-3 text-center text-2xl font-bold
+}
+.form-loghours-buttons{
+  @apply flex flex-row mx-5 justify-evenly
+}
+.form-loghours-red-btn {
+  @apply hover:bg-red-500 bg-red-600
+}
+.form-loghours-yellow-btn {
+  @apply hover:bg-blue-500 bg-blue-600
+}
 
 label {
   min-width: 125px;
