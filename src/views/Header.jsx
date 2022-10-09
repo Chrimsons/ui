@@ -179,7 +179,7 @@ export default function Header() {
               </a>
             </div>
             <div>
-            <Link
+              <Link
                 to="/"
                 className="side-link italic"
                 title="Mon-Fri 7am - 7pm"

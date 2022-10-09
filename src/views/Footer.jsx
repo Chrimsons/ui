@@ -1,7 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { SocialIcon } from "react-social-icons";
-
 export default function Footer() {
   var React = require("react");
   var { SocialIcon } = require("react-social-icons");

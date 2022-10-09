@@ -1,12 +1,9 @@
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import {
   fetchLicenceByIdAsync,
-  addLogbookEntryAsync,
 } from "../../web-services";
 import LogEntry from "./LogEntry";
-import { jwt } from "../../identity";
-import { TokenContext } from "../../App";
 import Header from "../Header";
 import Footer from "../Footer";
 import Welcome from "../Welcome";
@@ -19,22 +16,13 @@ const LogBook = () => {
   const [instructor, setInstructor] = useState(false);
   const [nightTime, setNightTime] = useState(false);
   const navigate = useNavigate();
-  const [token, setToken] = useContext(TokenContext);
+
+
   useEffect(() => {
     fetchLicenceByIdAsync(licenceId)
       .then((j) => setLicence(j))
       .catch((e) => {});
   }, [licenceId]);
-
-  const addLogBookEntry = () => {
-    let entry = {
-      start: Date.getLongFromDateTimeInput(start),
-      end: Date.getLongFromDateTimeInput(end),
-      instructor: instructor,
-      nightTime: nightTime,
-    };
-    addLogbookEntryAsync(licenceId, entry).then((j) => setLicence(j));
-  };
 
   const licenceJSX = () => {
     if (!licence) return;

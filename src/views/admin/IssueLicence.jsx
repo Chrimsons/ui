@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 import {
   fetchCustomersAsync,
   fetchCustomerLicenceAsync,
@@ -8,8 +8,6 @@ import {
 import CongratsPicture from "../../img/congratulations.jpg";
 import { useNavigate } from "react-router-dom";
 import BlankProfile from "../../img/blank.jpg";
-import { jwt } from "../../identity";
-import { TokenContext } from "../../App";
 import Welcome from "../Welcome";
 import Footer from "../Footer";
 import Header from "../Header";
@@ -25,7 +23,6 @@ const IssueLicence = () => {
   const [hours, setHours] = useState("");
   const [driving, setDriving] = useState("");
   let navigate = useNavigate();
-  const [token, setToken] = useContext(TokenContext);
 
   useEffect(() => {
     if (customer) {
@@ -122,8 +119,6 @@ const IssueLicence = () => {
     if (hours == "Yes" && driving == "Yes") {
       setP(true);
       issuePLicenceAsync(licence._id);
-
-      //navigate(`/admin/customer/prov`)
     } else {
       alert("DT/HPT/Hours is pending !!!");
     }
@@ -318,7 +313,6 @@ const IssueLicence = () => {
             {issueLicenceJSX()}
           </div>
         </section>
-
         <Footer />
       </div>
     </div>

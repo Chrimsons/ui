@@ -22,26 +22,6 @@ const Licence = () => {
     fetchCustomerLicenceAsync(customerId).then((j) => setLicence(j));
   }, [customerId]);
 
-  // const customerJSX = () => {
-  //   if (!customer) return;
-
-  //   return (
-  //     <div>
-  //       <div className="text-2xl font-semibold mb-3 text-center"></div>
-  //     </div>
-  //   );
-  // };
-
-  // const licenceJSX = () => {
-  //   if (!licence) return;
-
-  //   return (
-  //     <div>
-  //       <div>Licence: {licence._id}</div>
-  //     </div>
-  //   );
-  // };
-
   return (
     <div>
       <Header />
