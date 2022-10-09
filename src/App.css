@@ -134,6 +134,9 @@ h2 {
 .bar {
   @apply w-60;
 }
+
+/* Footer */
+
 footer{
   @apply flex w-full left-0 bottom-0 right-0 flex-col
 }
@@ -170,20 +173,6 @@ footer a {
 .footer-social{
   @apply mt-5 flex flex-row space-x-5
 }
-header {
-  @apply ml-64;
-}
-
-section {
-  @apply ml-72 pb-[620px] mt-24;
-}
-.main-container {
-  min-height: 100vh; /* will cover the 100% of viewport */
-  overflow: hidden;
-  display: block;
-  position: relative;
-  padding-bottom: 100px; /* height of your footer */
-}
 html,
 body {
   height: 100vh;
@@ -196,6 +185,39 @@ body {
 *:before,
 *:after {
   box-sizing: border-box;
+}
+
+/* Header */
+header {
+  @apply ml-64;
+}
+
+/* Section */
+section {
+  @apply ml-72 mt-24 pb-[100px];
+}
+
+/* Customer Search */
+.customer-search {
+  @apply ml-72 mt-5 border-[4px] border-collapse w-fit p-5
+}
+.customer-search-box {
+  @apply my-5 py-5 border-[2px] border-slate-400 bg-slate-100
+}
+.customer-search-box label {
+  @apply text-lg text-left font-semibold ml-7
+}
+.customer-search-box input {
+  @apply border-black active:border-blue-400 active:bg-blue-200 ml-3
+}
+.customer-search button {
+  @apply mr-5
+}
+.customer-search-text {
+  @apply text-center text-xl font-semibold text-red-600
+}
+.customer-search-result {
+  @apply tile pointer hover:bg-yellow-100 bg-slate-100 text-lg font-semibold text-left flex justify-center
 }
 
 label {

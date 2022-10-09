@@ -45,36 +45,34 @@ const IssueLicence = () => {
     if (!customer) {
       return (
         <>
-          <div className="ml-72 mt-5 border-[4px] border-collapse w-fit p-5">
-            <div className="my-5 py-5 border-[2px] border-slate-400 bg-slate-100">
+          <div className="customer-search">
+            <div className="customer-search-box">
               <label
-                className="text-lg text-left font-semibold ml-7"
                 htmlFor="customerSearch"
               >
                 Customer Search
               </label>
               <div className="float-right">
                 <input
-                  className="border-black active:border-blue-400 active:bg-blue-200 ml-3"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
-                <button className="mr-5" onClick={fetchCustomers}>
+                <button onClick={fetchCustomers}>
                   Search Customers
                 </button>
               </div>
             </div>
-            <div className="text-center text-xl font-semibold text-red-600">
+            <div className="customer-search-text">
               {customers.length == 0 && "Showing 0 Customers"}
             </div>
             {customers.length > 0 &&
               customers.map((c) => (
                 <div
-                  className="tile pointer hover:bg-yellow-100 bg-slate-100 text-lg font-semibold"
+                  className="customer-search-result"
                   key={c._id}
                   onClick={() => setCustomer(c)}
                 >
-                  <div className="text-left flex justify-center ">
+                  <div>
                     First Name: {c.firstname}
                     <br />
                     Last Name: {c.lastname}
@@ -296,9 +294,8 @@ const IssueLicence = () => {
       <Header />
       <Welcome />
       <body>
-        <section>
-          {" "}
-          <div className="ml-10 ">
+        <section>          
+          <div className="ml-10 mb-[400px]">
             {customerSearchJSX()}
             {issueLicenceJSX()}
           </div>
