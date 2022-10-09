@@ -40,6 +40,9 @@ const IssueLicence = () => {
   const fetchCustomers = () => {
     return fetchCustomersAsync(`email=${email}`).then((j) => setCustomers(j));
   };
+  const fetchCustomers2 = () => {
+    return fetchCustomersAsync(`mobile=${mobile}`).then((j) => setCustomers(j));
+  };
 
   const customerSearchJSX = () => {
     if (!customer) {
@@ -47,19 +50,22 @@ const IssueLicence = () => {
         <>
           <div className="customer-search">
             <div className="customer-search-box">
-              <label
-                htmlFor="customerSearch"
-              >
-                Customer Search
-              </label>
-              <div className="float-right">
+              <label htmlFor="customerSearch">Customer Search</label>
+              <div className="flex flex-col">
                 <input
+                  placeholder="Introduce email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
-                <button onClick={fetchCustomers}>
-                  Search Customers
-                </button>
+                <button onClick={fetchCustomers}>Search Email</button>
+                <br />
+                <input
+                  placeholder="Introduce mobile"
+                  value={mobile}
+                  onChange={(e) => setMobile(e.target.value)}
+                />
+                <button onClick={fetchCustomers2}>Search Mobile</button>
+                <br />
               </div>
             </div>
             <div className="customer-search-text">
@@ -294,7 +300,7 @@ const IssueLicence = () => {
       <Header />
       <Welcome />
       <body>
-        <section>          
+        <section>
           <div className="ml-10 mb-[400px]">
             {customerSearchJSX()}
             {issueLicenceJSX()}
