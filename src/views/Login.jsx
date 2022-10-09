@@ -32,38 +32,38 @@ export default function Login() {
   }
 
   return (
-      <body>
+    <body>
       <Header />
-        <section>
-          <div className="form ml-72">
-            <h2 className="text-center">Sign In</h2>
-            <div>
-              <label>Email: </label>
-              <br />
-              <input
-                placeholder="Please enter your e-mail"
-                type="text"
-                value={email}
-                required={true}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </div>
-            <div style={{ marginBottom: 10 }}>
-              <label>Password: </label>
-              <input
-                placeholder="Please enter your password"
-                type="password"
-                value={password}
-                required={true}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </div>
+      <section>
+        <div className="login">
+          <h2>Sign In</h2>
+          <div>
+            <label>Email: </label>
             <br />
-            <button className="form-btn-red" onClick={login}>
+            <input
+              placeholder="Please enter your e-mail"
+              type="text"
+              value={email}
+              required={true}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          <div>
+            <label>Password: </label>
+            <input
+              placeholder="Please enter your password"
+              type="password"
+              value={password}
+              required={true}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <div className="login-buttons">
+            <button className="login-buttons-red" onClick={login}>
               Sign in
             </button>
             <button
-              className="form-btn-blue"
+              className="login-buttons-blue"
               onClick={(e) => {
                 e.preventDefault();
                 navigate(-1);
@@ -71,13 +71,15 @@ export default function Login() {
             >
               Back
             </button>
-            <br />
-            <Link className="form-link" to="/register">
-              Create an account instead
-            </Link>
           </div>
-        </section>
-        <Footer />
-      </body>
+
+          <br />
+          <Link className="login-link" to="/register">
+            Create an account instead
+          </Link>
+        </div>
+      </section>
+      <Footer />
+    </body>
   );
 }
