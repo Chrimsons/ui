@@ -4,9 +4,10 @@ import {
   fetchLicenceByIdAsync,
   addLogbookEntryAsync,
 } from "../../web-services";
-import { jwt } from "../../identity";
 import { TokenContext } from "../../App";
-import Header from "./CustomerHeader";
+import Header from "../Header";
+import Welcome from "../Welcome";
+import Footer from "../Footer";
 
 const LogForm = () => {
   const { licenceId } = useParams();
@@ -16,7 +17,6 @@ const LogForm = () => {
   const [instructor, setInstructor] = useState(false);
   const [nightTime, setNightTime] = useState(false);
   const navigate = useNavigate();
-  const [token, setToken] = useContext(TokenContext);
 
   useEffect(() => {
     fetchLicenceByIdAsync(licenceId)
@@ -40,112 +40,94 @@ const LogForm = () => {
     if (!licence) return;
 
     return (
-      <div className="ml-72">
-        <div>
-          <Header />
-        </div>
-        <div>
-          <div>
-            <h2 className="mt-10 text-4xl mr-7">
-              Welcome
-              <span className="italic font-extrabold">
-                {jwt(token).firstname}
-              </span>
+      <body>
+        <Header />
+        <Welcome />
+
+        <section>
+          <form className="form-loghours ml-72 bg-gray-100">
+            <h2 className="text-center border-[1px] mr-6 py-6 border-black bg-gray-200">
+              New Log Entry
             </h2>
-          </div>
-          <div className="form-loghours ml-72 bg-gray-100">
-            <form>
-              <div>
-                <h2 className="text-center border-[1px] mr-6 py-6 border-black bg-gray-200">
-                  New Log Entry
-                </h2>
+
+            <div className="start-end">
+              <div className="start">
+                <label className="text-center">Start:</label>
+                <input
+                  type="datetime-local"
+                  value={start}
+                  required={true}
+                  onChange={(e) => setStart(e.target.value)}
+                />
               </div>
-              <div>
-                <div>
-                  <label className="text-center">Start:</label>
-                </div>
-                <div>
+
+              <div className="end">
+                <label className="text-center">End:</label>
+                <input
+                  type="datetime-local"
+                  value={end}
+                  required={true}
+                  min={start}
+                  onChange={(e) => setEnd(e.target.value)}
+                />
+              </div>
+            </div>
+
+            <div className="instAndNight flex flex-column justify-left mt-5 w-fit ml-[90px] mb-10">
+              <div className="instructor">
+                <label className="mr-20">
                   <input
-                    type="datetime-local"
-                    value={start}
-                    required={true}
-                    onChange={(e) => setStart(e.target.value)}
+                    type="checkbox"
+                    checked={instructor}
+                    onChange={() => setInstructor(!instructor)}
                   />
-                </div>
+                  Instructor
+                </label>
+                <p className="mt-5 font-semibold text-lg text-center mr-5">
+                  Total Hours: <br />
+                  {`Hours: ${licence.total.hours} | Minutes: ${licence.total.minutes}`}
+                </p>
               </div>
-              <div>
-                <div>
-                  <label className="text-center">End:</label>
-                </div>
-                <div>
+
+              <div className="night">
+                <label>
                   <input
-                    type="datetime-local"
-                    value={end}
-                    required={true}
-                    min={start}
-                    onChange={(e) => setEnd(e.target.value)}
+                    type="checkbox"
+                    checked={nightTime}
+                    onChange={() => setNightTime(!nightTime)}
                   />
-                </div>
-                <div className="flex flex-column justify-left mt-5 w-fit ml-[90px] mb-10">
-                  <div>
-                    <div>
-                      <label className="mr-20">
-                        <input
-                          type="checkbox"
-                          checked={instructor}
-                          onChange={() => setInstructor(!instructor)}
-                        />
-                        Instructor
-                      </label>
-                    </div>
-                    <div className="text-center mr-5">
-                      <p className="mt-5 font-semibold text-lg">
-                        Total Hours: <br />
-                        {`Hours: ${licence.total.hours} | Minutes: ${licence.total.minutes}`}
-                      </p>
-                    </div>
-                  </div>
-                  <div>
-                    <div>
-                      <label className="">
-                        <input
-                          type="checkbox"
-                          checked={nightTime}
-                          onChange={() => setNightTime(!nightTime)}
-                        />
-                        Night Time
-                      </label>
-                    </div>
-                    <div className="text-center ml-2">
-                      <p className="mt-5  font-semibold text-lg">
-                        Night Hours: <br />
-                        {`Hours: ${licence.totalNightHours.hours} | Minutes: ${licence.totalNightHours.minutes}`}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="mt-5 ml-24">
-                  <button
-                    className="rounded-full px-14 py-3 text-center hover:bg-red-500 bg-red-600"
-                    onClick={addLogBookEntry2}
-                  >
-                    Add Entry
-                  </button>
-                  <button
-                    className="rounded-full px-20 py-3 ml-6 text-center hover:bg-blue-500 bg-blue-600"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      navigate(-1);
-                    }}
-                  >
-                    Back
-                  </button>
-                </div>
+                  Night Time
+                </label>
+                <p className="mt-5  font-semibold text-lg text-center ml-2">
+                  Night Hours: <br />
+                  {`Hours: ${licence.totalNightHours.hours} | Minutes: ${licence.totalNightHours.minutes}`}
+                </p>
               </div>
-            </form>
-          </div>
-        </div>
-      </div>
+            </div>
+
+            <div className="buttons">
+              <button
+                className="rounded-full mt-5 ml-24 px-14 py-3 text-center hover:bg-red-500 bg-red-600"
+                onClick={addLogBookEntry2}
+              >
+                Add Entry
+              </button>
+
+              <button
+                className="rounded-full px-20 py-3 ml-6 text-center hover:bg-blue-500 bg-blue-600"
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigate(-1);
+                }}
+              >
+                Back
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <Footer />
+      </body>
     );
   };
 

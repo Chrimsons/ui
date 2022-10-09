@@ -10,8 +10,9 @@ import { useNavigate } from "react-router-dom";
 import BlankProfile from "../../img/blank.jpg";
 import { jwt } from "../../identity";
 import { TokenContext } from "../../App";
-import AdminHeader from "./AdminHeader";
-import Welcome from "../../Welcome";
+import Welcome from "../Welcome";
+import Footer from "../Footer";
+import Header from "../Header";
 
 const IssueLicence = () => {
   const [customers, setCustomers] = useState([]);
@@ -25,24 +26,6 @@ const IssueLicence = () => {
   const [driving, setDriving] = useState("");
   let navigate = useNavigate();
   const [token, setToken] = useContext(TokenContext);
-
-  function Display() {
-    return (
-      <div className="pl-72">
-        <div>
-          <AdminHeader />
-        </div>
-        <div>
-          <Welcome />
-        </div>
-        <div>
-          <h3 className="ml-7 mt-5 font-semibold text-2xl">
-            You are logged in as an {jwt(token).roles}
-          </h3>
-        </div>
-      </div>
-    );
-  }
 
   useEffect(() => {
     if (customer) {
@@ -62,7 +45,7 @@ const IssueLicence = () => {
     if (!customer) {
       return (
         <>
-          <div className="ml-72 mt-5 border-[4px] border-collapse w-fit p-5 ">
+          <div className="ml-72 mt-5 border-[4px] border-collapse w-fit p-5">
             <div className="my-5 py-5 border-[2px] border-slate-400 bg-slate-100">
               <label
                 className="text-lg text-left font-semibold ml-7"
@@ -133,7 +116,7 @@ const IssueLicence = () => {
   const issueLicenceJSX = () => {
     if (customer) {
       return (
-        <div className="ml-72 border-[4px]  w-fit p-5 ">
+        <div className="ml-72 border-[4px]  w-fit p-5">
           <div className="text-4xl font-bold mb-7 mt-2 text-center">
             Customer Information
           </div>
@@ -183,15 +166,22 @@ const IssueLicence = () => {
           )}
           {p && (
             <div>
-              <img
-                onClick={() => navigate("/admin")}
-                className="w-left ml-6 cursor-pointer object-contain w-[500px] "
-                src={CongratsPicture}
-              />
+              <img className="m-auto w-[400px]" src={BlankProfile} />
+              <p className="text-4xl font-bold mt-10 mb-6 text-center">
+                {customer.firstname} {customer.lastname}
+              </p>
+              <p className="text-3xl font-semibold italic mb-3 text-center">
+                Licence: <span className="italic">{licence._id}</span>
+              </p>
               <p className="font-semibold text-2xl mb-5 mt-7 text-center">
                 This customer has been issued a
-                <span className="italic font-bold">provisional</span> license
+                <span className="italic font-bold"> Provisional</span> Licence
               </p>
+              <img
+                onClick={() => navigate("/admin")}
+                className="m-auto cursor-pointer w-[300px] "
+                src={CongratsPicture}
+              />
               <button
                 class="ml-52 bg-yellow-600 hover:bg-yellow-500 mt-10 px-10 py-3 text-2xl font-semibold text-center"
                 onClick={() => navigate("/admin")}
@@ -302,14 +292,21 @@ const IssueLicence = () => {
   };
 
   return (
-    <div>
-      <br />
-      <Display />
-      <div className="ml-80 mt-24">
-        {customerSearchJSX()}
-        {issueLicenceJSX()}
-      </div>
-    </div>
+    <html>
+      <Header />
+      <Welcome />
+      <body>
+        <section>
+          {" "}
+          <div className="ml-10 ">
+            {customerSearchJSX()}
+            {issueLicenceJSX()}
+          </div>
+        </section>
+
+        <Footer />
+      </body>
+    </html>
   );
 };
 export default IssueLicence;

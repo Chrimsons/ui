@@ -1,8 +1,9 @@
-import Home from "./Home";
+import Main from "../Main";
+
 export default function Provisional() {
   return (
     <div>
-      <Home />
+      <Main />
       <div className="pl-72">
         {alert("Provisional license has been issued")}
         <label>

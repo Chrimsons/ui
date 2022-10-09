@@ -5,6 +5,10 @@ import {
   fetchCustomerLicenceAsync,
 } from "../../web-services";
 import CongratsPicture from "../../img/congratulations.jpg";
+import BlankProfile from "../../img/blank.jpg";
+import Welcome from "../Welcome";
+import Footer from "../Footer";
+import Header from "../Header";
 
 const Licence = () => {
   const navigate = useNavigate();
@@ -18,50 +22,60 @@ const Licence = () => {
     fetchCustomerLicenceAsync(customerId).then((j) => setLicence(j));
   }, [customerId]);
 
-  const customerJSX = () => {
-    if (!customer) return;
+  // const customerJSX = () => {
+  //   if (!customer) return;
 
-    return (
-      <div>
-        <div className="text-2xl font-semibold mb-3 ">
-          Customer: {customer.email}
-        </div>
-      </div>
-    );
-  };
+  //   return (
+  //     <div>
+  //       <div className="text-2xl font-semibold mb-3 text-center"></div>
+  //     </div>
+  //   );
+  // };
 
-  const licenceJSX = () => {
-    if (!licence) return;
+  // const licenceJSX = () => {
+  //   if (!licence) return;
 
-    return (
-      <div>
-        <div>Licence: {licence._id}</div>
-      </div>
-    );
-  };
+  //   return (
+  //     <div>
+  //       <div>Licence: {licence._id}</div>
+  //     </div>
+  //   );
+  // };
 
   return (
-    <div className="ml-72">
-      <div className="ml-72 mt-20 border-[4px] border-collapse w-fit p-5 ">
-        <img
-          onClick={() => navigate("/admin")}
-          className="w-left cursor-pointer object-contain w-[500px] "
-          src={CongratsPicture}
-        />
-        <div className="text-4xl font-bold mt-10 mb-6 ml-32 ">
-          {customerJSX()}
-        </div>
-        <div className="text-xl font-semibold italic mb-3 ml-24 ">
-          {licenceJSX()}
-        </div>
-        <button
-          class="ml-44 bg-yellow-600 hover:bg-yellow-500 mt-10 px-10 py-3 text-2xl font-semibold text-center"
-          onClick={() => navigate("/admin")}
-        >
-          Home
-        </button>
-      </div>
-    </div>
+    <html>
+      <Header />
+      <Welcome />
+      <body>
+        <section>
+          <div className="ml-72 mt-20 border-[4px] w-fit p-5 ">
+            <img className="m-auto w-[400px]" src={BlankProfile} />
+            <p className="text-4xl font-bold mt-10 mb-6 text-center">
+              {customer.firstname} {customer.lastname}
+            </p>
+            <p className="text-xl font-semibold italic mb-3 text-center">
+              Licence: {licence._id}
+            </p>
+            <p className="font-semibold text-2xl mb-5 mt-7 text-center">
+              This customer has been issued a
+              <span className="italic font-bold"> Learners</span> licence
+            </p>
+            <img
+                onClick={() => navigate("/admin")}
+                className="m-auto cursor-pointer w-[300px] "
+                src={CongratsPicture}
+              />
+            <button
+              class="ml-44 bg-yellow-600 hover:bg-yellow-500 mt-10 px-10 py-3 text-2xl font-semibold text-center"
+              onClick={() => navigate("/admin")}
+            >
+              Home
+            </button>
+          </div>
+        </section>
+        <Footer />
+      </body>
+    </html>
   );
 };
 
