@@ -1,4 +1,11 @@
+import React from "react";
+import ReactDOM from "react-dom";
+import { SocialIcon } from "react-social-icons";
+
 export default function Footer() {
+  var React = require("react");
+  var { SocialIcon } = require("react-social-icons");
+
   return (
     <footer>
       <div className="footer-acknowledgment">
@@ -9,7 +16,7 @@ export default function Footer() {
           past, present and emerging.
         </p>
       </div>
-      <div className="bg-gray-500 pl-[4.5%] py-5 text-white pr-[10%] text-[17px]">
+      <div className="footer-services">
         <div className="flex space-x-36 ml-[180px]">
           <div className="flex flex-col">
             <a
@@ -83,11 +90,17 @@ export default function Footer() {
             <a href="https://www.service.nsw.gov.au/nswgovdirectory">
               Find a NSW Government agency
             </a>
-            <div></div>
+            <div className="footer-social">
+              <SocialIcon url="https://www.facebook.com/ServiceNSW/" bgColor="#FFFFFF" style={{ height: 35, width: 35,}} />
+              <SocialIcon url="https://twitter.com/ServiceNSW/" bgColor="#FFFFFF" style={{ height: 35, width: 35}} />
+              <SocialIcon url="https://www.linkedin.com/company/servicensw/mycompany/verification//" bgColor="#FFFFFF" style={{ height: 35, width: 35}} />
+              <SocialIcon url="https://www.instagram.com/servicensw/?ref=badge/" bgColor="#FFFFFF" style={{ height: 35, width: 35,}} />
+              <SocialIcon url="https://www.youtube.com/channel/UCpFpdQqKphbZ5xiLV0nuwdQ/" bgColor="#FFFFFF" style={{ height: 35, width: 35,}} />
+            </div>
           </div>
         </div>
       </div>
-      <div className="bg-gray-800 pl-[10.5%] pr-[20%] py-5 text-white text-[14.5px] font-semibold">
+      <div className="footer-links">
         <div style={{ display: "flex", justifyContent: "space-evenly" }}>
           <a href="https://www.service.nsw.gov.au/accessibility">
             Accessibility
