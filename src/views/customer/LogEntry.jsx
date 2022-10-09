@@ -1,7 +1,7 @@
 const LogEntry = (props) => {
   let e = props.entry;
   return (
-    <>
+    <div>
       <div className="log-entry-box">
         <div className="log-entry-box-top">
           <div className="log-entry-box-top-content">
@@ -42,7 +42,7 @@ const LogEntry = (props) => {
             </div>
           )}
       </div>
-    </>
+    </div>
   );
 };
 export default LogEntry;

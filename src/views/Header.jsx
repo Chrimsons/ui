@@ -52,7 +52,7 @@ export default function Header() {
             onClick={() => {
               navigate("/");
             }}
-            className="register pointer bg-blue-500 mr-10 ml-5 rounded-lg"
+            className="register pointer bg-blue-500 hover:bg-blue-400 mr-10 ml-5 rounded-lg"
             style={{ border: "none" }}
           >
             Home
@@ -123,7 +123,7 @@ export default function Header() {
                   setToken(undefined);
                   navigate("/");
                 }}
-                className="link pointer mr-10 ml-5 rounded-lg"
+                className="link pointer mr-10 ml-5 rounded-lg hover:bg-red-500"
                 style={{ border: "none" }}
               >
                 Log out
@@ -191,7 +191,7 @@ export default function Header() {
                   setToken(undefined);
                   navigate("/");
                 }}
-                className="link pointer mr-10 ml-5 rounded-lg"
+                className="link pointer hover:bg-red-500 mr-10 ml-5 rounded-lg"
                 style={{ border: "none" }}
               >
                 Log out

@@ -191,7 +191,7 @@ section {
   @apply ml-72 mt-5 border-[4px] border-collapse w-fit p-5
 }
 .customer-search-box {
-  @apply my-5 py-16 pr-20 border-[2px] border-slate-400 bg-slate-100 flex justify-evenly
+  @apply my-5 py-10 pr-10 border-[2px] border-slate-400 bg-slate-100 flex justify-evenly
 }
 .customer-search-box label {
   @apply text-lg text-left font-semibold ml-7
@@ -199,8 +199,17 @@ section {
 .customer-search-box input {
   @apply border-black active:border-blue-400 active:bg-blue-200 ml-3
 }
+.customer-search-bar{
+  @apply flex flex-row mb-1
+}
 .customer-search button {
-  @apply mr-5 text-white bg-blue-600 hover:bg-blue-400 w-5/12
+  @apply text-white  w-full px-2 border-black 
+}
+.customer-search-blue {
+  @apply bg-blue-600 hover:bg-blue-400
+}
+.customer-search-red {
+  @apply bg-red-600 hover:bg-red-400
 }
 .customer-search-text {
   @apply text-center text-xl font-semibold text-red-600
@@ -264,7 +273,7 @@ section {
   }
 /* Buttons */
 .customer-service-licence button{
-  @apply rounded-full my-10 w-6/12 py-3 text-center 
+  @apply rounded-full my-10 w-6/12 py-3 text-center text-white
 }
 .buttons{
   @apply flex flex-row mx-5 justify-evenly
@@ -304,7 +313,7 @@ section {
 
 /* Log Forms */
 .form-loghours {
-  @apply form;
+  @apply form ml-72 bg-gray-100;
 }
 .form-loghours h2{
   @apply text-center border-[1px] mr-6 py-6 border-black bg-gray-200
@@ -323,7 +332,7 @@ section {
 }
 /* Buttons */
 .form-loghours button{
-  @apply rounded-full w-6/12 py-3 text-center text-2xl font-bold
+  @apply rounded-full w-6/12 py-3 text-center text-2xl font-bold text-white
 }
 .form-loghours-buttons{
   @apply flex flex-row mx-5 justify-evenly
@@ -331,8 +340,13 @@ section {
 .form-loghours-red-btn {
   @apply hover:bg-red-500 bg-red-600
 }
-.form-loghours-yellow-btn {
+.form-loghours-blue-btn {
   @apply hover:bg-blue-500 bg-blue-600
+}
+
+/* Total Hours */
+.total-hours-btn {
+  @apply rounded-full mt-10 px-10 w-3/4 ml-14 py-3 text-2xl font-semibold text-center text-white  bg-blue-600 hover:bg-blue-500
 }
 
 /* Login */

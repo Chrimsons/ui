@@ -40,7 +40,7 @@ const LogBook = () => {
     if (!licence) return;
 
     return (
-      <body>
+      <div>
         <Header />
         <Welcome />
         <section>
@@ -53,7 +53,7 @@ const LogBook = () => {
             ))}
             <br />
             <button
-              className="rounded-full mt-10 px-10 w-3/4 py-3 text-2xl font-semibold text-center ml-14"
+              className="total-hours-btn"
               onClick={() => navigate(-1)}
             >
               Back
@@ -61,7 +61,7 @@ const LogBook = () => {
           </div>
         </section>
         <Footer />
-      </body>
+      </div>
     );
   };
 

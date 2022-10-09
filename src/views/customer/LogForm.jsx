@@ -39,12 +39,12 @@ const LogForm = () => {
     if (!licence) return;
 
     return (
-      <body>
+      <div>
         <Header />
         <Welcome />
 
         <section>
-          <form className="form-loghours ml-72 bg-gray-100">
+          <form className="form-loghours">
             <h2>New Log Entry</h2>
             <div className="form-loghours-start-end">
               <div className="start">
@@ -110,7 +110,7 @@ const LogForm = () => {
               </button>
 
               <button
-                className="form-loghours-yellow-btn"
+                className="form-loghours-blue-btn"
                 onClick={(e) => {
                   e.preventDefault();
                   navigate(-1);
@@ -123,7 +123,7 @@ const LogForm = () => {
         </section>
 
         <Footer />
-      </body>
+      </div>
     );
   };
 

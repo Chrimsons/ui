@@ -43,10 +43,10 @@ const Licence = () => {
   // };
 
   return (
-    <html>
+    <div>
       <Header />
       <Welcome />
-      <body>
+      <div>
         <section>
           <div className="ml-72 mt-20 border-[4px] w-fit p-5 ">
             <img className="m-auto w-[400px]" src={BlankProfile} />
@@ -61,21 +61,21 @@ const Licence = () => {
               <span className="italic font-bold"> Learners</span> licence
             </p>
             <img
-                onClick={() => navigate("/admin")}
+                onClick={() => navigate("/")}
                 className="m-auto cursor-pointer w-[300px] "
                 src={CongratsPicture}
               />
             <button
-              class="ml-44 bg-yellow-600 hover:bg-yellow-500 mt-10 px-10 py-3 text-2xl font-semibold text-center"
-              onClick={() => navigate("/admin")}
+              class="ml-44 bg-yellow-600 hover:bg-yellow-500 mt-10 px-10 py-3 text-2xl font-semibold text-center text-white"
+              onClick={() => navigate("/")}
             >
               Home
             </button>
           </div>
         </section>
         <Footer />
-      </body>
-    </html>
+      </div>
+    </div>
   );
 };
 

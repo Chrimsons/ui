@@ -148,7 +148,7 @@ const Main = () => {
             </h3>
             <div className="ml-7 mt-52 text-xl font-semibold">
               <Link
-                className="border-[2px] bg-yellow-400 hover:bg-yellow-300 p-5"
+                className="border-[2px] bg-red-600 hover:bg-red-500 p-5 font-bold text-xl text-white rounded-xl"
                 to={"/admin/licence/issue"}
               >
                 Click here to issue a new licence

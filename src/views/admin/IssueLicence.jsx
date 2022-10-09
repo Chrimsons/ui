@@ -47,25 +47,37 @@ const IssueLicence = () => {
   const customerSearchJSX = () => {
     if (!customer) {
       return (
-        <>
+        <div>
           <div className="customer-search">
             <div className="customer-search-box">
               <label htmlFor="customerSearch">Customer Search</label>
               <div className="flex flex-col">
-                <input
-                  placeholder="Introduce email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-                <button onClick={fetchCustomers}>Search Email</button>
-                <br />
-                <input
-                  placeholder="Introduce mobile"
-                  value={mobile}
-                  onChange={(e) => setMobile(e.target.value)}
-                />
-                <button onClick={fetchCustomers2}>Search Mobile</button>
-                <br />
+                <div className="customer-search-bar">
+                  <input
+                    placeholder="Introduce email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                  <button
+                    className="customer-search-red"
+                    onClick={fetchCustomers}
+                  >
+                    Search Email
+                  </button>
+                </div>
+                <div className="customer-search-bar">
+                  <input
+                    placeholder="Introduce mobile"
+                    value={mobile}
+                    onChange={(e) => setMobile(e.target.value)}
+                  />
+                  <button
+                    className="customer-search-blue"
+                    onClick={fetchCustomers2}
+                  >
+                    Search Mobile
+                  </button>
+                </div>
               </div>
             </div>
             <div className="customer-search-text">
@@ -92,7 +104,7 @@ const IssueLicence = () => {
                 </div>
               ))}
           </div>
-        </>
+        </div>
       );
     }
   };
@@ -154,13 +166,13 @@ const IssueLicence = () => {
               </div>
               <div className="mb-4">
                 <button
-                  className="rounded-full bg-red-700 hover:bg-red-500 px-10 py-3 text-2xl font-semibold text-center ml-24"
+                  className="rounded-full bg-red-700 hover:bg-red-500 px-10 py-3 text-2xl font-semibold text-center ml-24 text-white"
                   onClick={submitLicence}
                 >
                   Issue
                 </button>
                 <button
-                  class="rounded-full hover:bg-blue-500 mt-10 px-10 py-3 text-2xl font-semibold text-center ml-4"
+                  className="rounded-full bg-blue-700 hover:bg-blue-500 mt-10 px-10 py-3 text-2xl font-semibold text-center ml-4 text-white"
                   onClick={() => setCustomer(null)}
                 >
                   Cancel
@@ -182,13 +194,13 @@ const IssueLicence = () => {
                 <span className="italic font-bold"> Provisional</span> Licence
               </p>
               <img
-                onClick={() => navigate("/admin")}
+                onClick={() => navigate("/")}
                 className="m-auto cursor-pointer w-[300px] "
                 src={CongratsPicture}
               />
               <button
-                class="ml-52 bg-yellow-600 hover:bg-yellow-500 mt-10 px-10 py-3 text-2xl font-semibold text-center"
-                onClick={() => navigate("/admin")}
+                className="ml-52 bg-yellow-600 hover:bg-yellow-500 text-white mt-10 px-10 py-3 text-2xl font-semibold text-center"
+                onClick={() => navigate("/")}
               >
                 Home
               </button>
@@ -274,13 +286,13 @@ const IssueLicence = () => {
                   </div>
                   <div>
                     <button
-                      class="rounded-full bg-red-700 hover:bg-red-500 mt-10 px-10 py-3 text-xl font-semibold text-center ml-2"
+                      className="rounded-full bg-red-700 hover:bg-red-500 mt-10 px-10 py-3 text-xl font-semibold text-center ml-2 text-white"
                       onClick={provisional}
                     >
                       Issue Provisional
                     </button>
                     <button
-                      class="rounded-full hover:bg-blue-500 mt-10 px-20 py-3 text-xl font-semibold text-center ml-4"
+                      className="rounded-full bg-blue-700 hover:bg-blue-500 mt-10 px-20 py-3 text-xl font-semibold text-center ml-4 text-white"
                       onClick={() => setCustomer(null)}
                     >
                       Cancel
@@ -296,10 +308,10 @@ const IssueLicence = () => {
   };
 
   return (
-    <html>
+    <div>
       <Header />
       <Welcome />
-      <body>
+      <div>
         <section>
           <div className="ml-10 mb-[400px]">
             {customerSearchJSX()}
@@ -308,8 +320,8 @@ const IssueLicence = () => {
         </section>
 
         <Footer />
-      </body>
-    </html>
+      </div>
+    </div>
   );
 };
 export default IssueLicence;

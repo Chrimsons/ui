@@ -21,7 +21,7 @@ const Services = () => {
   }, []);
   if (licences == "") {
     return (
-      <body>
+      <div>
         <Header />
         <Welcome />
         <section>
@@ -33,7 +33,7 @@ const Services = () => {
               <br />
               <p>No Licence Found!</p>
             </div>
-            <div className="customer-services-no-licence-body">
+            <div className="customer-services-no-licence-div">
               <div>
                 For more information on how to apply for a license. <br />
                 <a
@@ -54,12 +54,12 @@ const Services = () => {
           </div>
         </section>
         <Footer />
-      </body>
+      </div>
     );
   }
 
   return (
-    <body>
+    <div>
       <Header />
       <Welcome />
 
@@ -138,7 +138,7 @@ const Services = () => {
         ))}
       </section>
       <Footer />
-    </body>
+    </div>
   );
 };
 export default Services;
