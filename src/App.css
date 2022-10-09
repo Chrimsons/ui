@@ -131,9 +131,6 @@ h2 {
   @apply px-3 py-1;
 }
 
-.bar {
-  @apply w-60;
-}
 
 /* Footer */
 
@@ -194,7 +191,7 @@ header {
 
 /* Section */
 section {
-  @apply ml-72 mt-24 pb-[100px];
+  @apply ml-72 mt-24 mb-[350px];
 }
 
 /* Customer Search */
@@ -219,6 +216,100 @@ section {
 .customer-search-result {
   @apply tile pointer hover:bg-yellow-100 bg-slate-100 text-lg font-semibold text-left flex justify-center
 }
+
+/* Customer Services */
+
+/* No Licence */
+.customer-services-no-licence{
+  @apply border-[3px] border-red-500 w-fit ml-72 p-10 mt-20
+}
+.customer-services-no-licence img {
+  @apply w-[100px] m-auto
+}
+.customer-services-no-licence p{
+  @apply text-center font-semibold text-red-500 mb-3 
+}
+.customer-services-no-licence-body{
+  @apply text-center text-2xl mb-16 mt-10
+}
+.customer-services-no-licence-box{
+  @apply mt-7 text-center text-2xl font-semibold border-[2px] pt-2 py-3 hover:bg-slate-100 bg-slate-200
+}
+
+/* Yes Licence */
+/* Customer Profile */
+.customer-service-licence {
+  @apply tile ml-72 text-2xl font-semibold text-center border-[550px] p-[10px] flex flex-col justify-evenly
+}
+.customer-service-licence-profile{
+  @apply border-[3px] border-yellow-300 border-dotted mx-5 my-10
+}
+.customer-service-licence-profile img {
+  @apply ml-[90px] mb-5 w-[300px]
+}
+.customer-service-licence-profile p {
+  @apply text-center font-semibold text-2xl
+}
+/* Remaining Hours */
+.total-remaining-hours h4{
+  @apply mt-5 font-bold mb-3
+}
+.total-remaining-hours-box{
+  @apply border-[3px] w-fit m-auto border-dotted border-black text-center py-1 px-4
+}
+/* Progress Bars */
+.progress-bar {
+  @apply flex flex-row justify-evenly mt-10
+}
+.progress-bar-day{
+  @apply text-yellow-500
+}
+.progress-bar-night{
+  @apply text-blue-500
+}
+.bar {
+    @apply w-60 mt-10;
+  }
+/* Buttons */
+.customer-service-licence button{
+  @apply rounded-full my-10 w-6/12 py-3 text-center 
+}
+.buttons{
+  @apply flex flex-row mx-5 justify-evenly
+}
+.customer-service-blue-btn {
+  @apply bg-blue-600 hover:bg-blue-500
+}
+.customer-service-yellow-btn {
+  @apply bg-yellow-600 hover:bg-yellow-400
+}
+
+/* Log Entry */
+.log-entry-box {
+  @apply bg-blue-200 italic text-center w-[598px] text-lg border-[1px] border-black
+}
+.log-entry-box-top{
+  @apply border-[3px] border-black mt-5 mx-9 my-3 pb-4 bg-blue-100
+}
+.log-entry-box-top-content{
+  @apply flex flex-row justify-evenly mt-5 mb-3
+}
+.log-entry-box-top-total {
+  @apply border-[3px] border-green-600 border-dotted mx-28
+}
+.log-entry-content{
+  @apply flex flex-row justify-evenly mt-5
+}
+.log-entry-content label{
+  @apply text-blue-600
+}
+.log-entry-bonus {
+  @apply text-2xl border-[3px] border-yellow-500 border-dotted mx-16 bg-yellow-100 py-3 mt-4
+}
+.log-entry-bonus p {
+  @apply font-bold
+}
+
 
 label {
   min-width: 125px;
@@ -253,14 +344,7 @@ button {
   width: 550px;
   padding: 10px;
 }
-.tile2 {
-  border: 1px solid #000;
-  text-align: center;
-  width: 598px;
-  font-size: large;
-  font-style: italic;
-  color: rgb(7, 2, 2);
-}
+
 .pointer {
   cursor: pointer;
 }

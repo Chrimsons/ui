@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./views/Login";
 import "./App.css";
@@ -20,26 +20,32 @@ function App() {
     <TokenContext.Provider value={[token, setToken]}>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Main />}/>
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/customer/services" element={<Customer.Services />} />
-            <Route path="/customer" element={<Customer.Home />}/>
-              
-              <Route path="/customer/licence/:licenceId/logbook" element={<Customer.LogBook />}/>
-                <Route path="/customer/licence/:licenceId/logform" element = {<Customer.LogForm/>}/>
-                
-                <Route path="/admin/customer/prov" element={<Admin.Provisional/>}/>
-            <Route path="/admin" element={<Admin.Home />}/>
-            
-              <Route path="/admin/licence/issue" element={<Admin.IssueLicence />} />
-              <Route
-                path="/admin/customer/:customerId/licence"
-                element={<Admin.Licence />}
-              />
-            
-            
+          <Route path="/" element={<Main />} />
+
+          {/* Account Routes */}
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+
+          {/* Customer Routes */}
+          <Route path="/customer/services" element={<Customer.Services />} />
+          <Route path="/customer" element={<Customer.Home />} />
+          <Route
+            path="/customer/licence/:licenceId/logbook"
+            element={<Customer.LogBook />}
+          />
+          <Route
+            path="/customer/licence/:licenceId/logform"
+            element={<Customer.LogForm />}
+          />
           
+          {/* Admin Routes */}
+          <Route path="/admin/customer/prov" element={<Admin.Provisional />} />
+          <Route path="/admin" element={<Admin.Home />} />
+          <Route path="/admin/licence/issue" element={<Admin.IssueLicence />} />
+          <Route
+            path="/admin/customer/:customerId/licence"
+            element={<Admin.Licence />}
+          />
         </Routes>
       </BrowserRouter>
     </TokenContext.Provider>
