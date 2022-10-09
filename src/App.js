@@ -28,7 +28,6 @@ function App() {
 
           {/* Customer Routes */}
           <Route path="/customer/services" element={<Customer.Services />} />
-          <Route path="/customer" element={<Customer.Home />} />
           <Route
             path="/customer/licence/:licenceId/logbook"
             element={<Customer.LogBook />}
@@ -40,7 +39,6 @@ function App() {
           
           {/* Admin Routes */}
           <Route path="/admin/customer/prov" element={<Admin.Provisional />} />
-          <Route path="/admin" element={<Admin.Home />} />
           <Route path="/admin/licence/issue" element={<Admin.IssueLicence />} />
           <Route
             path="/admin/customer/:customerId/licence"
