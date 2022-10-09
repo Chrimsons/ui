@@ -17,7 +17,7 @@ const Main = () => {
   return (
     <>
       {!token && (
-        <body>
+        <div>
           <header>
             <div className="home-bar">
               <Link className="home-link" to="/">
@@ -113,10 +113,10 @@ const Main = () => {
             </div>
           </section>
           <Footer />
-        </body>
+        </div>
       )}
       {token && isInRole(token, "customer") && (
-        <body>
+        <div>
           <Header />
           <Welcome />
           <section className="flex flex-row-reverse">
@@ -135,10 +135,10 @@ const Main = () => {
             </p>
           </section>
           <Footer />
-        </body>
+        </div>
       )}
       {token && isInRole(token, "admin") && (
-        <body>
+        <div>
           <Header />
           <Welcome />
           <section>
@@ -156,7 +156,7 @@ const Main = () => {
             </div>
           </section>
           <Footer />
-        </body>
+        </div>
       )}
       <Outlet />
     </>

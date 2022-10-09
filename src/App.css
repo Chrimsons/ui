@@ -191,7 +191,7 @@ section {
   @apply ml-72 mt-5 border-[4px] border-collapse w-fit p-5
 }
 .customer-search-box {
-  @apply my-5 py-5 border-[2px] border-slate-400 bg-slate-100
+  @apply my-5 py-16 pr-20 border-[2px] border-slate-400 bg-slate-100 flex justify-evenly
 }
 .customer-search-box label {
   @apply text-lg text-left font-semibold ml-7
@@ -200,7 +200,7 @@ section {
   @apply border-black active:border-blue-400 active:bg-blue-200 ml-3
 }
 .customer-search button {
-  @apply mr-5
+  @apply mr-5 text-white bg-blue-600 hover:bg-blue-400 w-5/12
 }
 .customer-search-text {
   @apply text-center text-xl font-semibold text-red-600
@@ -356,7 +356,7 @@ section {
 }
 /* Buttons */
 .login button{
-  @apply rounded-full w-5/12 py-3 text-center text-xl font-bold mt-10 mb-5
+  @apply rounded-full w-5/12 py-3 text-center text-xl font-bold mt-10 mb-5 text-white
 }
 .login-buttons{
   @apply flex flex-row mx-5 justify-evenly
@@ -393,7 +393,7 @@ section {
 }
 /* Buttons */
 .register button{
-  @apply rounded-full w-5/12 py-3 text-center text-xl font-bold mt-10 mb-10
+  @apply rounded-full w-5/12 py-3 text-center text-xl font-bold mt-10 mb-10 text-white
 }
 .register-buttons{
   @apply flex flex-row mx-5 justify-evenly
