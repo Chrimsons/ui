@@ -184,7 +184,7 @@ header {
 
 /* Section */
 section {
-  @apply ml-72 mt-24 mb-[350px];
+  @apply ml-72 mt-16 mb-[350px];
 }
 
 /* Customer Search */
