@@ -10,14 +10,14 @@ export default function Header() {
 
   if (!token) {
     <header>
-      <div className="home-bar">
-        <Link className="home-link" to="/">
+      <div className="home-bar ">
+        <Link className="home-link " to="/">
           MyServiceNSW Account
         </Link>
       </div>
       <br />
-      <div className="mt-10 flex justify-between">
-        <div className="login-input justify-start">
+      <div className="mt-10 flex justify-between ">
+        <div className="login-input justify-start ">
           <img
             onClick={() => navigate("/")}
             className="w-left cursor-pointer object-contain w-[200px] "
@@ -133,7 +133,7 @@ export default function Header() {
         </header>
       )}
       {token && isInRole(token, "admin") && (
-        <header>
+        <header className="">
           <div className="home-bar">
             <Link className="home-link" to="/">
               MyServiceNSW Account
@@ -142,7 +142,7 @@ export default function Header() {
           <br />
           <div
             style={{ display: "flex", justifyContent: "space-between" }}
-            className="mt-10"
+            className="mt-10 "
           >
             <div className="login-input">
               <img

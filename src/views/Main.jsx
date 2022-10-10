@@ -25,53 +25,50 @@ const Main = () => {
               </Link>
             </div>
             <br />
-              <div className=" main-none-link">
-                <img
-                  onClick={() => navigate("/")}
-                  src={ProfilePicture}
-                />
-                <Link to={"/"} className="main-links">
-                  Home
-                </Link>
-                <a
-                  href="https://www.service.nsw.gov.au/transaction/apply-learner-driver-licence#eligibility"
-                  className="main-links"
-                  target="blank"
-                >
-                  Check eligibility
-                </a>
-                <a
-                  href="https://www.service.nsw.gov.au/service-centre"
-                  className="main-links"
-                >
-                  Find Location
-                </a>
-                <a
-                    href="tel:137788"
-                    className="main-links italic"
-                    title="Mon-Fri 7am - 7pm"
-                  >
-                    Contact us @ 13 77 88
-                  </a>
-                <div className="main-links-btn">
+            <div className=" main-none-link">
+              <img onClick={() => navigate("/")} src={ProfilePicture} />
+              <Link to={"/"} className="main-links">
+                Home
+              </Link>
+              <a
+                href="https://www.service.nsw.gov.au/transaction/apply-learner-driver-licence#eligibility"
+                className="main-links"
+                target="blank"
+              >
+                Check eligibility
+              </a>
+              <a
+                href="https://www.service.nsw.gov.au/service-centre"
+                className="main-links"
+              >
+                Find Location
+              </a>
+              <a
+                href="tel:137788"
+                className="main-links italic"
+                title="Mon-Fri 7am - 7pm"
+              >
+                Contact us @ 13 77 88
+              </a>
+              <div className="main-links-btn">
                 <button
-                    onClick={() => {
-                      navigate("/login");
-                    }}
-                    className="bg-red-600 hover:bg-red-400"
-                  >
-                    Log in
-                  </button>
-                  <button
-                    onClick={() => {
-                      navigate("/register");
-                    }}
-                    className=" bg-blue-600 hover:bg-blue-400 ml-1"
-                  >
-                    Register
-                  </button>
-                </div>
+                  onClick={() => {
+                    navigate("/login");
+                  }}
+                  className="bg-red-600 hover:bg-red-400"
+                >
+                  Log in
+                </button>
+                <button
+                  onClick={() => {
+                    navigate("/register");
+                  }}
+                  className=" bg-blue-600 hover:bg-blue-400 ml-1"
+                >
+                  Register
+                </button>
               </div>
+            </div>
           </header>
 
           <section>
@@ -116,17 +113,15 @@ const Main = () => {
         </div>
       )}
       {token && isInRole(token, "customer") && (
-        <div>
+        <div className="main-customer">
           <Header />
           <Welcome />
-          <section className="flex flex-row-reverse">
-            <img src={LearnersTwo} className="mr-40 w-7/12 " />
-            <p className="mt-32 font-semibold text-2xl">
+          <section className="main-customer-section">
+            <img src={LearnersTwo} />
+            <p>
               Click
               <a
-                className="page-link mx-2"
-                href="https://www.nsw.gov.au/driving-boating-and-transport/driver-and-rider-licences
-          /proof-of-identity/proving-your-identity"
+                href="https://www.nsw.gov.au/driving-boating-and-transport/driver-and-rider-licences/proof-of-identity/proving-your-identity"
                 target="blank"
               >
                 here
@@ -138,21 +133,24 @@ const Main = () => {
         </div>
       )}
       {token && isInRole(token, "admin") && (
-        <div>
+        <div className="main-admin">
           <Header />
           <Welcome />
+
           <section>
-            <img src={Transition} className=" mr-40 w-7/12 float-right" />
-            <h3 className="ml-7 mt- font-semibold text-2xl">
+            <h3>
               You are logged in as an {jwt(token).roles}
             </h3>
-            <div className="ml-7 mt-52 text-xl font-semibold">
-              <Link
-                className="border-[2px] bg-red-600 hover:bg-red-500 p-5 font-bold text-xl text-white rounded-xl"
-                to={"/admin/licence/issue"}
-              >
-                Click here to issue a new licence
-              </Link>
+            <div className="main-admin-section">
+              <img src={Transition} />
+              <div className="main-admin-section-word">
+                <Link
+                  className="main-admin-section-link"
+                  to={"/admin/licence/issue"}
+                >
+                  Click here to issue a new licence
+                </Link>
+              </div>
             </div>
           </section>
           <Footer />

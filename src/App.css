@@ -436,7 +436,40 @@ section {
   @apply cursor-pointer w-[200px]
 }
 .main-customer{
+  @apply overflow-hidden
+}
+.main-customer-section img{
+  @apply mr-40 w-7/12 
+}
+.main-customer-section{
   @apply flex flex-row-reverse
+}
+.main-customer-section p {
+  @apply mt-32 font-semibold text-2xl
+}
+.main-customer-section a {
+  @apply page-link mx-2 underline text-blue-600 visited:text-purple-400 visited:inline-block hover:text-blue-700
+}
+.main-admin{
+  @apply overflow-hidden
+}
+.main-admin-section img{
+  @apply mr-40 w-7/12 
+}
+.main-admin-section{
+  @apply flex flex-row-reverse justify-evenly
+}
+.main-admin-section h3{
+  @apply ml-7 font-semibold text-2xl
+}
+.main-admin-section p {
+  @apply mt-32 font-semibold text-2xl
+}
+.main-admin-section-link {
+  @apply border-[2px] bg-red-600 hover:bg-red-500 p-5 font-bold text-xl text-white rounded-xl 
+}
+.main-admin-section-word{
+  @apply ml-7 mt-52 text-xl font-semibold 
 }
 
 
