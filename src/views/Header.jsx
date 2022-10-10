@@ -184,7 +184,7 @@ export default function Header() {
                 className="side-link italic"
                 title="Mon-Fri 7am - 7pm"
               >
-                Logged in as {jwt(token).firstname} {jwt(token).roles}
+                Logged in as {jwt(token).firstname} <span className="text-blue-600">{"{ "}{jwt(token).roles}{" }"}</span>
               </Link>
               <button
                 onClick={() => {

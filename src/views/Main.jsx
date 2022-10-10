@@ -136,11 +136,7 @@ const Main = () => {
         <div className="main-admin">
           <Header />
           <Welcome />
-
           <section>
-            <h3>
-              You are logged in as an {jwt(token).roles}
-            </h3>
             <div className="main-admin-section">
               <img src={Transition} />
               <div className="main-admin-section-word">

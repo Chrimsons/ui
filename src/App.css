@@ -456,9 +456,7 @@ section {
 .main-admin-section{
   @apply flex flex-row-reverse justify-evenly
 }
-.main-admin-section h3{
-  @apply ml-7 font-semibold text-2xl
-}
+
 .main-admin-section p {
   @apply mt-32 font-semibold text-2xl
 }
@@ -467,6 +465,18 @@ section {
 }
 .main-admin-section-word{
   @apply ml-7 mt-52 text-xl font-semibold 
+}
+.welcome{
+  @apply flex flex-col justify-evenly
+}
+.welcome h2{
+  @apply mt-10 text-2xl ml-72 w-screen
+}
+.welcome span{
+  @apply italic font-extrabold ml-4
+}
+.welcome h3{
+  @apply text-center font-semibold text-2xl italic text-blue-500
 }
 
 
