@@ -84,6 +84,8 @@ const Services = () => {
               <p>{` ${l.total.hours} hours / ${l.total.minutes} minutes`}</p>
               <h4>Remaining Hours:</h4>
               <p className="total-remaining-hours-box">{120 - l.total.hours}</p>
+              <h4>Remaining Night Hours:</h4>
+              <p className="total-remaining-hours-box">{30 - l.totalNightHours.hours}</p>
             </div>
 
             <div className="progress-bar ">
