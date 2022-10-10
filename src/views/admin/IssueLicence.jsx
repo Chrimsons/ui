@@ -44,9 +44,9 @@ const IssueLicence = () => {
   const customerSearchJSX = () => {
     if (!customer) {
       return (
-        <div>
-          <div className="customer-search">
-            <div className="customer-search-box">
+        <div className="">
+          <div className="customer-search overflow-hidden">
+            <div className="customer-search-box ">
               <label htmlFor="customerSearch">Customer Search</label>
               <div className="flex flex-col">
                 <div className="customer-search-bar">
@@ -308,7 +308,7 @@ const IssueLicence = () => {
       <Welcome />
       <div>
         <section>
-          <div className="ml-10 mb-[400px]">
+          <div className="ml-10 mb-[400px] ">
             {customerSearchJSX()}
             {issueLicenceJSX()}
           </div>

@@ -25,7 +25,7 @@ const Services = () => {
         <Header />
         <Welcome />
         <section>
-          <div className="customer-services-no-licence">
+          <div className="customer-services-no-licence ">
             <div>
               <div>
                 <img src={Error} alt="Error!" title="Error!" />

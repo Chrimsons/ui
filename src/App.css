@@ -166,6 +166,7 @@ html,
 body {
   height: 100vh;
   position: relative;
+  overflow-x: hidden;
 }
 
 * {
@@ -222,7 +223,7 @@ section {
 
 /* No Licence */
 .customer-services-no-licence{
-  @apply border-[3px] border-red-500 w-fit ml-72 p-10 mt-20
+  @apply border-[3px] border-red-500 w-fit ml-72 p-10 mt-20 
 }
 .customer-services-no-licence img {
   @apply w-[100px] m-auto
@@ -240,7 +241,7 @@ section {
 /* Yes Licence */
 /* Customer Profile */
 .customer-service-licence {
-  @apply tile ml-72 text-2xl font-semibold text-center border-[550px] p-[10px] flex flex-col justify-evenly
+  @apply tile ml-72 text-2xl font-semibold text-center border-[550px] p-[10px] flex flex-col justify-evenly 
 }
 .customer-service-licence-profile{
   @apply border-[3px] border-yellow-300 border-dotted mx-5 my-10
@@ -435,9 +436,7 @@ section {
 .main-none-link img{
   @apply cursor-pointer w-[200px]
 }
-.main-customer{
-  @apply overflow-hidden
-}
+
 .main-customer-section img{
   @apply mr-40 w-7/12 
 }
@@ -450,9 +449,7 @@ section {
 .main-customer-section a {
   @apply page-link mx-2 underline text-blue-600 visited:text-purple-400 visited:inline-block hover:text-blue-700
 }
-.main-admin{
-  @apply overflow-hidden
-}
+
 .main-admin-section img{
   @apply mr-40 w-7/12 
 }

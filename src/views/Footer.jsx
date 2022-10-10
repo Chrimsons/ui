@@ -4,7 +4,7 @@ export default function Footer() {
 
   return (
     <footer>
-      <div className="footer-acknowledgment">
+      <div className="footer-acknowledgment ">
         <h4 className="footer-ackn-heading">ACKNOWLEDGEMENT OF COUNTRY</h4>
         <p>
           We acknowledge the Traditional Custodians of NSW, and their continued
