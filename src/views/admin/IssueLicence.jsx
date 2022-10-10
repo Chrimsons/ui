@@ -276,8 +276,11 @@ const IssueLicence = () => {
                     </div>
                   </div>
                   <div className="text-center text-red-500 font-semibold mt-5 text-lg">
-                    <p>120 hours and Hazard Perception Test</p>
-                    <p>Has to be completed before continuing!</p>
+                    <p>
+                      120 hours and Hazard Perception Test
+                      <br />
+                      has to be completed before continuing!
+                    </p>
                   </div>
                   <div>
                     <button
