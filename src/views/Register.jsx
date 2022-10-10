@@ -47,7 +47,7 @@ export default function Register() {
   return (
     <>
       {!token && (
-        <body>
+        <div>
           <Header />
           <section>
             <form
@@ -163,10 +163,10 @@ export default function Register() {
             </form>
           </section>
           <Footer />
-        </body>
+        </div>
       )}
       {token && isInRole(token, "customer") && (
-        <body>
+        <div>
           <Header />
           <Welcome />
           <section className="flex flex-row-reverse">
@@ -185,10 +185,10 @@ export default function Register() {
             </p>
           </section>
           <Footer />
-        </body>
+        </div>
       )}
       {token && isInRole(token, "admin") && (
-        <body>
+        <div>
           <Header />
           <Welcome />
           <section>
@@ -206,7 +206,7 @@ export default function Register() {
             </div>
           </section>
           <Footer />
-        </body>
+        </div>
       )}
     </>
   );

@@ -32,7 +32,7 @@ export default function Login() {
   }
 
   return (
-    <body>
+    <div>
       <Header />
       <section>
         <div className="login">
@@ -80,6 +80,6 @@ export default function Login() {
         </div>
       </section>
       <Footer />
-    </body>
+    </div>
   );
 }
