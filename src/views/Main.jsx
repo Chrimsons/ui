@@ -55,7 +55,7 @@ const Main = () => {
                   onClick={() => {
                     navigate("/login");
                   }}
-                  className="bg-red-600 hover:bg-red-400"
+                  className="bg-red-500 hover:bg-red-400"
                 >
                   Log in
                 </button>
@@ -63,7 +63,7 @@ const Main = () => {
                   onClick={() => {
                     navigate("/register");
                   }}
-                  className=" bg-blue-600 hover:bg-blue-400 ml-1"
+                  className=" bg-blue-500 hover:bg-blue-400 ml-1"
                 >
                   Register
                 </button>

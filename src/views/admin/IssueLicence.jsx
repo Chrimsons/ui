@@ -44,14 +44,14 @@ const IssueLicence = () => {
   const customerSearchJSX = () => {
     if (!customer) {
       return (
-        <div className="">
-          <div className="customer-search overflow-hidden">
+        <div>
+          <div className="customer-search">
             <div className="customer-search-box ">
               <label htmlFor="customerSearch">Customer Search</label>
               <div className="flex flex-col">
                 <div className="customer-search-bar">
                   <input
-                    placeholder="Introduce email"
+                    placeholder="Search by Email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                   />
@@ -64,7 +64,7 @@ const IssueLicence = () => {
                 </div>
                 <div className="customer-search-bar">
                   <input
-                    placeholder="Introduce mobile"
+                    placeholder="Search by Mobile"
                     value={mobile}
                     onChange={(e) => setMobile(e.target.value)}
                   />
@@ -161,13 +161,13 @@ const IssueLicence = () => {
               </div>
               <div className="mb-4">
                 <button
-                  className="rounded-full bg-red-700 hover:bg-red-500 px-10 py-3 text-2xl font-semibold text-center ml-24 text-white"
+                  className="rounded-full bg-red-500 hover:bg-red-400 px-10 py-3 text-2xl font-semibold text-center ml-24 text-white"
                   onClick={submitLicence}
                 >
                   Issue
                 </button>
                 <button
-                  className="rounded-full bg-blue-700 hover:bg-blue-500 mt-10 px-10 py-3 text-2xl font-semibold text-center ml-4 text-white"
+                  className="rounded-full bg-blue-500 hover:bg-blue-400 mt-10 px-10 py-3 text-2xl font-semibold text-center ml-4 text-white"
                   onClick={() => setCustomer(null)}
                 >
                   Cancel
@@ -281,13 +281,13 @@ const IssueLicence = () => {
                   </div>
                   <div>
                     <button
-                      className="rounded-full bg-red-700 hover:bg-red-500 mt-10 px-10 py-3 text-xl font-semibold text-center ml-2 text-white"
+                      className="rounded-full bg-red-500 hover:bg-red-400 mt-10 px-10 py-3 text-xl font-semibold text-center ml-2 text-white"
                       onClick={provisional}
                     >
                       Issue Provisional
                     </button>
                     <button
-                      className="rounded-full bg-blue-700 hover:bg-blue-500 mt-10 px-20 py-3 text-xl font-semibold text-center ml-4 text-white"
+                      className="rounded-full bg-blue-500 hover:bg-blue-400 mt-10 px-20 py-3 text-xl font-semibold text-center ml-4 text-white"
                       onClick={() => setCustomer(null)}
                     >
                       Cancel

@@ -7,11 +7,7 @@ export default function Welcome() {
 
   return (
     <div className="welcome">
-      {token && isInRole(token, "admin") && (
-        <div>
-          <h3>{"{ "}You are logged in as an {jwt(token).roles}{" }"}</h3>
-        </div>
-      )}
+      
       <h2>
         Welcome,
         <span>{jwt(token).firstname}</span>

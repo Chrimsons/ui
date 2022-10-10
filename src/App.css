@@ -40,28 +40,28 @@ h2 {
   @apply rounded w-4/12 py-2 text-white font-semibold;
 }
 .form-btn-red {
-  @apply btn bg-red-700 hover:bg-red-500 ml-28;
+  @apply btn bg-red-500 hover:bg-red-400 ml-28;
 }
 .form-btn-blue {
-  @apply btn bg-blue-700 hover:bg-blue-500 mb-5 ml-4;
+  @apply btn bg-blue-500 hover:bg-blue-400 mb-5 ml-4;
 }
 .form-btn-blue-search {
-  @apply btn bg-blue-700 hover:bg-blue-500 mt-7 flex-auto ml-48;
+  @apply btn bg-blue-500 hover:bg-blue-400 mt-7 flex-auto ml-48;
 }
 .log-btn-red {
-  @apply btn bg-red-700 hover:bg-red-500;
+  @apply btn bg-red-500 hover:bg-red-400;
 }
 .log-btn-blue {
-  @apply btn bg-blue-700 hover:bg-blue-500;
+  @apply btn bg-blue-500 hover:bg-blue-400;
 }
 .hours-btn {
   @apply rounded  py-2 text-white font-semibold;
 }
 .hours-btn-red {
-  @apply hours-btn bg-red-700 hover:bg-red-500 w-[200px];
+  @apply hours-btn bg-red-500 hover:bg-red-400 w-[200px];
 }
 .hours-btn-blue {
-  @apply hours-btn bg-blue-700 hover:bg-blue-500 mb-10 w-1/2;
+  @apply hours-btn bg-blue-500 hover:bg-blue-400 mb-10 w-1/2;
 }
 .hours-btn-yellow {
   @apply hours-btn bg-yellow-500 hover:bg-yellow-400 mb-10 w-1/2;
@@ -80,10 +80,10 @@ h2 {
   @apply float-right font-bold text-white;
 }
 .userinfo-btn-red {
-  @apply bg-red-600 rounded text-white text-lg px-16 py-2;
+  @apply bg-red-500 hover:bg-red-400 rounded text-white text-lg px-16 py-2;
 }
 .userinfo-btn-blue {
-  @apply hover:bg-gray-100 rounded shadow text-white text-lg px-16 py-2 px-8 border border-blue-900 text-blue-900 bg-white font-semibold;
+  @apply hover:bg-gray-200 hover:border-[2px] rounded shadow text-lg py-2 px-8 border border-blue-900 text-blue-900 bg-white font-semibold;
 }
 .user-h {
   @apply text-4xl font-bold font-sans mt-16;
@@ -192,25 +192,25 @@ section {
   @apply ml-72 mt-5 border-[4px] border-collapse w-fit p-5
 }
 .customer-search-box {
-  @apply my-5 py-10 pr-10 border-[2px] border-slate-400 bg-slate-100 flex justify-evenly
+  @apply my-5 py-10 pr-10 border-[2px] border-slate-400 bg-slate-100 flex flex-col justify-evenly pl-7
 }
 .customer-search-box label {
-  @apply text-lg text-left font-semibold ml-7
+  @apply text-2xl ml-3 text-center font-bold mb-5 
 }
 .customer-search-box input {
-  @apply border-black active:border-blue-400 active:bg-blue-200 ml-3
+  @apply border-black active:border-blue-400 active:bg-blue-200 ml-3 px-[100px]
 }
 .customer-search-bar{
-  @apply flex flex-row mb-1
+  @apply flex flex-row mb-1 text-center
 }
 .customer-search button {
-  @apply text-white  w-full px-2 border-black 
+  @apply text-white  w-full px-2 border-black ml-[2px] rounded-lg
 }
 .customer-search-blue {
-  @apply bg-blue-600 hover:bg-blue-400
+  @apply bg-blue-500 hover:bg-blue-400
 }
 .customer-search-red {
-  @apply bg-red-600 hover:bg-red-400
+  @apply bg-red-500 hover:bg-red-400
 }
 .customer-search-text {
   @apply text-center text-xl font-semibold text-red-600
@@ -280,10 +280,10 @@ section {
   @apply flex flex-row mx-5 justify-evenly
 }
 .customer-service-blue-btn {
-  @apply bg-blue-600 hover:bg-blue-500
+  @apply bg-blue-500 hover:bg-blue-400
 }
 .customer-service-yellow-btn {
-  @apply bg-yellow-600 hover:bg-yellow-400
+  @apply bg-yellow-500 hover:bg-yellow-400
 }
 
 /* Log Entry */
@@ -339,15 +339,15 @@ section {
   @apply flex flex-row mx-5 justify-evenly
 }
 .form-loghours-red-btn {
-  @apply hover:bg-red-500 bg-red-600
+  @apply hover:bg-red-400 bg-red-500
 }
 .form-loghours-blue-btn {
-  @apply hover:bg-blue-500 bg-blue-600
+  @apply hover:bg-blue-400 bg-blue-500
 }
 
 /* Total Hours */
 .total-hours-btn {
-  @apply rounded-full mt-10 px-10 w-3/4 ml-14 py-3 text-2xl font-semibold text-center text-white  bg-blue-600 hover:bg-blue-500
+  @apply rounded-full mt-10 px-10 w-3/4 ml-14 py-3 text-2xl font-semibold text-center text-white  bg-blue-500 hover:bg-blue-400
 }
 
 /* Login */
@@ -377,10 +377,10 @@ section {
   @apply flex flex-row mx-5 justify-evenly
 }
 .login-buttons-red {
-  @apply hover:bg-red-500 bg-red-600
+  @apply hover:bg-red-400 bg-red-500
 }
 .login-buttons-blue {
-  @apply hover:bg-blue-500 bg-blue-600
+  @apply hover:bg-blue-400 bg-blue-500
 }
 
 /* Register */
@@ -414,10 +414,10 @@ section {
   @apply flex flex-row mx-5 justify-evenly
 }
 .register-buttons-red {
-  @apply hover:bg-red-500 bg-red-600
+  @apply hover:bg-red-400 bg-red-500
 }
 .register-buttons-blue {
-  @apply hover:bg-blue-500 bg-blue-600
+  @apply hover:bg-blue-400 bg-blue-500
 }
 
 /* Main */
@@ -461,7 +461,7 @@ section {
   @apply mt-32 font-semibold text-2xl
 }
 .main-admin-section-link {
-  @apply border-[2px] bg-red-600 hover:bg-red-500 p-5 font-bold text-xl text-white rounded-xl 
+  @apply border-[2px] bg-red-500 hover:bg-red-400 p-5 font-bold text-xl text-white rounded-xl 
 }
 .main-admin-section-word{
   @apply ml-7 mt-52 text-xl font-semibold 
