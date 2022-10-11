@@ -187,6 +187,29 @@ section {
   @apply ml-72 mt-16 mb-[350px];
 }
 
+/* Licence */
+.learners-licence {
+  @apply ml-72 mt-20 border-[px] w-fit p-5  text-center
+}
+.learners-licence span{
+  @apply italic font-bold
+}
+.learners-licence div{
+  @apply my-5 flex flex-col justify-evenly items-center
+}
+.learners-licence button{
+  @apply  bg-yellow-500 hover:bg-yellow-400 text-white mt-10 px-10 py-3 text-2xl font-semibold text-center w-3/4 rounded-xl
+}
+.learners-text-one {
+  @apply text-4xl font-bold mt-10 mb-6
+}
+.learners-text-two {
+  @apply text-2xl font-semibold italic mb-3 text-yellow-600 underline
+}
+.learners-text-three {
+  @apply font-semibold text-2xl mb-5 mt-7
+}
+
 /* Customer Search */
 .customer-search {
   @apply ml-72 mt-5 border-[4px] border-collapse w-fit p-5

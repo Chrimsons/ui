@@ -28,29 +28,31 @@ const Licence = () => {
       <Welcome />
       <div>
         <section>
-          <div className="ml-72 mt-20 border-[4px] w-fit p-5 ">
-            <img className="m-auto w-[400px]" src={BlankProfile} />
-            <p className="text-4xl font-bold mt-10 mb-6 text-center">
-              {customer.firstname} {customer.lastname}
-            </p>
-            <p className="text-xl font-semibold italic mb-3 text-center">
-              Licence: {licence._id}
-            </p>
-            <p className="font-semibold text-2xl mb-5 mt-7 text-center">
-              This customer has been issued a
-              <span className="italic font-bold"> Learners</span> licence
-            </p>
-            <img
-              onClick={() => navigate("/")}
-              className="m-auto cursor-pointer w-[300px] "
-              src={CongratsPicture}
-            />
-            <button
-              className="ml-44 bg-yellow-600 hover:bg-yellow-500 mt-10 px-10 py-3 text-2xl font-semibold text-center text-white"
-              onClick={() => navigate("/")}
-            >
-              Home
-            </button>
+          <div className="learners-licence">
+            <div>
+              <span className="border-[3px] border-yellow-400 border-dotted p-10">
+              <h3 className="text-4xl mb-10 text-lime-600">
+                  Learner's Driver Licence
+                </h3>
+                <img className="w-[400px]" src={BlankProfile} />
+                <p className="learners-text-one">
+                  {customer.firstname} {customer.lastname}
+                </p>
+                <p className="learners-text-two">Licence: {licence._id}</p>
+              </span>
+              <img
+                onClick={() => navigate("/")}
+                className="mt-5 cursor-pointer w-[300px] "
+                src={CongratsPicture}
+              />
+              <p className="learners-text-three">
+                This customer has been issued a<span> Learners</span> licence!
+              </p>
+
+              <button className="licence-button" onClick={() => navigate("/")}>
+                Home
+              </button>
+            </div>
           </div>
         </section>
         <Footer />
