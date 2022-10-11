@@ -35,7 +35,7 @@ export default function Register() {
     )
       .then((t) => {
         setToken(t);
-        navigate("/customer");
+        navigate("/");
       })
       .catch((e) =>
         alert(

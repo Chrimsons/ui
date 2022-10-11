@@ -13,8 +13,8 @@ import Header from "../Header";
 const Licence = () => {
   const navigate = useNavigate();
   let { customerId } = useParams();
-  const [customer, setCustomer] = useState();
-  const [licence, setLicence] = useState();
+  const [customer, setCustomer] = useState([]);
+  const [licence, setLicence] = useState([]);
 
   useEffect(() => {
     fetchCustomerByIdAsync(customerId).then((j) => setCustomer(j));
@@ -41,12 +41,12 @@ const Licence = () => {
               <span className="italic font-bold"> Learners</span> licence
             </p>
             <img
-                onClick={() => navigate("/")}
-                className="m-auto cursor-pointer w-[300px] "
-                src={CongratsPicture}
-              />
+              onClick={() => navigate("/")}
+              className="m-auto cursor-pointer w-[300px] "
+              src={CongratsPicture}
+            />
             <button
-              class="ml-44 bg-yellow-600 hover:bg-yellow-500 mt-10 px-10 py-3 text-2xl font-semibold text-center text-white"
+              className="ml-44 bg-yellow-600 hover:bg-yellow-500 mt-10 px-10 py-3 text-2xl font-semibold text-center text-white"
               onClick={() => navigate("/")}
             >
               Home
